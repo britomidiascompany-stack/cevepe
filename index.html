@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEVEPE — Plano de Otimização Google Business Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
+  <style>
+    :root {
+      --purple: #7C3AED;
+      --purple-dark: #5B21B6;
+      --purple-light: #A78BFA;
+      --purple-xlight: #DDD6FE;
+      --black: #0A0A0A;
+      --gray: #1A1A1A;
+      --gray2: #2D2D2D;
+      --white: #FFFFFF;
+      --white-80: rgba(255,255,255,0.8);
+      --white-40: rgba(255,255,255,0.4);
+    }
+
+    .reveal-viewport { background: var(--black); }
+    .reveal { font-family: 'Poppins', sans-serif; color: var(--white); }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    .reveal h1 { font-size: 2.4em; line-height: 1.1; }
+    .reveal h2 { font-size: 1.6em; color: var(--purple-light); }
+    .reveal h3 { font-size: 1.1em; color: var(--purple-xlight); font-weight: 600; }
+    .reveal p { font-weight: 300; line-height: 1.7; }
+    .reveal ul { list-style: none; padding: 0; }
+    .reveal ul li { padding: 6px 0; font-weight: 300; }
+    .reveal .slides section { padding: 40px 60px; }
+
+    /* SLIDE TYPES */
+    .slide-cover { background: linear-gradient(135deg, var(--black) 0%, var(--gray) 50%, var(--purple-dark) 100%); text-align: center; }
+    .slide-dark { background: var(--black); }
+    .slide-purple { background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%); }
+    .slide-gray { background: var(--gray); }
+
+    /* TAGS */
+    .tag { display: inline-block; background: var(--purple); color: white; font-size: 0.4em; font-weight: 600; padding: 4px 12px; border-radius: 20px; vertical-align: middle; margin-left: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
+    .tag-alert { background: #DC2626; }
+    .tag-ok { background: #16A34A; }
+    .tag-pending { background: #D97706; }
+
+    /* BADGE */
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gray2); border: 1px solid var(--purple); border-radius: 12px; padding: 10px 18px; margin: 6px; font-size: 0.75em; font-weight: 500; }
+    .badge-check { border-color: #16A34A; color: #86EFAC; }
+    .badge-alert { border-color: #DC2626; color: #FCA5A5; }
+    .badge-pending { border-color: #D97706; color: #FCD34D; }
+
+    /* TABLE */
+    .reveal table { width: 100%; border-collapse: collapse; font-size: 0.65em; }
+    .reveal table th { background: var(--purple); color: white; padding: 10px 14px; text-align: left; font-weight: 600; }
+    .reveal table td { padding: 9px 14px; border-bottom: 1px solid var(--gray2); color: var(--white-80); }
+    .reveal table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+
+    /* CARDS */
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .card-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 20px; }
+    .card { background: var(--gray2); border-radius: 12px; padding: 20px; border-left: 4px solid var(--purple); }
+    .card-title { font-size: 0.7em; font-weight: 700; color: var(--purple-light); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .card-body { font-size: 0.65em; color: var(--white-80); line-height: 1.6; font-weight: 300; }
+    .card-alert { border-left-color: #DC2626; }
+    .card-ok { border-left-color: #16A34A; }
+    .card-pending { border-left-color: #D97706; }
+
+    /* STAT */
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 24px; }
+    .stat { text-align: center; background: var(--gray2); border-radius: 16px; padding: 24px 16px; }
+    .stat-number { font-size: 2.2em; font-weight: 800; color: var(--purple-light); line-height: 1; }
+    .stat-label { font-size: 0.55em; color: var(--white-40); margin-top: 6px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* CHECK LIST */
+    .checklist li::before { content: "✓ "; color: #86EFAC; font-weight: 700; }
+    .checklist-alert li::before { content: "⚠ "; color: #FCA5A5; }
+    .checklist-todo li::before { content: "→ "; color: var(--purple-light); }
+
+    /* DIVIDER */
+    .divider { width: 60px; height: 4px; background: var(--purple); border-radius: 2px; margin: 16px auto; }
+
+    /* CODE */
+    .code-block { background: #0F0F1A; border: 1px solid var(--purple); border-radius: 10px; padding: 16px; font-family: 'Courier New', monospace; font-size: 0.42em; color: #C4B5FD; text-align: left; overflow: auto; max-height: 320px; line-height: 1.5; white-space: pre; }
+
+    /* LOGO AREA */
+    .logo-area { margin-bottom: 20px; }
+    .logo-cevepe { font-size: 3.5em; font-weight: 900; background: linear-gradient(135deg, #fff 0%, var(--purple-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+    .logo-sub { font-size: 0.8em; font-weight: 300; color: var(--white-80); letter-spacing: 0.3em; text-transform: uppercase; margin-top: 4px; }
+
+    /* BRITO BADGE */
+    .brito-badge { display: inline-block; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 6px 16px; font-size: 0.5em; font-weight: 400; color: var(--white-40); letter-spacing: 0.1em; }
+
+    /* HIGHLIGHT */
+    .highlight { color: var(--purple-light); font-weight: 600; }
+    .big-number { font-size: 3em; font-weight: 900; color: var(--purple-light); display: block; line-height: 1; }
+
+    /* WHATSAPP LINK */
+    .wa-link { display: inline-block; background: #16A34A; color: white; padding: 12px 28px; border-radius: 50px; font-size: 0.7em; font-weight: 600; text-decoration: none; margin-top: 10px; }
+
+    /* SECTION LABEL */
+    .section-label { font-size: 0.45em; font-weight: 600; color: var(--purple); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 8px; display: block; }
+
+    /* POSITION PILL */
+    .position { display: inline-block; background: var(--purple); border-radius: 50px; padding: 4px 16px; font-size: 0.6em; font-weight: 700; margin: 4px; }
+    .position-gold { background: #B45309; }
+
+    /* TWO COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start; }
+
+    /* FOOTER */
+    .slide-footer { position: absolute; bottom: 20px; left: 60px; right: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 0.4em; color: var(--white-40); }
+
+    .emoji-big { font-size: 2em; display: block; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- SLIDE 1: CAPA -->
+    <section class="slide-cover">
+      <div style="margin-bottom:40px;">
+        <div class="logo-cevepe">CEVEPE</div>
+        <div class="logo-sub">Centro Veterinário de Petrolina</div>
+      </div>
+      <div class="divider"></div>
+      <h1 style="font-size:1.6em; margin:24px 0 12px; font-weight:800;">Plano de Otimização<br><span style="color:var(--purple-light)">Google Business Profile</span></h1>
+      <p style="font-size:0.65em; color:var(--white-40); margin-bottom:30px;">Diagnóstico · Ações realizadas · Próximos passos</p>
+      <div class="brito-badge">Elaborado por Brito Mídias · Junho 2026</div>
+      <div class="slide-footer">
+        <span>cevepe.com.br</span>
+        <span>@clinica_cevepe</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: DIAGNÓSTICO -->
+    <section class="slide-dark">
+      <span class="section-label">Diagnóstico</span>
+      <h2>Posição atual no Google</h2>
+      <p style="font-size:0.65em; color:var(--white-40);">Pesquisa realizada em Petrolina-PE · Junho 2026</p>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-number">2º</div>
+          <div class="stat-label">orgânico · "veterinário petrolina"</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">5º</div>
+          <div class="stat-label">· "clínica veterinária petrolina"</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">4,8★</div>
+          <div class="stat-label">467 avaliações no Google</div>
+        </div>
+      </div>
+      <div class="card-grid" style="margin-top:20px;">
+        <div class="card">
+          <div class="card-title">Maior diferencial</div>
+          <div class="card-body">30 anos de mercado + Hospital Veterinário 24h + maior número de reviews da região</div>
+        </div>
+        <div class="card card-alert">
+          <div class="card-title">Principal gap</div>
+          <div class="card-body">Perfil desatualizado, categorias incorretas e baixa velocidade de reviews recentes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: ANÁLISE DOS CONCORRENTES -->
+    <section class="slide-dark">
+      <span class="section-label">Análise</span>
+      <h2>Concorrentes em Petrolina</h2>
+      <table>
+        <tr>
+          <th>Posição</th>
+          <th>Clínica</th>
+          <th>Avaliação</th>
+          <th>Reviews</th>
+          <th>24h</th>
+          <th>Site</th>
+        </tr>
+        <tr>
+          <td><span class="position position-gold">1º pago</span></td>
+          <td>Animalia</td>
+          <td>4,6★</td>
+          <td>218</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td><span class="position">1º orgânico</span></td>
+          <td>Animalvet</td>
+          <td>4,6★</td>
+          <td>602</td>
+          <td>✅</td>
+          <td>❌</td>
+        </tr>
+        <tr style="background:rgba(124,58,237,0.15);">
+          <td><span class="position">2º orgânico</span></td>
+          <td><strong>CEVEPE ◀</strong></td>
+          <td><strong>4,8★</strong></td>
+          <td><strong>467</strong></td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>3º</td>
+          <td>Vet Spa</td>
+          <td>5,0★</td>
+          <td>118</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>4º</td>
+          <td>Planeta Animal</td>
+          <td>4,5★</td>
+          <td>301</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>5º</td>
+          <td>Mil Patinhas</td>
+          <td>4,8★</td>
+          <td>361</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+      </table>
+      <p style="font-size:0.5em; color:var(--white-40); margin-top:12px;">* O CEVEPE tem a melhor combinação de nota + anos de mercado + serviços completos. O gap é em velocidade de reviews e otimização do perfil.</p>
+    </section>
+
+    <!-- SLIDE 4: O QUE FOI FEITO -->
+    <section class="slide-dark">
+      <span class="section-label">Ações realizadas</span>
+      <h2>O que foi feito hoje</h2>
+      <div class="card-grid">
+        <div>
+          <ul class="checklist" style="font-size:0.65em; line-height:2;">
+            <li>Categoria principal → <strong>Hospital Veterinário</strong></li>
+            <li>Categorias adicionais adicionadas</li>
+            <li>Descrição reescrita (747 caracteres)</li>
+            <li>Foto de perfil — logo oficial atualizada</li>
+            <li>Foto de capa adicionada</li>
+            <li>Redes sociais vinculadas ao perfil</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="checklist" style="font-size:0.65em; line-height:2;">
+            <li>Acessibilidade configurada</li>
+            <li>Estacionamento adicionado</li>
+            <li>Botão WhatsApp de agendamento</li>
+            <li>Número (87) 98825-3766 adicionado</li>
+            <li>+15 serviços adicionados ao perfil</li>
+            <li>Redes sociais vinculadas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: CATEGORIAS E DESCRIÇÃO -->
+    <section class="slide-dark">
+      <span class="section-label">Detalhamento</span>
+      <h2>Categorias atualizadas</h2>
+      <div class="two-col">
+        <div>
+          <div class="card-title" style="font-size:0.6em; margin-bottom:12px;">Principal</div>
+          <div class="badge" style="font-size:0.8em; margin:0;">🏥 Hospital Veterinário</div>
+          <div class="card-title" style="font-size:0.6em; margin-top:20px; margin-bottom:12px;">Adicionais</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <div class="badge" style="font-size:0.65em;">🐾 Veterinário</div>
+            <div class="badge" style="font-size:0.65em;">🛒 Pet Shop</div>
+            <div class="badge" style="font-size:0.65em;">💊 Farmácia Vet.</div>
+            <div class="badge" style="font-size:0.65em;">🚨 Emergência</div>
+            <div class="badge" style="font-size:0.65em;">✂️ Banho e Tosa</div>
+          </div>
+        </div>
+        <div>
+          <div class="card-title" style="font-size:0.6em; margin-bottom:12px;">Palavras-chave na descrição</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px;">
+            <div class="badge" style="font-size:0.6em;">Petrolina</div>
+            <div class="badge" style="font-size:0.6em;">Juazeiro</div>
+            <div class="badge" style="font-size:0.6em;">Lagoa Grande</div>
+            <div class="badge" style="font-size:0.6em;">Vale do São Francisco</div>
+            <div class="badge" style="font-size:0.6em;">30 anos</div>
+            <div class="badge" style="font-size:0.6em;">24 horas</div>
+            <div class="badge" style="font-size:0.6em;">Emergência</div>
+            <div class="badge" style="font-size:0.6em;">Cirurgia</div>
+            <div class="badge" style="font-size:0.6em;">UTI veterinária</div>
+            <div class="badge" style="font-size:0.6em;">Farmácia</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: ALERTA PENDÊNCIAS -->
+    <section class="slide-dark">
+      <span class="section-label">Pendências</span>
+      <h2>Alertas e itens pendentes</h2>
+      <div class="card card-alert" style="margin-bottom:16px;">
+        <div class="card-title" style="color:#FCA5A5;">⚠️ Verificar com Felipe — Número do perfil</div>
+        <div class="card-body">Havia uma edição pendente sugerindo remoção dos dois telefones do perfil. Verificar se foi rejeitada corretamente. Número adicionado: <strong>(87) 98825-3766</strong></div>
+      </div>
+      <div class="card-title" style="font-size:0.6em; margin:16px 0 10px;">Serviços a confirmar com a clínica antes de adicionar ao perfil</div>
+      <table>
+        <tr>
+          <th>Serviço</th>
+          <th>Por que é importante</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Vacina antirrábica</td>
+          <td>Busca frequente e específica</td>
+          <td>🔄 Confirmar</td>
+        </tr>
+        <tr>
+          <td>Teste de leishmaniose</td>
+          <td>Petrolina é área endêmica — alta demanda</td>
+          <td>🔄 Confirmar</td>
+        </tr>
+        <tr>
+          <td>Microchipagem</td>
+          <td>Diferencial competitivo crescente</td>
+          <td>🔄 Confirmar</td>
+        </tr>
+        <tr>
+          <td>Cardiologia veterinária</td>
+          <td>Consta no site — adicionar ao GBP</td>
+          <td>✅ Confirmar adição</td>
+        </tr>
+        <tr>
+          <td>Tratamento com células-tronco</td>
+          <td>Diferencial único em Petrolina</td>
+          <td>✅ Adicionar urgente</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- SLIDE 7: ESTRATÉGIA DE REVIEWS -->
+    <section class="slide-dark">
+      <span class="section-label">Estratégia</span>
+      <h2>Plano de Reviews</h2>
+      <div class="card-grid">
+        <div>
+          <div class="card card-ok">
+            <div class="card-title" style="color:#86EFAC;">Meta diária</div>
+            <div class="card-body">
+              <strong>Mínimo 1 review por dia.</strong><br><br>
+              Fluxo após atendimento:<br>
+              1. Oferecer foto com o pet<br>
+              2. Entregar QR Code para avaliação Google<br>
+              3. Se "já avaliei" → "Pode avaliar novamente, nos ajuda muito!"
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-title">Palavras-chave nos reviews</div>
+            <div class="card-body">
+              Orientar o atendente a perguntar antes do QR Code:<br><br>
+              · "O veterinário foi atencioso?"<br>
+              · "A emergência foi rápida?"<br>
+              · "Como foi o atendimento?"<br><br>
+              O cliente usa essas palavras naturalmente na avaliação.
+            </div>
+          </div>
+          <div class="card card-alert" style="margin-top:14px;">
+            <div class="card-title" style="color:#FCA5A5;">Rotina de respostas</div>
+            <div class="card-body">Responder todos os reviews 2x ao dia.<br>Checklist para atendentes até 12h.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: ESTRATÉGIA DE CONTEÚDO -->
+    <section class="slide-dark">
+      <span class="section-label">Estratégia</span>
+      <h2>Plano de Conteúdo</h2>
+      <div class="three-col">
+        <div class="card" style="text-align:center;">
+          <div class="emoji-big">📅</div>
+          <div class="card-title">Posts no GBP</div>
+          <div class="big-number" style="font-size:2em;">2x</div>
+          <div class="card-body">por dia<br><br>Nenhum concorrente faz isso em Petrolina. Vantagem competitiva imediata.</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="emoji-big">✍️</div>
+          <div class="card-title">Blog no site</div>
+          <div class="big-number" style="font-size:2em;">1x</div>
+          <div class="card-body">por semana<br><br>Artigos sobre saúde animal em Petrolina. Aparece nas IAs e AI Overviews do Google.</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="emoji-big">📸</div>
+          <div class="card-title">Fotos no perfil</div>
+          <div class="big-number" style="font-size:2em;">100+</div>
+          <div class="card-body">fotos<br><br>Pets com autorização, equipe, estrutura, equipamentos.</div>
+        </div>
+      </div>
+      <p style="font-size:0.5em; color:var(--white-40); margin-top:16px; text-align:center;">Sugestões: dicas veterinárias · fotos de pets atendidos · promoções · efemérides · destaques de serviço</p>
+    </section>
+
+    <!-- SLIDE 9: SCHEMA MARKUP -->
+    <section class="slide-dark">
+      <span class="section-label">Técnico</span>
+      <h2>Schema Markup — GTM</h2>
+      <p style="font-size:0.6em; color:var(--white-40); margin-bottom:16px;">Código pronto para inserir no Google Tag Manager como <strong>Custom HTML Tag → All Pages</strong></p>
+      <div class="code-block">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Centro Veterinário de Petrolina - CEVEPE",
+  "description": "Hospital veterinário em Petrolina-PE com 30 anos. Atendimento 24h, emergências, células-tronco, cirurgias, exames, banho e tosa, pet shop e farmácia veterinária.",
+  "url": "https://cevepe.com.br",
+  "telephone": ["+55-87-3862-3989", "+55-87-98814-1272"],
+  "openingHours": "Mo-Su 00:00-23:59",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Engenheiro Carlos Pinheiro, 382",
+    "addressLocality": "Petrolina",
+    "addressRegion": "PE",
+    "addressCountry": "BR"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "467"
+  },
+  "medicalSpecialty": ["Cirurgia veterinária","Oftalmologia veterinária","Ortopedia veterinária","Cardiologia veterinária","Tratamento com células-tronco"],
+  "areaServed": ["Petrolina","Juazeiro","Lagoa Grande","Vale do São Francisco"],
+  "sameAs": [
+    "https://www.instagram.com/clinica_cevepe",
+    "https://www.facebook.com/cevepe",
+    "https://www.youtube.com/channel/UC2hIYsziWaaSZD2kaM8xJgg"
+  ]
+}
+&lt;/script&gt;</div>
+      <p style="font-size:0.48em; color:var(--white-40); margin-top:10px;">💡 Dica: como o site é WordPress, instale também o plugin <strong>RankMath</strong> (gratuito) para gerenciar schemas automaticamente.</p>
+    </section>
+
+    <!-- SLIDE 10: RANKING NAS IAs -->
+    <section class="slide-dark">
+      <span class="section-label">Inovação</span>
+      <h2>Ranqueamento nas IAs</h2>
+      <div class="three-col">
+        <div class="card">
+          <div class="card-title">Google AI Overviews</div>
+          <div class="card-body">
+            Aparece antes de todos os resultados. Depende de:<br>
+            · GBP otimizado ✅<br>
+            · Site com conteúdo autoritativo<br>
+            · Reviews com keywords<br>
+            · Schema Markup ✅
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">ChatGPT &amp; Claude</div>
+          <div class="card-body">
+            IAs acessam o Google em tempo real. Para ser recomendado:<br>
+            · Aparecer bem no Google ✅<br>
+            · Estar em diretórios (PetLife)<br>
+            · Site com conteúdo rico<br>
+            · Presença em múltiplas plataformas
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Plano de ação</div>
+          <div class="card-body">
+            · Blog: 1 post/semana ✅<br>
+            · Cadastro no PetLife<br>
+            · Artigos: leishmaniose, emergência, cuidados<br>
+            · Schema Markup no GTM ✅<br>
+            · Citações em mídias locais
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: PRÓXIMOS PASSOS -->
+    <section class="slide-dark">
+      <span class="section-label">Próximos passos</span>
+      <h2>Checklist de ações</h2>
+      <div class="card-grid">
+        <div>
+          <div class="card-title" style="font-size:0.6em; color:#FCA5A5; margin-bottom:10px;">🔴 Alta prioridade</div>
+          <ul class="checklist-todo" style="font-size:0.62em; line-height:2;">
+            <li>Verificar rejeição da edição de telefones c/ Felipe</li>
+            <li>Confirmar 5 serviços pendentes com CEVEPE</li>
+            <li>Instalar Schema Markup no GTM</li>
+            <li>Adicionar cardiologia + células-tronco ao GBP</li>
+            <li>Cadastrar no PetLife.com.br</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-title" style="font-size:0.6em; color:#FCD34D; margin-bottom:10px;">🟡 Médio prazo</div>
+          <ul class="checklist-todo" style="font-size:0.62em; line-height:2;">
+            <li>Iniciar rotina de 2 posts/dia no GBP</li>
+            <li>Lançar campanha de reviews com QR Code</li>
+            <li>Criar rotina de resposta 2x ao dia</li>
+            <li>Adicionar 100+ fotos ao perfil</li>
+            <li>Instalar RankMath no WordPress</li>
+            <li>Publicar 1 post/semana no blog</li>
+            <li>Verificar convênios com empresas locais</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: CONTATO -->
+    <section class="slide-purple" style="text-align:center;">
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Contato</span>
+      <h2 style="color:white; font-size:1.8em;">CEVEPE — Fale conosco</h2>
+      <p style="font-size:0.65em; opacity:0.8; margin-bottom:30px;">Clique no botão abaixo para iniciar uma conversa diretamente pelo WhatsApp</p>
+      <a class="wa-link" href="https://wa.me/5587988253766?text=Oi%2C+vi+o+perfil+de+voc%C3%AAs+no+Google+e+queria+tirar+algumas+d%C3%BAvidas!">
+        💬 Falar pelo WhatsApp
+      </a>
+      <div style="margin-top:40px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.2);">
+        <div class="logo-cevepe" style="font-size:1.5em; margin-bottom:8px;">CEVEPE</div>
+        <p style="font-size:0.5em; opacity:0.5;">Centro Veterinário de Petrolina · cevepe.com.br · @clinica_cevepe</p>
+        <p style="font-size:0.45em; opacity:0.3; margin-top:20px;">Plano elaborado por <strong>Brito Mídias</strong> · britomidiascompany@gmail.com</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    slideNumber: true,
+    overview: true,
+    keyboard: true,
+    touch: true,
+    loop: false,
+    autoPlayMedia: false,
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    plugins: []
+  });
+</script>
+</body>
+</html>
