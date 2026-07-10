@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BM Mídias · Estratégia de Tráfego Pago — CEVEPE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C3AED;
+    --purple-dark:#5B21B6;
+    --purple-deep:#3B0F73;
+    --purple-light:#A78BFA;
+    --purple-xlight:#EDE9FE;
+    --black:#0A0A0A;
+    --ink:#141018;
+    --gray:#5B5566;
+    --line:#E7E3EE;
+    --bg:#FFFFFF;
+    --bg-soft:#FAF9FC;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.65;
+    font-weight:300;
+    font-size:16px;
+  }
+  .page{max-width:920px;margin:0 auto;padding:0 40px}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  strong,b{font-weight:600}
+  .accent{color:var(--purple)}
+  .muted{color:var(--gray)}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,0.55), transparent 60%),
+      linear-gradient(150deg,#0A0A0A 0%, #17111F 45%, #3B0F73 100%);
+    color:#fff;
+    padding:70px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cover::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);
+    background-size:38px 38px;
+    mask-image:linear-gradient(120deg,transparent 40%,#000 100%);
+    pointer-events:none;
+  }
+  .cover .page{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:64px}
+  .brand svg{width:52px;height:52px;flex:0 0 auto}
+  .brand .bar{width:2px;height:44px;background:rgba(255,255,255,.85)}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm .l1{font-weight:800;font-size:20px;letter-spacing:.06em}
+  .brand .wm .l2{font-weight:300;font-size:20px;letter-spacing:.28em}
+  .eyebrow{
+    display:inline-block;font-weight:600;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--purple-light);
+    border:1px solid rgba(167,139,250,.4);border-radius:100px;padding:7px 16px;margin-bottom:26px;
+  }
+  .cover h1{font-size:52px;font-weight:800;margin-bottom:18px}
+  .cover h1 .thin{font-weight:300;display:block;font-size:30px;color:rgba(255,255,255,.72);letter-spacing:-0.01em;margin-top:6px}
+  .cover .lede{font-weight:300;font-size:18px;color:rgba(255,255,255,.82);max-width:620px}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+  .cover .meta .chip{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:12px 18px;font-size:13px;color:rgba(255,255,255,.9);
+  }
+  .cover .meta .chip b{color:#fff;font-weight:600;display:block;font-size:14px}
+  .cover .meta .chip span{color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:56px 0}
+  section + section{border-top:1px solid var(--line)}
+  .kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--purple);display:inline-block}
+  h2.sec{font-size:30px;font-weight:700;margin-bottom:14px}
+  .sec-lede{font-size:17px;color:var(--gray);max-width:680px;margin-bottom:8px}
+  p{margin-bottom:14px}
+  p.body{max-width:720px}
+
+  /* KPI ROW */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+  .kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+  .kpi .n{font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-0.03em;line-height:1}
+  .kpi .n small{font-size:16px;font-weight:700;color:var(--purple)}
+  .kpi .l{font-size:12px;color:var(--gray);margin-top:8px;font-weight:400;line-height:1.4}
+
+  /* THREE FRONTS CARDS */
+  .fronts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  .front{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .front .top{padding:20px 22px 16px;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+  .front .badge{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);background:var(--purple-xlight);border-radius:100px;padding:5px 12px;display:inline-block;margin-bottom:12px}
+  .front h3{font-size:19px;margin-bottom:4px}
+  .front .pct{font-size:13px;color:var(--gray);font-weight:500}
+  .front .body{padding:18px 22px 24px;font-size:14px;color:var(--ink);font-weight:300}
+  .front .body li{list-style:none;padding-left:22px;position:relative;margin-bottom:9px;line-height:1.5}
+  .front .body li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--purple)}
+
+  /* BUDGET */
+  .split{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center;margin-top:26px}
+  .bars{display:flex;flex-direction:column;gap:18px}
+  .bar-row .bl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+  .bar-row .bl .name{font-weight:600;font-size:15px}
+  .bar-row .bl .val{font-weight:700;font-size:15px;color:var(--purple)}
+  .track{height:12px;background:var(--purple-xlight);border-radius:100px;overflow:hidden}
+  .fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--purple),var(--purple-dark))}
+  .bar-row .sub{font-size:12.5px;color:var(--gray);margin-top:7px}
+  .note{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:12px;padding:18px 20px;font-size:14px;color:var(--ink);font-weight:300}
+  .note b{color:var(--purple-dark)}
+
+  /* TIMELINE */
+  .timeline{margin-top:26px;position:relative;padding-left:8px}
+  .tl{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:0 0 26px 26px;position:relative;border-left:2px solid var(--line)}
+  .tl:last-child{border-left-color:transparent;padding-bottom:0}
+  .tl::before{content:"";position:absolute;left:-9px;top:2px;width:16px;height:16px;border-radius:50%;background:var(--purple);border:3px solid #fff;box-shadow:0 0 0 2px var(--purple)}
+  .tl .when{font-weight:700;font-size:14px;color:var(--purple-dark);padding-top:0}
+  .tl .what h4{font-size:16px;margin-bottom:5px}
+  .tl .what p{font-size:14px;color:var(--ink);font-weight:300;margin:0;max-width:560px}
+
+  /* AUDIENCE CHIPS */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chips .c{border:1px solid var(--line);background:var(--bg-soft);border-radius:100px;padding:10px 18px;font-size:13.5px;font-weight:400;display:flex;align-items:center;gap:9px}
+  .chips .c b{font-weight:600}
+  .chips .c .dot{width:8px;height:8px;border-radius:50%;background:var(--purple)}
+
+  /* RESULTS: donut + table */
+  .results-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;margin-top:24px}
+  .donut-wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+  .donut{position:relative;width:210px;height:210px}
+  .donut .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .donut .center .v{font-size:26px;font-weight:800;letter-spacing:-0.02em}
+  .donut .center .k{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.12em}
+  .legend{display:flex;flex-direction:column;gap:12px}
+  .legend .li{display:flex;align-items:flex-start;gap:12px}
+  .legend .sw{width:14px;height:14px;border-radius:4px;flex:0 0 auto;margin-top:4px}
+  .legend .li .t{font-size:14px}
+  .legend .li .t b{font-weight:600}
+  .legend .li .t span{color:var(--gray);font-size:12.5px;display:block}
+
+  table{width:100%;border-collapse:collapse;margin-top:26px;font-size:14px}
+  thead th{text-align:left;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);padding:0 14px 12px;border-bottom:2px solid var(--line)}
+  thead th.num{text-align:right}
+  tbody td{padding:14px;border-bottom:1px solid var(--line);font-weight:300;vertical-align:middle}
+  tbody td.num{text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
+  tbody tr:last-child td{border-bottom:none}
+  tbody .name{font-weight:500;color:var(--ink)}
+  tbody .tag{font-size:11px;color:var(--purple);background:var(--purple-xlight);border-radius:6px;padding:2px 8px;font-weight:500;white-space:nowrap}
+  tfoot td{padding:14px;font-weight:700;border-top:2px solid var(--line)}
+  tfoot td.num{text-align:right;color:var(--purple-dark)}
+
+  /* CREATIVE CARDS */
+  .creatives{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  .cr{border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+  .cr .thumb{height:118px;display:flex;align-items:center;justify-content:center;position:relative;color:#fff}
+  .cr .thumb.g1{background:linear-gradient(135deg,#5B21B6,#7C3AED)}
+  .cr .thumb.g2{background:linear-gradient(135deg,#17111F,#3B0F73)}
+  .cr .thumb.g3{background:linear-gradient(135deg,#7C3AED,#A78BFA)}
+  .cr .thumb .rank{position:absolute;top:12px;left:14px;font-size:11px;font-weight:600;letter-spacing:.1em;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:4px 10px;border-radius:100px}
+  .cr .thumb .type{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.95}
+  .cr .cbody{padding:18px 20px 20px}
+  .cr .cbody h4{font-size:15px;margin-bottom:4px}
+  .cr .cbody .desc{font-size:12.5px;color:var(--gray);margin-bottom:14px;min-height:34px}
+  .cr .stat{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--line);font-size:13px}
+  .cr .stat .k{color:var(--gray)}
+  .cr .stat .v{font-weight:600}
+  .cr .link{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:500;color:var(--purple);text-decoration:none;border-bottom:1px solid var(--purple-light)}
+
+  /* NEXT STEPS */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  .step{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:var(--bg-soft)}
+  .step .h{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .step .h .num{width:30px;height:30px;border-radius:9px;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:0 0 auto}
+  .step .h h4{font-size:16px}
+  .step p{font-size:14px;color:var(--ink);font-weight:300;margin:0}
+
+  /* FOOTER */
+  footer{background:var(--black);color:#fff;padding:44px 0;margin-top:0}
+  footer .page{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  footer .fbrand{display:flex;align-items:center;gap:14px}
+  footer .fbrand svg{width:40px;height:40px}
+  footer .fbrand .wm{line-height:1.1}
+  footer .fbrand .wm b{font-weight:700;letter-spacing:.05em;font-size:16px;display:block}
+  footer .fbrand .wm span{font-size:12px;color:rgba(255,255,255,.55)}
+  footer .fmeta{font-size:12.5px;color:rgba(255,255,255,.6);text-align:right;line-height:1.7}
+  footer .fmeta a{color:var(--purple-light);text-decoration:none}
+
+  @media (max-width:760px){
+    .page{padding:0 22px}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .fronts,.creatives,.steps{grid-template-columns:1fr}
+    .split,.results-top{grid-template-columns:1fr;gap:26px}
+    .cover h1{font-size:36px}
+    .cover h1 .thin{font-size:22px}
+    .tl{grid-template-columns:1fr;gap:6px}
+  }
+
+  /* PRINT / PDF */
+  @page{size:A4;margin:14mm}
+  @media print{
+    .page{max-width:100%;padding:0}
+    section{padding:22px 0}
+    .cover{padding:34px 30px}
+    .cover .page{padding:0}
+    footer .page{padding:0 6px}
+    section,.front,.cr,.step,.tl,.note,table,.results-top,.split{break-inside:avoid;page-break-inside:avoid}
+    h2.sec{break-after:avoid}
+    .no-print{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- =============== COVER =============== -->
+<div class="cover">
+  <div class="page">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/>
+        <polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/>
+        <line x1="90" y1="73" x2="65" y2="59"/>
+        <line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/>
+        <line x1="90" y1="27" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/>
+        <line x1="10" y1="27" x2="35" y2="59"/>
+        <line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="bar"></div>
+      <div class="wm"><span class="l1">BM</span><span class="l2">MÍDIAS</span></div>
+    </div>
+
+    <span class="eyebrow">Gestão de Tráfego Pago · Meta Ads</span>
+    <h1>Estratégia de Tráfego<span class="thin">Cliente CEVEPE · Centro Veterinário de Petrolina</span></h1>
+    <p class="lede">Como estruturamos as campanhas todos os meses e o que os últimos 6 meses de investimento entregaram em resultado.</p>
+
+    <div class="meta">
+      <div class="chip"><span>Preparado para</span><b>Mateus</b></div>
+      <div class="chip"><span>Período analisado</span><b>Jan a Jul de 2026</b></div>
+      <div class="chip"><span>Conta</span><b>Anúncios CEVEPE · Meta</b></div>
+      <div class="chip"><span>Emitido em</span><b>Julho de 2026</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============== RESUMO =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">Resumo dos 6 meses</div>
+    <h2 class="sec">O panorama, em números</h2>
+    <p class="body sec-lede">De janeiro a julho de 2026 investimos <strong>R$ 5.059,83</strong> na conta do CEVEPE. O motor de resultado é a campanha de mensagens, que sozinha gera a maior parte das conversas no WhatsApp a um custo baixo.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n"><small>R$</small> 5.059</div><div class="l">Investimento total no período</div></div>
+      <div class="kpi"><div class="n">824</div><div class="l">Conversas iniciadas no WhatsApp</div></div>
+      <div class="kpi"><div class="n"><small>R$</small> 4,17</div><div class="l">Custo médio por conversa</div></div>
+      <div class="kpi"><div class="n">177,8<small>mil</small></div><div class="l">Contas alcançadas na Meta</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== COMO FUNCIONA =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">A lógica da operação</div>
+    <h2 class="sec">Como funciona a nossa estratégia</h2>
+    <p class="body">Trabalhamos com <strong>campanhas mensais</strong>. Todo mês existe uma campanha nova, com um pacote de conteúdo próprio: <strong>vídeos, imagens e carrosséis</strong>. Esse conteúdo é o que usamos para fazer o tráfego de <strong>aquisição</strong>, trazendo novas pessoas para o perfil do Instagram.</p>
+    <p class="body">Ao mesmo tempo, roda de forma <strong>independente e contínua</strong> uma campanha de mensagens. Nela ficam sempre os <strong>criativos que estão performando melhor</strong>, não importa de qual mês eles sejam. É essa campanha que converte a audiência em conversa no WhatsApp, o resultado que interessa para o cliente.</p>
+    <p class="body">Na prática, a verba do mês se divide em três frentes que trabalham juntas.</p>
+
+    <div class="fronts">
+      <div class="front">
+        <div class="top">
+          <span class="badge">Frente 1 · Conversão</span>
+          <h3>Campanha de mensagens</h3>
+          <div class="pct">60% a 70% da verba</div>
+        </div>
+        <div class="body">
+          <ul>
+            <li>Roda o tempo todo, independente do mês.</li>
+            <li>Só entram os criativos que já provaram performance.</li>
+            <li>Objetivo direto: conversa no WhatsApp.</li>
+            <li>Custo médio de <b>~R$ 4</b> por conversa neste ano.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="front">
+        <div class="top">
+          <span class="badge">Frente 2 · Aquisição</span>
+          <h3>Impulsionamentos</h3>
+          <div class="pct">~7% da verba</div>
+        </div>
+        <div class="body">
+          <ul>
+            <li>Distribui o conteúdo do mês para gente nova.</li>
+            <li>Leva vídeos, imagens e carrosséis ao perfil.</li>
+            <li>Alimenta o público que depois vira retargeting.</li>
+            <li>Foca em visitas ao perfil e novos seguidores.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="front">
+        <div class="top">
+          <span class="badge">Frente 3 · Retargeting</span>
+          <h3>Reconhecimento e alcance</h3>
+          <div class="pct">~7% da verba</div>
+        </div>
+        <div class="body">
+          <ul>
+            <li>Fala com quem já teve contato com a marca.</li>
+            <li>Reforça os conteúdos do mês nesse público quente.</li>
+            <li>Entra alguns dias depois, com base já aquecida.</li>
+            <li>Sustenta a lembrança e reduz o custo de conversa.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== VERBA =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">Distribuição da verba</div>
+    <h2 class="sec">Para onde vai o investimento</h2>
+    <p class="body sec-lede">A maior parte da verba fica na frente que converte. O restante sustenta a entrada de gente nova e a lembrança da marca.</p>
+    <div class="split">
+      <div class="bars">
+        <div class="bar-row">
+          <div class="bl"><span class="name">Mensagens (conversão)</span><span class="val">60% a 70%</span></div>
+          <div class="track"><div class="fill" style="width:65%"></div></div>
+          <div class="sub">Onde ficam os melhores criativos, gerando conversa no WhatsApp.</div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><span class="name">Aquisição e conteúdo do mês</span><span class="val">~20%</span></div>
+          <div class="track"><div class="fill" style="width:21%"></div></div>
+          <div class="sub">Distribuição dos vídeos, imagens e carrosséis para novos públicos.</div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><span class="name">Impulsionamentos</span><span class="val">~7%</span></div>
+          <div class="track"><div class="fill" style="width:7%"></div></div>
+          <div class="sub">Empurrão pago nos posts para ampliar visitas ao perfil.</div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><span class="name">Retargeting (reconhecimento e alcance)</span><span class="val">~7%</span></div>
+          <div class="track"><div class="fill" style="width:7%"></div></div>
+          <div class="sub">Impacto no público quente que já conhece a marca.</div>
+        </div>
+      </div>
+      <div class="note">
+        <p style="margin-bottom:10px"><b>Por que essa divisão?</b></p>
+        <p style="margin:0">A campanha de mensagens é a que traz retorno mais direto, então concentra o grosso da verba. As outras frentes existem para <b>não deixar a base secar</b>: elas trazem gente nova e mantêm a marca presente, o que alimenta a própria campanha de mensagens ao longo do tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FLUXO DO MÊS =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">O ritmo</div>
+    <h2 class="sec">O fluxo de um mês</h2>
+    <p class="body sec-lede">A campanha do mês não sobe tudo de uma vez. Existe uma ordem que deixa o retargeting mais eficiente.</p>
+    <div class="timeline">
+      <div class="tl">
+        <div class="when">Início do mês</div>
+        <div class="what"><h4>Lançamento da campanha</h4><p>Sobe a campanha do mês, normalmente começando por um vídeo principal, junto com o pacote de imagens e carrosséis.</p></div>
+      </div>
+      <div class="tl">
+        <div class="when">Dias 1 ao 15</div>
+        <div class="what"><h4>Publicação e aquisição</h4><p>Publicamos bastante conteúdo e rodamos o tráfego de aquisição, levando esse material para novas pessoas e construindo audiência.</p></div>
+      </div>
+      <div class="tl">
+        <div class="when">Após 10 a 15 dias</div>
+        <div class="what"><h4>Entrada do retargeting</h4><p>Com a base já aquecida, entramos com o remarketing sobre quem visitou o perfil e quem viu o primeiro conteúdo do mês, reforçando os demais criativos.</p></div>
+      </div>
+      <div class="tl">
+        <div class="when">O mês inteiro</div>
+        <div class="what"><h4>Mensagens sempre no ar</h4><p>Em paralelo a tudo, a campanha de mensagens roda sem parar com os criativos de melhor performance, puxando conversa no WhatsApp.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PÚBLICOS =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">Retargeting</div>
+    <h2 class="sec">Os públicos que reimpactamos</h2>
+    <p class="body sec-lede">O retargeting é montado sobre quem já teve algum contato com a marca nos últimos 30 dias. Reunimos esses públicos e rodamos os conteúdos do mês em cima deles.</p>
+    <div class="chips">
+      <div class="c"><span class="dot"></span><span>Visitou o <b>perfil do Instagram</b> (30 dias)</span></div>
+      <div class="c"><span class="dot"></span><span>Se <b>engajou</b> com o conteúdo</span></div>
+      <div class="c"><span class="dot"></span><span>Mandou <b>mensagem</b></span></div>
+      <div class="c"><span class="dot"></span><span><b>Salvou</b> um post</span></div>
+      <div class="c"><span class="dot"></span><span><b>Curtiu</b> um post</span></div>
+      <div class="c"><span class="dot"></span><span><b>Compartilhou</b> um post</span></div>
+      <div class="c"><span class="dot"></span><span>Viu o <b>vídeo de lançamento</b> do mês</span></div>
+      <div class="c"><span class="dot"></span><span><b>Seguidores</b> do perfil</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RESULTADOS =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">Resultados · Jan a Jul de 2026</div>
+    <h2 class="sec">O que os 6 meses entregaram</h2>
+    <p class="body sec-lede">Os R$ 5.059,83 investidos no período se dividiram entre as três frentes. A campanha de mensagens concentrou o investimento e as conversas.</p>
+
+    <div class="results-top">
+      <div class="donut-wrap">
+        <div class="donut">
+          <svg viewBox="0 0 160 160" width="210" height="210">
+            <circle cx="80" cy="80" r="60" fill="none" stroke="#EDE9FE" stroke-width="26"/>
+            <circle cx="80" cy="80" r="60" fill="none" stroke="#7C3AED" stroke-width="26"
+              stroke-dasharray="255.9 121.1" stroke-dashoffset="0" transform="rotate(-90 80 80)"/>
+            <circle cx="80" cy="80" r="60" fill="none" stroke="#5B21B6" stroke-width="26"
+              stroke-dasharray="94.6 282.4" stroke-dashoffset="-255.9" transform="rotate(-90 80 80)"/>
+            <circle cx="80" cy="80" r="60" fill="none" stroke="#A78BFA" stroke-width="26"
+              stroke-dasharray="26.0 351.0" stroke-dashoffset="-350.5" transform="rotate(-90 80 80)"/>
+          </svg>
+          <div class="center"><div class="v">R$ 5.059</div><div class="k">investidos</div></div>
+        </div>
+      </div>
+      <div class="legend">
+        <div class="li"><span class="sw" style="background:#7C3AED"></span><div class="t"><b>Mensagens · 67,9%</b><span>R$ 3.437,88 · 824 conversas a R$ 4,17</span></div></div>
+        <div class="li"><span class="sw" style="background:#5B21B6"></span><div class="t"><b>Retargeting e reconhecimento · 25,1%</b><span>R$ 1.270,78 · engajamento, vídeo e alcance no público quente</span></div></div>
+        <div class="li"><span class="sw" style="background:#A78BFA"></span><div class="t"><b>Impulsionamentos · 6,9%</b><span>R$ 351,17 · ~1.400 visitas ao perfil a R$ 0,25</span></div></div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Frente</th><th>Foco</th><th class="num">Investido</th><th class="num">Resultado</th><th class="num">Custo unit.</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">Mensagens</td><td><span class="tag">Conversão</span></td><td class="num">R$ 3.437,88</td><td class="num">824 conversas</td><td class="num">R$ 4,17</td></tr>
+        <tr><td class="name">Retargeting / alcance</td><td><span class="tag">Público quente</span></td><td class="num">R$ 1.270,78</td><td class="num">~1.360 interações + 18,4 mil ThruPlays</td><td class="num">R$ 0,04 a 0,38</td></tr>
+        <tr><td class="name">Impulsionamentos</td><td><span class="tag">Perfil</span></td><td class="num">R$ 351,17</td><td class="num">~1.400 visitas ao perfil</td><td class="num">R$ 0,25</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td></td><td class="num">R$ 5.059,83</td><td class="num">824 conversas WhatsApp</td><td class="num">R$ 4,17</td></tr>
+      </tfoot>
+    </table>
+    <p class="body muted" style="font-size:13px;margin-top:16px">Alcance de 177.865 contas, 969.488 impressões, CTR médio de 0,81% e CPC de R$ 0,64 no período. Dados extraídos direto da conta de anúncios da Meta.</p>
+  </div>
+</section>
+
+<!-- =============== CRIATIVOS =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">O que performou</div>
+    <h2 class="sec">Criativos que mais performaram</h2>
+    <p class="body sec-lede">São estes os criativos que sustentam a campanha de mensagens neste ano. O tema de castração domina, seguido pela prevenção. É o que mantemos rodando por gerar conversa mais barata.</p>
+    <div class="creatives">
+      <div class="cr">
+        <div class="thumb g1"><span class="rank">1º LUGAR</span><span class="type">Imagem</span></div>
+        <div class="cbody">
+          <h4>Castração</h4>
+          <div class="desc">Imagem levando direto para o WhatsApp. O criativo mais investido do ano.</div>
+          <div class="stat"><span class="k">Investido</span><span class="v">R$ 1.979,36</span></div>
+          <div class="stat"><span class="k">Impressões</span><span class="v">361.253</span></div>
+          <div class="stat"><span class="k">Cliques · CTR</span><span class="v">2.873 · 0,80%</span></div>
+          <a class="link" href="https://www.facebook.com/518294171615966/posts/1029807605838488" target="_blank" rel="noopener">Ver o criativo &rsaquo;</a>
+        </div>
+      </div>
+      <div class="cr">
+        <div class="thumb g2"><span class="rank">2º LUGAR</span><span class="type">Vídeo</span></div>
+        <div class="cbody">
+          <h4>Castração / check-up</h4>
+          <div class="desc">Vídeo do veterinário, com atendimento estendido. O melhor CTR do trio.</div>
+          <div class="stat"><span class="k">Investido</span><span class="v">R$ 860,22</span></div>
+          <div class="stat"><span class="k">Impressões</span><span class="v">99.838</span></div>
+          <div class="stat"><span class="k">Cliques · CTR</span><span class="v">1.045 · 1,05%</span></div>
+          <a class="link" href="https://www.facebook.com/518294171615966/posts/981722643980318" target="_blank" rel="noopener">Ver o criativo &rsaquo;</a>
+        </div>
+      </div>
+      <div class="cr">
+        <div class="thumb g3"><span class="rank">3º LUGAR</span><span class="type">Prevenção</span></div>
+        <div class="cbody">
+          <h4>Prevenção · carrapato</h4>
+          <div class="desc">Linha de prevenção (vacinação e antiparasitário) puxando conversa.</div>
+          <div class="stat"><span class="k">Investido</span><span class="v">R$ 304,70</span></div>
+          <div class="stat"><span class="k">Impressões</span><span class="v">59.493</span></div>
+          <div class="stat"><span class="k">Cliques · CTR</span><span class="v">526 · 0,88%</span></div>
+          <a class="link" href="https://www.facebook.com/518294171615966/posts/962706505881932" target="_blank" rel="noopener">Ver o criativo &rsaquo;</a>
+        </div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:22px">
+      <p style="margin:0">Nos impulsionamentos, os destaques de custo foram o Reels <b>"Você, herói do seu pet"</b> (CTR 3,12%, visita ao perfil a R$ 0,28) e o vídeo do <b>sorteio de 30 anos</b> (CTR 2,34%, visita a R$ 0,22, o mais barato do período).</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CONTEXTO / PRÓXIMOS PASSOS =============== -->
+<section>
+  <div class="page">
+    <div class="kicker">Onde estamos agora</div>
+    <h2 class="sec">Contexto atual e próximos passos</h2>
+    <p class="body">A estratégia descrita aqui é a que rodou até o mês passado. De lá para cá, o <strong>volume de pessoas vindo pelo Facebook caiu</strong>, ponto que o próprio Felipe levantou. Como resposta imediata, decidimos <strong>concentrar mais em mensagens</strong> por enquanto, para segurar o resultado enquanto entendemos o movimento.</p>
+    <p class="body">O próximo passo é justamente esta análise conjunta com o Mateus, para revisar a distribuição e evoluir os resultados a partir dos dados dos últimos 6 meses.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="h"><span class="num">1</span><h4>Diagnóstico</h4></div>
+        <p>Entender a queda de alcance no Facebook e o que mudou no comportamento do público nas últimas semanas.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="num">2</span><h4>Revisão da divisão</h4></div>
+        <p>Avaliar se o foco temporário em mensagens deve continuar ou se voltamos a abrir verba para aquisição e retargeting.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="num">3</span><h4>Renovação de criativos</h4></div>
+        <p>Testar novos ângulos além de castração, evitando desgaste do criativo que carrega a conta desde 2025.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="num">4</span><h4>Plano conjunto</h4></div>
+        <p>Definir com o Mateus os ajustes de estratégia e as metas para os próximos meses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer>
+  <div class="page">
+    <div class="fbrand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/>
+        <polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/>
+        <line x1="90" y1="73" x2="65" y2="59"/>
+        <line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/>
+        <line x1="90" y1="27" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/>
+        <line x1="10" y1="27" x2="35" y2="59"/>
+        <line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="wm"><b>BM MÍDIAS</b><span>Gestão de Tráfego Pago</span></div>
+    </div>
+    <div class="fmeta">
+      Documento de estratégia · Cliente CEVEPE<br>
+      Emitido em julho de 2026 · <a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
