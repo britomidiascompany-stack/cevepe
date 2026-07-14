@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BM Mídias · Estratégia de Google Ads — CEVEPE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C3AED; --purple-dark:#5B21B6; --purple-deep:#3B0F73; --purple-light:#A78BFA; --purple-xlight:#EDE9FE;
+    --black:#0A0A0A; --ink:#141018; --gray:#5B5566; --line:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC; --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-weight:300;font-size:16px}
+  .page{max-width:920px;margin:0 auto;padding:0 40px}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  strong,b{font-weight:600}
+  .muted{color:var(--gray)}
+  p{margin-bottom:14px}
+  p.body{max-width:720px}
+
+  /* COVER */
+  .cover{background:radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,0.55), transparent 60%),linear-gradient(150deg,#0A0A0A 0%, #17111F 45%, #3B0F73 100%);color:#fff;padding:70px 0 64px;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(120deg,transparent 40%,#000 100%);pointer-events:none}
+  .cover .page{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:64px}
+  .brand svg{width:52px;height:52px;flex:0 0 auto}
+  .brand .bar{width:2px;height:44px;background:rgba(255,255,255,.85)}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm .l1{font-weight:800;font-size:20px;letter-spacing:.06em}
+  .brand .wm .l2{font-weight:300;font-size:20px;letter-spacing:.28em}
+  .eyebrow{display:inline-block;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--purple-light);border:1px solid rgba(167,139,250,.4);border-radius:100px;padding:7px 16px;margin-bottom:26px}
+  .cover h1{font-size:52px;font-weight:800;margin-bottom:18px}
+  .cover h1 .thin{font-weight:300;display:block;font-size:30px;color:rgba(255,255,255,.72);letter-spacing:-0.01em;margin-top:6px}
+  .cover .lede{font-weight:300;font-size:18px;color:rgba(255,255,255,.82);max-width:640px}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+  .cover .meta .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 18px;font-size:13px;color:rgba(255,255,255,.9)}
+  .cover .meta .chip b{color:#fff;font-weight:600;display:block;font-size:14px}
+  .cover .meta .chip span{color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+  section{padding:56px 0}
+  section + section{border-top:1px solid var(--line)}
+  .kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--purple);display:inline-block}
+  h2.sec{font-size:30px;font-weight:700;margin-bottom:14px}
+  .sec-lede{font-size:17px;color:var(--gray);max-width:700px;margin-bottom:8px}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+  .kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+  .kpi .n{font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1}
+  .kpi .n small{font-size:16px;font-weight:700;color:var(--purple)}
+  .kpi .l{font-size:12px;color:var(--gray);margin-top:8px;font-weight:400;line-height:1.4}
+
+  /* FUNNEL */
+  .funnel{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0;margin-top:28px}
+  .fstep{border:1px solid var(--line);border-radius:18px;padding:24px 22px;background:#fff;text-align:center;display:flex;flex-direction:column;align-items:center}
+  .fstep .ic{width:46px;height:46px;border-radius:14px;background:var(--purple-xlight);color:var(--purple-dark);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-weight:800;font-size:18px}
+  .fstep h4{font-size:17px;margin-bottom:6px}
+  .fstep p{font-size:13.5px;color:var(--gray);margin:0;font-weight:300}
+  .fstep .tagn{margin-top:12px;font-size:13px;font-weight:700;color:var(--purple)}
+  .farrow{display:flex;align-items:center;justify-content:center;padding:0 12px;color:var(--purple-light);font-size:22px;font-weight:700}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px}
+  thead th{text-align:left;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);padding:0 12px 12px;border-bottom:2px solid var(--line)}
+  thead th.num{text-align:right}
+  tbody td{padding:12px;border-bottom:1px solid var(--line);font-weight:300}
+  tbody td.num{text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
+  tbody .name{font-weight:500;color:var(--ink)}
+  tbody tr.dim td{color:var(--gray)}
+  tfoot td{padding:13px 12px;font-weight:700;border-top:2px solid var(--line)}
+  tfoot td.num{text-align:right;color:var(--purple-dark)}
+  .tag{font-size:11px;color:var(--purple);background:var(--purple-xlight);border-radius:6px;padding:3px 9px;font-weight:500;white-space:nowrap}
+  .tag.off{color:var(--gray);background:#F1EFF5}
+
+  /* KEYWORDS */
+  .kws{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+  .kw{display:grid;grid-template-columns:26px 1fr 74px;align-items:center;gap:14px}
+  .kw .r{font-weight:700;color:var(--purple-light);font-size:14px;text-align:center}
+  .kw .b{position:relative;background:var(--purple-xlight);border-radius:8px;height:34px;overflow:hidden;display:flex;align-items:center}
+  .kw .b .f{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--purple),var(--purple-dark));border-radius:8px}
+  .kw .b .t{position:relative;z-index:1;padding-left:14px;font-size:13.5px;font-weight:500;color:var(--ink)}
+  .kw .b .t.on{color:#fff}
+  .kw .v{text-align:right;font-weight:700;font-size:14px;color:var(--purple-dark)}
+
+  /* AUDIENCE GRID */
+  .aud{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}
+  .card{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:#fff}
+  .card h4{font-size:15px;margin-bottom:16px;color:var(--ink)}
+  .row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .row .lb{font-size:13px;width:120px;flex:0 0 auto;color:var(--gray)}
+  .row .tr{flex:1;height:9px;background:var(--purple-xlight);border-radius:100px;overflow:hidden}
+  .row .tr .fl{height:100%;background:linear-gradient(90deg,var(--purple),var(--purple-dark));border-radius:100px}
+  .row .vl{font-size:13px;font-weight:600;width:64px;text-align:right;flex:0 0 auto}
+
+  .note{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:12px;padding:18px 20px;font-size:14px;font-weight:300;margin-top:24px}
+  .note b{color:var(--purple-dark)}
+  .note.warn{border-left-color:#B45309;background:#FFFBF3;border-color:#F3E4CC}
+  .note.warn b{color:#B45309}
+
+  /* MONTHS BARS */
+  .months{margin-top:26px;display:flex;gap:10px;align-items:flex-end;height:190px;padding-bottom:4px}
+  .m{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .m .bwrap{width:100%;display:flex;justify-content:center;align-items:flex-end;height:140px}
+  .m .bar{width:70%;background:linear-gradient(180deg,var(--purple),var(--purple-dark));border-radius:8px 8px 0 0;position:relative}
+  .m .bar.part{background:linear-gradient(180deg,var(--purple-light),var(--purple));opacity:.75}
+  .m .cv{font-size:12px;font-weight:700;color:var(--purple-dark);margin-bottom:5px}
+  .m .lb{font-size:11px;color:var(--gray);margin-top:8px;font-weight:400}
+
+  /* COMPARISON */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  .cmp .c{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .cmp .c .h{padding:16px 22px;background:var(--bg-soft);border-bottom:1px solid var(--line);font-weight:600;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+  .cmp .c .h .p{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);background:var(--purple-xlight);padding:4px 10px;border-radius:100px}
+  .cmp .c .b{padding:16px 22px 20px}
+  .cmp .c .st{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+  .cmp .c .st:last-child{border-bottom:none}
+  .cmp .c .st .k{color:var(--gray)}
+  .cmp .c .st .v{font-weight:600}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  .step{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:var(--bg-soft)}
+  .step .h{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .step .h .num{width:30px;height:30px;border-radius:9px;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:0 0 auto}
+  .step .h h4{font-size:16px}
+  .step p{font-size:14px;font-weight:300;margin:0}
+
+  footer{background:var(--black);color:#fff;padding:44px 0}
+  footer .page{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  footer .fbrand{display:flex;align-items:center;gap:14px}
+  footer .fbrand svg{width:40px;height:40px}
+  footer .fbrand .wm b{font-weight:700;letter-spacing:.05em;font-size:16px;display:block}
+  footer .fbrand .wm span{font-size:12px;color:rgba(255,255,255,.55)}
+  footer .fmeta{font-size:12.5px;color:rgba(255,255,255,.6);text-align:right;line-height:1.7}
+  footer .fmeta a{color:var(--purple-light);text-decoration:none}
+
+  @media (max-width:760px){
+    .page{padding:0 22px}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .aud,.cmp,.steps{grid-template-columns:1fr}
+    .funnel{grid-template-columns:1fr}
+    .farrow{padding:10px 0;transform:rotate(90deg)}
+    .cover h1{font-size:36px}
+    .cover h1 .thin{font-size:22px}
+  }
+  @page{size:A4;margin:14mm}
+  @media print{
+    .page{max-width:100%;padding:0}
+    section{padding:22px 0}
+    .cover{padding:34px 30px}
+    .cover .page{padding:0}
+    footer .page{padding:0 6px}
+    section,.card,.step,.note,table,.cmp,.funnel,.months,.kws{break-inside:avoid;page-break-inside:avoid}
+    h2.sec{break-after:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="bar"></div>
+      <div class="wm"><span class="l1">BM</span><span class="l2">MÍDIAS</span></div>
+    </div>
+
+    <span class="eyebrow">Gestão de Tráfego Pago · Google Ads</span>
+    <h1>Estratégia de Busca<span class="thin">Cliente CEVEPE · Centro Veterinário de Petrolina</span></h1>
+    <p class="lede">Como ganhamos o leilão na hora em que a pessoa procura por um veterinário, e o que os últimos 6 meses de investimento entregaram.</p>
+
+    <div class="meta">
+      <div class="chip"><span>Preparado para</span><b>Mateus</b></div>
+      <div class="chip"><span>Período analisado</span><b>Jan a Jul de 2026</b></div>
+      <div class="chip"><span>Canal</span><b>Google Ads · Rede de Pesquisa</b></div>
+      <div class="chip"><span>Emitido em</span><b>Julho de 2026</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESUMO -->
+<section>
+  <div class="page">
+    <div class="kicker">Resumo dos 6 meses</div>
+    <h2 class="sec">O panorama, em números</h2>
+    <p class="body sec-lede">De janeiro a julho de 2026 investimos <strong>R$ 5.413,08</strong> no Google Ads. Diferente do Meta, aqui não criamos demanda: capturamos quem já está procurando um veterinário agora.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n"><small>R$</small> 5.413</div><div class="l">Investimento total no período</div></div>
+      <div class="kpi"><div class="n">1.685</div><div class="l">Conversões registradas</div></div>
+      <div class="kpi"><div class="n"><small>R$</small> 3,21</div><div class="l">Custo por conversão</div></div>
+      <div class="kpi"><div class="n">2.439</div><div class="l">Cliques levados ao site</div></div>
+    </div>
+    <div class="note">
+      <p style="margin:0">Complementares do período: <b>61.546 impressões</b>, CTR de <b>3,96%</b>, CPC de <b>R$ 2,22</b>, CPM de R$ 87,95 e <b>69,10% de impressões no topo</b> da página. Também foram registradas 16 ligações diretas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRATÉGIA / FUNIL -->
+<section>
+  <div class="page">
+    <div class="kicker">A lógica da operação</div>
+    <h2 class="sec">Como funciona a nossa estratégia</h2>
+    <p class="body">No Google a lógica é oposta à do Meta. Lá a gente interrompe a pessoa com conteúdo e desperta o interesse. Aqui a pessoa <strong>já tem o problema</strong> e está digitando a busca. Nosso trabalho é <strong>ganhar o leilão</strong> naquele momento exato, levar essa pessoa para o site e fazer com que ela chame no WhatsApp.</p>
+    <p class="body">É um funil curto, de três etapas, e por isso o custo por contato é mais baixo e a intenção de compra é mais alta.</p>
+
+    <div class="funnel">
+      <div class="fstep">
+        <div class="ic">1</div>
+        <h4>Ganhar o leilão</h4>
+        <p>Aparecer no topo quando alguém busca por veterinário, clínica 24h ou farmácia pet na região.</p>
+        <div class="tagn">69,10% no topo</div>
+      </div>
+      <div class="farrow">&rsaquo;</div>
+      <div class="fstep">
+        <div class="ic">2</div>
+        <h4>Levar ao site</h4>
+        <p>O clique cai no cevepe.com.br, que apresenta a estrutura, os serviços e as provas sociais.</p>
+        <div class="tagn">2.439 cliques</div>
+      </div>
+      <div class="farrow">&rsaquo;</div>
+      <div class="fstep">
+        <div class="ic">3</div>
+        <h4>Converter no WhatsApp</h4>
+        <p>O site não tem formulário. Todos os botões levam direto para a conversa no WhatsApp.</p>
+        <div class="tagn">1.685 conversões</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <p style="margin:0"><b>O site é a peça do meio.</b> O cevepe.com.br trabalha com três portas de entrada, todas para WhatsApp: <b>Urgência</b> (87 98814-1272), <b>Atendimento Clínico</b> e <b>Pet Shop e Farmácia</b> (87 98825-3766). Não existe formulário na página, então o WhatsApp é o único caminho de conversão.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA DA CONTA -->
+<section>
+  <div class="page">
+    <div class="kicker">Estrutura da conta</div>
+    <h2 class="sec">Onde o investimento está concentrado</h2>
+    <p class="body sec-lede">Hoje o investimento está 100% em uma única campanha de Rede de Pesquisa, com raio de 20km em torno da clínica. As demais campanhas estão criadas, porém pausadas.</p>
+    <table>
+      <thead>
+        <tr><th>Campanha</th><th>Tipo</th><th class="num">Investido</th><th class="num">Conversões</th><th class="num">Custo/Conv.</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">[CEVEPE] [SEARCH] [LEADS] [RAIO-20KM]</td><td><span class="tag">Ativa · Search</span></td><td class="num">R$ 5.413,08</td><td class="num">1.685</td><td class="num">R$ 3,21</td></tr>
+        <tr class="dim"><td>[SEARCH+] [TRÁFEGO] Cevepe +10km</td><td><span class="tag off">Pausada</span></td><td class="num">R$ 0</td><td class="num">0</td><td class="num">n/d</td></tr>
+        <tr class="dim"><td>[TRÁFEGO] [SEARCH] [MAX CONV] CIRURGIAS PET</td><td><span class="tag off">Pausada</span></td><td class="num">R$ 0</td><td class="num">0</td><td class="num">n/d</td></tr>
+        <tr class="dim"><td>[DISPLAY] [ALCANCE] +10km</td><td><span class="tag off">Pausada</span></td><td class="num">R$ 0</td><td class="num">0</td><td class="num">n/d</td></tr>
+        <tr class="dim"><td>[VIDEO] [ALCANCE] Vídeo Alcance eficiente +10km</td><td><span class="tag off">Pausada</span></td><td class="num">R$ 0</td><td class="num">0</td><td class="num">n/d</td></tr>
+        <tr class="dim"><td>[TESTE] [SMART] PET SHOP · ROTA</td><td><span class="tag off">Pausada</span></td><td class="num">R$ 0</td><td class="num">0</td><td class="num">n/d</td></tr>
+        <tr class="dim"><td>[TESTE] [SMART] SERVIÇOS · LIGAÇÃO</td><td><span class="tag off">Pausada</span></td><td class="num">R$ 0</td><td class="num">0</td><td class="num">n/d</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td></td><td class="num">R$ 5.413,08</td><td class="num">1.685</td><td class="num">R$ 3,21</td></tr>
+      </tfoot>
+    </table>
+    <p class="body muted" style="font-size:13px;margin-top:14px">Distribuição por rede: <strong>Search 100%</strong>. Display, Vídeo e Smart não receberam investimento no período.</p>
+  </div>
+</section>
+
+<!-- PALAVRAS-CHAVE -->
+<section>
+  <div class="page">
+    <div class="kicker">O que as pessoas buscam</div>
+    <h2 class="sec">Palavras-chave que mais convertem</h2>
+    <p class="body sec-lede">A busca por urgência lidera com folga. "Clínica veterinária 24 horas" sozinha responde por mais conversões que as duas seguintes somadas, o que confirma que o pico de intenção é o atendimento imediato.</p>
+    <div class="kws">
+      <div class="kw"><span class="r">1</span><div class="b"><div class="f" style="width:100%"></div><span class="t on">clinica veterinária 24 horas</span></div><span class="v">243,7</span></div>
+      <div class="kw"><span class="r">2</span><div class="b"><div class="f" style="width:55.8%"></div><span class="t on">clínicas veterinárias</span></div><span class="v">136</span></div>
+      <div class="kw"><span class="r">3</span><div class="b"><div class="f" style="width:44.7%"></div><span class="t on">clinica de caes</span></div><span class="v">109</span></div>
+      <div class="kw"><span class="r">4</span><div class="b"><div class="f" style="width:41.4%"></div><span class="t on">cevepe (marca)</span></div><span class="v">101</span></div>
+      <div class="kw"><span class="r">5</span><div class="b"><div class="f" style="width:36.5%"></div><span class="t on">farmacia para pet</span></div><span class="v">88,8</span></div>
+      <div class="kw"><span class="r">6</span><div class="b"><div class="f" style="width:29.5%"></div><span class="t on">produtos veterinarios</span></div><span class="v">72</span></div>
+      <div class="kw"><span class="r">7</span><div class="b"><div class="f" style="width:26.8%"></div><span class="t on">veterinário</span></div><span class="v">65,3</span></div>
+      <div class="kw"><span class="r">8</span><div class="b"><div class="f" style="width:25.9%"></div><span class="t on">loja animais</span></div><span class="v">63</span></div>
+    </div>
+    <div class="note">
+      <p style="margin:0">Leitura rápida: as buscas se dividem em <b>três intenções</b>. Urgência e atendimento clínico (posições 1, 2, 3 e 7), <b>marca</b> (posição 4, gente que já conhece o CEVEPE) e <b>produto e farmácia</b> (posições 5, 6 e 8). Cada uma dessas intenções deveria idealmente ter uma página de destino própria.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PÚBLICO -->
+<section>
+  <div class="page">
+    <div class="kicker">Quem converte</div>
+    <h2 class="sec">O perfil de quem chama no WhatsApp</h2>
+    <p class="body sec-lede">O retrato do público que converte no Google é bem definido e ajuda a orientar tanto o anúncio quanto o site.</p>
+    <div class="aud">
+      <div class="card">
+        <h4>Por cidade</h4>
+        <div class="row"><span class="lb">Petrolina</span><div class="tr"><div class="fl" style="width:100%"></div></div><span class="vl">80,7%</span></div>
+        <div class="row"><span class="lb">Juazeiro</span><div class="tr"><div class="fl" style="width:23.9%"></div></div><span class="vl">19,3%</span></div>
+      </div>
+      <div class="card">
+        <h4>Por dispositivo</h4>
+        <div class="row"><span class="lb">Celular</span><div class="tr"><div class="fl" style="width:100%"></div></div><span class="vl">94,9%</span></div>
+        <div class="row"><span class="lb">Computador</span><div class="tr"><div class="fl" style="width:5.1%"></div></div><span class="vl">4,8%</span></div>
+        <div class="row"><span class="lb">Tablet</span><div class="tr"><div class="fl" style="width:1%"></div></div><span class="vl">0,3%</span></div>
+      </div>
+      <div class="card">
+        <h4>Por faixa etária</h4>
+        <div class="row"><span class="lb">25 a 34 anos</span><div class="tr"><div class="fl" style="width:100%"></div></div><span class="vl">486</span></div>
+        <div class="row"><span class="lb">35 a 44 anos</span><div class="tr"><div class="fl" style="width:72.6%"></div></div><span class="vl">353</span></div>
+        <div class="row"><span class="lb">18 a 24 anos</span><div class="tr"><div class="fl" style="width:60.9%"></div></div><span class="vl">296</span></div>
+        <div class="row"><span class="lb">45 a 54 anos</span><div class="tr"><div class="fl" style="width:36%"></div></div><span class="vl">175</span></div>
+        <div class="row"><span class="lb">55 anos ou mais</span><div class="tr"><div class="fl" style="width:15.4%"></div></div><span class="vl">75</span></div>
+      </div>
+      <div class="card">
+        <h4>Por gênero</h4>
+        <div class="row"><span class="lb">Mulheres</span><div class="tr"><div class="fl" style="width:100%"></div></div><span class="vl">59,6%</span></div>
+        <div class="row"><span class="lb">Homens</span><div class="tr"><div class="fl" style="width:38%"></div></div><span class="vl">22,7%</span></div>
+        <div class="row"><span class="lb">Não identificado</span><div class="tr"><div class="fl" style="width:29.7%"></div></div><span class="vl">17,7%</span></div>
+      </div>
+    </div>
+    <div class="note">
+      <p style="margin:0">Praticamente <b>tudo acontece no celular</b> (94,9%). Isso torna a velocidade e a clareza do botão de WhatsApp no mobile o fator mais crítico do site. O público central é <b>mulher, de 25 a 44 anos, em Petrolina</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MÊS A MÊS -->
+<section>
+  <div class="page">
+    <div class="kicker">Evolução</div>
+    <h2 class="sec">Resultado mês a mês</h2>
+    <p class="body sec-lede">O investimento subiu de forma gradual e o custo por conversão caiu à medida que a campanha amadureceu. Março e abril foram os melhores meses.</p>
+
+    <div class="months">
+      <div class="m"><div class="bwrap"><div class="bar" style="height:40.5%"></div></div><div class="lb">Jan</div></div>
+      <div class="m"><div class="bwrap"><div class="bar" style="height:47.4%"></div></div><div class="lb">Fev</div></div>
+      <div class="m"><div class="bwrap"><div class="bar" style="height:81.7%"></div></div><div class="lb">Mar</div></div>
+      <div class="m"><div class="bwrap"><div class="bar" style="height:78.5%"></div></div><div class="lb">Abr</div></div>
+      <div class="m"><div class="bwrap"><div class="bar" style="height:53.8%"></div></div><div class="lb">Mai</div></div>
+      <div class="m"><div class="bwrap"><div class="bar" style="height:75.1%"></div></div><div class="lb">Jun</div></div>
+      <div class="m"><div class="bwrap"><div class="bar part" style="height:39%"></div></div><div class="lb">Jul*</div></div>
+    </div>
+    <p class="muted" style="font-size:12px;margin-top:0">Altura das barras proporcional às conversões do mês. *Julho é parcial, fechado até o dia 14.</p>
+
+    <table>
+      <thead>
+        <tr><th>Mês</th><th class="num">Investido</th><th class="num">Cliques</th><th class="num">Conversões</th><th class="num">Custo/Conv.</th><th class="num">Taxa Conv.</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">Janeiro</td><td class="num">R$ 689,19</td><td class="num">321</td><td class="num">164</td><td class="num">R$ 4,20</td><td class="num">51,09%</td></tr>
+        <tr><td class="name">Fevereiro</td><td class="num">R$ 793,83</td><td class="num">334</td><td class="num">192</td><td class="num">R$ 4,13</td><td class="num">57,49%</td></tr>
+        <tr><td class="name">Março</td><td class="num">R$ 790,62</td><td class="num">404</td><td class="num">331</td><td class="num">R$ 2,39</td><td class="num">81,93%</td></tr>
+        <tr><td class="name">Abril</td><td class="num">R$ 834,79</td><td class="num">407</td><td class="num">318</td><td class="num">R$ 2,63</td><td class="num">78,13%</td></tr>
+        <tr><td class="name">Maio</td><td class="num">R$ 805,85</td><td class="num">324</td><td class="num">218</td><td class="num">R$ 3,70</td><td class="num">67,28%</td></tr>
+        <tr><td class="name">Junho</td><td class="num">R$ 1.003,43</td><td class="num">406</td><td class="num">304</td><td class="num">R$ 3,30</td><td class="num">74,88%</td></tr>
+        <tr><td class="name">Julho (parcial)</td><td class="num">R$ 495,37</td><td class="num">243</td><td class="num">158</td><td class="num">R$ 3,14</td><td class="num">65,02%</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td class="num">R$ 5.413,08</td><td class="num">2.439</td><td class="num">1.685</td><td class="num">R$ 3,21</td><td class="num">69,09%</td></tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- PONTO DE ATENÇÃO -->
+<section>
+  <div class="page">
+    <div class="kicker">Ponto de atenção</div>
+    <h2 class="sec">Como ler a métrica de conversão</h2>
+    <p class="body">Vale um alerta honesto antes de qualquer comparação. A taxa de conversão média do período é de <strong>69,09%</strong>, e em vários dias isolados ela passa de <strong>100%</strong> (chegando a 200%). Uma taxa acima de 100% significa mais conversões do que cliques, o que não é possível se cada pessoa convertesse uma única vez.</p>
+    <p class="body">Na prática, isso indica que o evento de conversão está contando <strong>cada clique no botão de WhatsApp</strong>, e não conversas únicas. Uma mesma pessoa que clica em "Urgência" e depois em "Atendimento Clínico" gera duas conversões.</p>
+    <div class="note warn">
+      <p style="margin:0"><b>O que isso muda:</b> as 1.685 conversões devem ser lidas como <b>intenções de contato</b>, não como 1.685 conversas únicas no WhatsApp. O número real de conversas é menor. Antes de comparar Google e Meta lado a lado, precisamos alinhar a definição do evento de conversão. Essa é a primeira coisa que sugerimos revisar com o Mateus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARATIVO -->
+<section>
+  <div class="page">
+    <div class="kicker">Visão consolidada</div>
+    <h2 class="sec">Google e Meta lado a lado</h2>
+    <p class="body sec-lede">Somando os dois canais, foram <strong>R$ 10.472,91</strong> investidos nos últimos 6 meses. Os canais fazem trabalhos diferentes e se complementam.</p>
+    <div class="cmp">
+      <div class="c">
+        <div class="h"><span>Google Ads</span><span class="p">Colhe demanda</span></div>
+        <div class="b">
+          <div class="st"><span class="k">Investido</span><span class="v">R$ 5.413,08</span></div>
+          <div class="st"><span class="k">Conversões</span><span class="v">1.685</span></div>
+          <div class="st"><span class="k">Custo por conversão</span><span class="v">R$ 3,21</span></div>
+          <div class="st"><span class="k">Papel</span><span class="v">Captura quem já procura</span></div>
+        </div>
+      </div>
+      <div class="c">
+        <div class="h"><span>Meta Ads</span><span class="p">Cria demanda</span></div>
+        <div class="b">
+          <div class="st"><span class="k">Investido</span><span class="v">R$ 5.059,83</span></div>
+          <div class="st"><span class="k">Conversas WhatsApp</span><span class="v">824</span></div>
+          <div class="st"><span class="k">Custo por conversa</span><span class="v">R$ 4,17</span></div>
+          <div class="st"><span class="k">Papel</span><span class="v">Desperta o interesse</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p style="margin:0">A verba está praticamente <b>dividida ao meio</b> entre os dois canais. O Google entrega contato mais barato porque pega a pessoa no momento da necessidade. O Meta é o que <b>alimenta a lembrança de marca</b> e faz a busca por "cevepe" acontecer depois, que é justamente a 4ª palavra-chave que mais converte no Google. Um canal sustenta o outro. Lembrando que as métricas de conversão dos dois ainda não são idênticas, conforme a ressalva da seção anterior.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section>
+  <div class="page">
+    <div class="kicker">Onde estamos agora</div>
+    <h2 class="sec">Próximos passos</h2>
+    <p class="body">A operação de Google está estável e entregando contato barato, mas está concentrada em uma única campanha e em um site que hoje é uma página institucional, não uma página de conversão. É aí que enxergamos espaço de crescimento junto com o Mateus.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="h"><span class="num">1</span><h4>Alinhar a conversão</h4></div>
+        <p>Revisar o evento de conversão para medir conversas únicas de WhatsApp, e não cada clique no botão.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="num">2</span><h4>Separar as intenções</h4></div>
+        <p>Urgência, clínica e farmácia são buscas diferentes. Merecem campanhas e páginas de destino próprias.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="num">3</span><h4>Evoluir o site</h4></div>
+        <p>Com 94,9% do tráfego no celular, uma landing page mobile focada em WhatsApp tende a subir a conversão.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="num">4</span><h4>Ampliar a cobertura</h4></div>
+        <p>Avaliar reativar as campanhas pausadas e disputar mais leilão, já que 30,9% das impressões ainda não saem no topo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="fbrand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="wm"><b>BM MÍDIAS</b><span>Gestão de Tráfego Pago</span></div>
+    </div>
+    <div class="fmeta">
+      Documento de estratégia · Google Ads · Cliente CEVEPE<br>
+      Emitido em julho de 2026 · <a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
