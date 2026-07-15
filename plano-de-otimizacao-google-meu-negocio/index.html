@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BM Mídias · Plano de Otimização Google Meu Negócio — CEVEPE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C3AED; --purple-dark:#5B21B6; --purple-deep:#3B0F73; --purple-light:#A78BFA; --purple-xlight:#EDE9FE;
+    --black:#0A0A0A; --ink:#141018; --gray:#5B5566; --line:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-weight:300;font-size:16px}
+  .page{max-width:920px;margin:0 auto;padding:0 40px}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  strong,b{font-weight:600}
+  p{margin-bottom:14px}
+  p.body{max-width:720px}
+  .muted{color:var(--gray)}
+
+  /* COVER */
+  .cover{background:radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,0.55), transparent 60%),linear-gradient(150deg,#0A0A0A 0%, #17111F 45%, #3B0F73 100%);color:#fff;padding:70px 0 64px;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(120deg,transparent 40%,#000 100%);pointer-events:none}
+  .cover .page{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:64px}
+  .brand svg{width:52px;height:52px;flex:0 0 auto}
+  .brand .bar{width:2px;height:44px;background:rgba(255,255,255,.85)}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm .l1{font-weight:800;font-size:20px;letter-spacing:.06em}
+  .brand .wm .l2{font-weight:300;font-size:20px;letter-spacing:.28em}
+  .eyebrow{display:inline-block;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--purple-light);border:1px solid rgba(167,139,250,.4);border-radius:100px;padding:7px 16px;margin-bottom:26px}
+  .cover h1{font-size:50px;font-weight:800;margin-bottom:18px}
+  .cover h1 .thin{font-weight:300;display:block;font-size:30px;color:rgba(255,255,255,.72);letter-spacing:-0.01em;margin-top:6px}
+  .cover .lede{font-weight:300;font-size:18px;color:rgba(255,255,255,.82);max-width:640px}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+  .cover .meta .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 18px;font-size:13px;color:rgba(255,255,255,.9)}
+  .cover .meta .chip b{color:#fff;font-weight:600;display:block;font-size:14px}
+  .cover .meta .chip span{color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+  section{padding:56px 0}
+  section + section{border-top:1px solid var(--line)}
+  .kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--purple);display:inline-block}
+  h2.sec{font-size:30px;font-weight:700;margin-bottom:14px}
+  .sec-lede{font-size:17px;color:var(--gray);max-width:700px;margin-bottom:8px}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+  .kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+  .kpi .n{font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1}
+  .kpi .n small{font-size:15px;font-weight:700;color:var(--purple)}
+  .kpi .l{font-size:12px;color:var(--gray);margin-top:8px;font-weight:400;line-height:1.4}
+
+  /* DONE LIST */
+  .done{display:grid;grid-template-columns:1fr 1fr;gap:12px 26px;margin-top:24px}
+  .done .it{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;padding:6px 0}
+  .done .ck{width:22px;height:22px;border-radius:50%;background:var(--purple);flex:0 0 auto;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .done .ck svg{width:12px;height:12px}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px}
+  thead th{text-align:left;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);padding:0 12px 12px;border-bottom:2px solid var(--line)}
+  thead th.c{text-align:center}
+  tbody td{padding:13px 12px;border-bottom:1px solid var(--line);font-weight:300;vertical-align:middle}
+  tbody td.c{text-align:center}
+  tbody .name{font-weight:500;color:var(--ink)}
+  tbody tr.me{background:var(--purple-xlight)}
+  tbody tr.me .name{color:var(--purple-dark);font-weight:700}
+  .tag{font-size:11px;color:var(--purple);background:var(--purple-xlight);border-radius:6px;padding:3px 9px;font-weight:500;white-space:nowrap;display:inline-block}
+  .tag.done{background:var(--purple);color:#fff}
+  .yes{color:var(--purple);font-weight:700}
+  .no{color:#C4BCD4;font-weight:700}
+
+  /* CHIPS */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+  .chips .c{border:1px solid var(--line);background:var(--bg-soft);border-radius:100px;padding:8px 15px;font-size:13px;font-weight:400}
+  .chips .c.pri{background:var(--purple);color:#fff;border-color:var(--purple);font-weight:500}
+
+  /* CARDS GRID */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+  .card{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:#fff}
+  .card h4{font-size:16px;margin-bottom:12px}
+  .card .lab{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+  .card ul{list-style:none}
+  .card li{font-size:14px;font-weight:300;padding-left:20px;position:relative;margin-bottom:8px;line-height:1.5}
+  .card li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--purple-light)}
+  .card .big{font-size:34px;font-weight:800;color:var(--purple-dark);letter-spacing:-0.03em;line-height:1}
+  .card .big small{font-size:14px;font-weight:600;color:var(--gray)}
+
+  .note{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:12px;padding:18px 20px;font-size:14px;font-weight:300;margin-top:24px}
+  .note b{color:var(--purple-dark)}
+
+  /* STEPS ordered */
+  .flow{margin-top:24px;counter-reset:s}
+  .flow .st{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .flow .st:last-child{border-bottom:none}
+  .flow .st .n{width:30px;height:30px;border-radius:9px;background:var(--purple-xlight);color:var(--purple-dark);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:0 0 auto}
+  .flow .st .t{font-size:14.5px;font-weight:300}
+  .flow .st .t b{font-weight:600}
+
+  /* CODE */
+  pre{background:#141018;color:#EDE9FE;border-radius:14px;padding:22px 24px;overflow-x:auto;font-size:12.5px;line-height:1.7;margin-top:18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  pre .k{color:#A78BFA}
+  code.inline{background:var(--purple-xlight);color:var(--purple-dark);padding:2px 7px;border-radius:6px;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+
+  /* CHECKLIST */
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:24px}
+  .checkcol h4{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+  .checkcol h4 .dot{width:10px;height:10px;border-radius:50%}
+  .checkcol .row{display:flex;align-items:flex-start;gap:11px;font-size:14px;font-weight:300;padding:7px 0;border-bottom:1px solid var(--line)}
+  .checkcol .row:last-child{border-bottom:none}
+  .checkcol .row .bx{width:20px;height:20px;border-radius:6px;flex:0 0 auto;margin-top:1px;display:flex;align-items:center;justify-content:center}
+  .checkcol .row .bx.on{background:var(--purple)}
+  .checkcol .row .bx.on svg{width:11px;height:11px}
+  .checkcol .row .bx.off{border:2px solid var(--line)}
+
+  footer{background:var(--black);color:#fff;padding:44px 0}
+  footer .page{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  footer .fbrand{display:flex;align-items:center;gap:14px}
+  footer .fbrand svg{width:40px;height:40px}
+  footer .fbrand .wm b{font-weight:700;letter-spacing:.05em;font-size:16px;display:block}
+  footer .fbrand .wm span{font-size:12px;color:rgba(255,255,255,.55)}
+  footer .fmeta{font-size:12.5px;color:rgba(255,255,255,.6);text-align:right;line-height:1.7}
+  footer .fmeta a{color:var(--purple-light);text-decoration:none}
+
+  @media (max-width:760px){
+    .page{padding:0 22px}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .done,.grid2,.grid3,.checks{grid-template-columns:1fr}
+    .cover h1{font-size:34px}
+    .cover h1 .thin{font-size:21px}
+  }
+  @page{size:A4;margin:14mm}
+  @media print{
+    .page{max-width:100%;padding:0}
+    section{padding:22px 0}
+    .cover{padding:34px 30px}
+    .cover .page{padding:0}
+    footer .page{padding:0 6px}
+    section,.card,.note,table,.flow,.checks,pre{break-inside:avoid;page-break-inside:avoid}
+    h2.sec{break-after:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="bar"></div>
+      <div class="wm"><span class="l1">BM</span><span class="l2">MÍDIAS</span></div>
+    </div>
+
+    <span class="eyebrow">Otimização Local · Google Meu Negócio</span>
+    <h1>Plano de Otimização<span class="thin">Cliente CEVEPE · Centro Veterinário de Petrolina</span></h1>
+    <p class="lede">Diagnóstico do perfil no Google, tudo o que já foi otimizado e a rotina que sustenta o resultado daqui para frente.</p>
+
+    <div class="meta">
+      <div class="chip"><span>Cliente</span><b>CEVEPE</b></div>
+      <div class="chip"><span>Canal</span><b>Google Meu Negócio</b></div>
+      <div class="chip"><span>Status</span><b>Ações concluídas</b></div>
+      <div class="chip"><span>Elaborado por</span><b>Brito Mídias · Jun 2026</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- DIAGNÓSTICO -->
+<section>
+  <div class="page">
+    <div class="kicker">Diagnóstico</div>
+    <h2 class="sec">Posição atual no Google</h2>
+    <p class="body sec-lede">Pesquisa realizada em Petrolina-PE. O CEVEPE já tem a melhor reputação da região. O trabalho foi transformar isso em um perfil forte e completo.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n">2º</div><div class="l">Orgânico em "veterinário petrolina"</div></div>
+      <div class="kpi"><div class="n">5º</div><div class="l">Em "clínica veterinária petrolina"</div></div>
+      <div class="kpi"><div class="n">4,8<small>★</small></div><div class="l">Nota no Google</div></div>
+      <div class="kpi"><div class="n">467</div><div class="l">Avaliações no perfil</div></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <div class="lab">Maior diferencial</div>
+        <p style="margin:0;font-size:14.5px">30 anos de mercado, Hospital Veterinário 24h e o maior número de avaliações da região.</p>
+      </div>
+      <div class="card">
+        <div class="lab">Principal gap (antes)</div>
+        <p style="margin:0;font-size:14.5px">Perfil desatualizado, categorias incorretas e baixa velocidade de avaliações recentes. Os dois primeiros já foram resolvidos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCORRENTES -->
+<section>
+  <div class="page">
+    <div class="kicker">Análise</div>
+    <h2 class="sec">Concorrentes em Petrolina</h2>
+    <p class="body sec-lede">O CEVEPE tem a melhor combinação de nota, tempo de mercado e serviços completos. A disputa se decide na velocidade de avaliações e na força do perfil.</p>
+    <table>
+      <thead>
+        <tr><th>Posição</th><th>Clínica</th><th class="c">Nota</th><th class="c">Avaliações</th><th class="c">24h</th><th class="c">Site</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1º pago</td><td class="name">Animalia</td><td class="c">4,6★</td><td class="c">218</td><td class="c"><span class="yes">✓</span></td><td class="c"><span class="yes">✓</span></td></tr>
+        <tr><td>1º orgânico</td><td class="name">Animalvet</td><td class="c">4,6★</td><td class="c">602</td><td class="c"><span class="yes">✓</span></td><td class="c"><span class="no">✕</span></td></tr>
+        <tr class="me"><td>2º orgânico</td><td class="name">CEVEPE</td><td class="c">4,8★</td><td class="c">467</td><td class="c"><span class="yes">✓</span></td><td class="c"><span class="yes">✓</span></td></tr>
+        <tr><td>3º</td><td class="name">Vet Spa</td><td class="c">5,0★</td><td class="c">118</td><td class="c"><span class="yes">✓</span></td><td class="c"><span class="yes">✓</span></td></tr>
+        <tr><td>4º</td><td class="name">Planeta Animal</td><td class="c">4,5★</td><td class="c">301</td><td class="c"><span class="yes">✓</span></td><td class="c"><span class="yes">✓</span></td></tr>
+        <tr><td>5º</td><td class="name">Mil Patinhas</td><td class="c">4,8★</td><td class="c">361</td><td class="c"><span class="yes">✓</span></td><td class="c"><span class="yes">✓</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- AÇÕES REALIZADAS -->
+<section>
+  <div class="page">
+    <div class="kicker">Ações concluídas</div>
+    <h2 class="sec">O que já foi otimizado no perfil</h2>
+    <p class="body sec-lede">Todo o núcleo do perfil foi revisado e atualizado. Estes itens estão feitos e no ar.</p>
+    <div class="done">
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Categoria principal alterada para <b>Hospital Veterinário</b></div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Categorias adicionais incluídas</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Descrição reescrita (747 caracteres)</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Foto de perfil com a logo oficial</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Foto de capa adicionada</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Redes sociais vinculadas ao perfil</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Acessibilidade configurada</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Estacionamento adicionado</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Botão de WhatsApp para agendamento</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Número (87) 98825-3766 adicionado</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Mais de 15 serviços adicionados ao perfil</div></div>
+      <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Edição de remoção de telefones verificada e rejeitada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DETALHAMENTO -->
+<section>
+  <div class="page">
+    <div class="kicker">Detalhamento</div>
+    <h2 class="sec">Categorias e palavras-chave</h2>
+    <div class="grid2">
+      <div class="card">
+        <h4>Categorias do perfil</h4>
+        <div class="lab" style="margin-top:4px">Principal</div>
+        <div class="chips"><span class="c pri">Hospital Veterinário</span></div>
+        <div class="lab" style="margin-top:16px">Adicionais</div>
+        <div class="chips">
+          <span class="c">Veterinário</span><span class="c">Pet Shop</span><span class="c">Farmácia Veterinária</span><span class="c">Emergência</span><span class="c">Banho e Tosa</span>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Palavras-chave na descrição</h4>
+        <div class="chips" style="margin-top:4px">
+          <span class="c">Petrolina</span><span class="c">Juazeiro</span><span class="c">Lagoa Grande</span><span class="c">Vale do São Francisco</span><span class="c">30 anos</span><span class="c">24 horas</span><span class="c">Emergência</span><span class="c">Cirurgia</span><span class="c">UTI veterinária</span><span class="c">Farmácia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS CONFIRMADOS -->
+<section>
+  <div class="page">
+    <div class="kicker">Serviços</div>
+    <h2 class="sec">Serviços confirmados e adicionados</h2>
+    <p class="body sec-lede">Os serviços que dependiam de confirmação com a clínica foram validados e já estão publicados no perfil.</p>
+    <table>
+      <thead>
+        <tr><th>Serviço</th><th>Por que importa</th><th class="c">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">Vacina antirrábica</td><td>Busca frequente e específica</td><td class="c"><span class="tag done">Adicionado</span></td></tr>
+        <tr><td class="name">Teste de leishmaniose</td><td>Petrolina é área endêmica, alta demanda</td><td class="c"><span class="tag done">Adicionado</span></td></tr>
+        <tr><td class="name">Microchipagem</td><td>Diferencial competitivo crescente</td><td class="c"><span class="tag done">Adicionado</span></td></tr>
+        <tr><td class="name">Cardiologia veterinária</td><td>Já constava no site, agora também no perfil</td><td class="c"><span class="tag done">Adicionado</span></td></tr>
+        <tr><td class="name">Tratamento com células-tronco</td><td>Diferencial único em Petrolina</td><td class="c"><span class="tag done">Adicionado</span></td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <p style="margin:0"><b>Telefone do perfil, resolvido.</b> Havia uma edição sugerindo a remoção dos telefones do perfil. Ela foi verificada e rejeitada corretamente, e o número <b>(87) 98825-3766</b> segue ativo no perfil.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROTINA CONTÍNUA / REVIEWS -->
+<section>
+  <div class="page">
+    <div class="kicker">Rotina contínua</div>
+    <h2 class="sec">O que sustenta o resultado daqui pra frente</h2>
+    <p class="body sec-lede">A otimização do perfil é um trabalho de uma vez, já concluído. O que mantém o CEVEPE subindo é a rotina de avaliações. É aqui que está a alavanca real do ranqueamento local.</p>
+
+    <div class="grid3">
+      <div class="card">
+        <div class="lab">Meta</div>
+        <div class="big">1<small> / dia</small></div>
+        <p style="margin-top:10px;font-size:14px;font-weight:300">No mínimo uma avaliação nova por dia, todos os dias.</p>
+      </div>
+      <div class="card">
+        <div class="lab">Rotina de respostas</div>
+        <div class="big">2<small>x / dia</small></div>
+        <p style="margin-top:10px;font-size:14px;font-weight:300">Responder todas as avaliações duas vezes por dia. Checklist para os atendentes até as 12h.</p>
+      </div>
+      <div class="card">
+        <div class="lab">A cada atendimento</div>
+        <div class="big" style="font-size:26px;line-height:1.15">Foto + avaliação</div>
+        <p style="margin-top:10px;font-size:14px;font-weight:300">Cada pet atendido vira uma foto e um convite para avaliar. É a otimização que se repete no dia a dia.</p>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:18px">
+      <div class="card">
+        <h4>Fluxo após o atendimento</h4>
+        <div class="flow" style="margin-top:6px">
+          <div class="st"><span class="n">1</span><div class="t">Oferecer uma <b>foto com o pet</b></div></div>
+          <div class="st"><span class="n">2</span><div class="t">Entregar o <b>QR Code</b> para avaliar no Google</div></div>
+          <div class="st"><span class="n">3</span><div class="t">Se a pessoa já avaliou: <b>"pode avaliar de novo, nos ajuda muito"</b></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Palavras-chave nas avaliações</h4>
+        <p style="font-size:14px;font-weight:300;margin-bottom:12px">Antes de entregar o QR Code, o atendente pergunta. O cliente usa essas palavras naturalmente na avaliação:</p>
+        <div class="chips">
+          <span class="c">"O veterinário foi atencioso?"</span>
+          <span class="c">"A emergência foi rápida?"</span>
+          <span class="c">"Como foi o atendimento?"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEMA -->
+<section>
+  <div class="page">
+    <div class="kicker">Técnico · Concluído</div>
+    <h2 class="sec">Schema Markup no site</h2>
+    <p class="body sec-lede">Código estruturado que ajuda o Google e as IAs a entenderem o CEVEPE. Já preparado para o Google Tag Manager como <code class="inline">Custom HTML Tag → All Pages</code>.</p>
+    <pre>&lt;<span class="k">script</span> type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Centro Veterinário de Petrolina - CEVEPE",
+  "description": "Hospital veterinário em Petrolina-PE com 30 anos. Atendimento 24h, emergências, células-tronco, cirurgias, exames, banho e tosa, pet shop e farmácia veterinária.",
+  "url": "https://cevepe.com.br",
+  "telephone": ["+55-87-3862-3989", "+55-87-98814-1272"],
+  "openingHours": "Mo-Su 00:00-23:59",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Engenheiro Carlos Pinheiro, 382",
+    "addressLocality": "Petrolina",
+    "addressRegion": "PE",
+    "addressCountry": "BR"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "467" },
+  "medicalSpecialty": ["Cirurgia veterinária","Oftalmologia veterinária","Ortopedia veterinária","Cardiologia veterinária","Tratamento com células-tronco"],
+  "areaServed": ["Petrolina","Juazeiro","Lagoa Grande","Vale do São Francisco"],
+  "sameAs": [
+    "https://www.instagram.com/clinica_cevepe",
+    "https://www.facebook.com/cevepe",
+    "https://www.youtube.com/channel/UC2hIYsziWaaSZD2kaM8xJgg"
+  ]
+}
+&lt;/<span class="k">script</span>&gt;</pre>
+    <div class="note">
+      <p style="margin:0">Como o site é WordPress, dá para instalar também o plugin <b>RankMath</b> (gratuito) para gerenciar os schemas automaticamente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IAs -->
+<section>
+  <div class="page">
+    <div class="kicker">Alcance nas IAs</div>
+    <h2 class="sec">Aparecer também nas respostas de IA</h2>
+    <p class="body sec-lede">Cada vez mais a busca acontece dentro de IA. Um perfil forte é a base para o CEVEPE ser citado nesses lugares.</p>
+    <div class="grid2">
+      <div class="card">
+        <h4>Google AI Overviews</h4>
+        <p style="font-size:13.5px;color:var(--gray);margin-bottom:12px">O resumo de IA que aparece antes de todos os resultados. Depende de:</p>
+        <ul>
+          <li>Perfil no Google otimizado <b>(feito)</b></li>
+          <li>Site com conteúdo autoritativo</li>
+          <li>Avaliações com palavras-chave</li>
+          <li>Schema Markup <b>(feito)</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>ChatGPT e Claude</h4>
+        <p style="font-size:13.5px;color:var(--gray);margin-bottom:12px">As IAs consultam o Google em tempo real. Para ser recomendado:</p>
+        <ul>
+          <li>Aparecer bem no Google <b>(em curso)</b></li>
+          <li>Estar em diretórios como o PetLife</li>
+          <li>Site com conteúdo rico</li>
+          <li>Presença em múltiplas plataformas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS PASSOS -->
+<section>
+  <div class="page">
+    <div class="kicker">Status</div>
+    <h2 class="sec">O que está feito e o que segue em rotina</h2>
+    <div class="checks">
+      <div class="checkcol">
+        <h4><span class="dot" style="background:var(--purple)"></span> Concluído</h4>
+        <div class="row"><span class="bx on"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Categoria principal e categorias adicionais corrigidas</div></div>
+        <div class="row"><span class="bx on"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Descrição, fotos, redes, acessibilidade e WhatsApp</div></div>
+        <div class="row"><span class="bx on"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>5 serviços confirmados e adicionados</div></div>
+        <div class="row"><span class="bx on"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Cardiologia e células-tronco no perfil</div></div>
+        <div class="row"><span class="bx on"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Edição de telefones verificada e rejeitada</div></div>
+        <div class="row"><span class="bx on"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><div>Schema Markup preparado para o GTM</div></div>
+      </div>
+      <div class="checkcol">
+        <h4><span class="dot" style="background:var(--purple-light)"></span> Rotina e próximos</h4>
+        <div class="row"><span class="bx off"></span><div>Campanha de avaliações com QR Code (meta de 1 por dia)</div></div>
+        <div class="row"><span class="bx off"></span><div>Rotina de resposta às avaliações 2x ao dia</div></div>
+        <div class="row"><span class="bx off"></span><div>Foto do pet a cada atendimento</div></div>
+        <div class="row"><span class="bx off"></span><div>Blog no site, 1 artigo por semana</div></div>
+        <div class="row"><span class="bx off"></span><div>Adicionar fotos ao perfil, em lote</div></div>
+        <div class="row"><span class="bx off"></span><div>Cadastro no PetLife e citações locais</div></div>
+        <div class="row"><span class="bx off"></span><div>Instalar RankMath no WordPress</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="fbrand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="wm"><b>BM MÍDIAS</b><span>Gestão de Tráfego Pago</span></div>
+    </div>
+    <div class="fmeta">
+      Plano de otimização Google Meu Negócio · Cliente CEVEPE<br>
+      Elaborado por Brito Mídias · <a href="mailto:britomidiascompany@gmail.com">britomidiascompany@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
