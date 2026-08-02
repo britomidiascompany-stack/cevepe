@@ -1,0 +1,111 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Conteúdo CEVEPE · Brito Mídias</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{
+  --roxo:#7C3AED;--roxo-dark:#5B21B6;--roxo-deep:#3B0F73;--roxo-light:#A78BFA;--roxo-xlight:#EDE9FE;
+  --preto:#0A0A0A;--ink:#141018;--cinza:#5B5566;--linha:#E7E3EE;--bg:#FFFFFF;--bg-soft:#FAF9FC;
+  --hero:radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),linear-gradient(150deg,#0A0A0A 0%,#17111F 45%,#3B0F73 100%);
+  --grad-marca:linear-gradient(90deg,#7C3AED,#5B21B6);--maxw:1020px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Poppins',sans-serif;font-weight:300;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3,h4{margin:0;line-height:1.2;font-weight:700}h1{font-weight:800;letter-spacing:-.02em}
+a{color:var(--roxo-dark);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.section-label{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo);margin-bottom:14px}
+.section-label::before{content:"";width:34px;height:2px;background:var(--roxo);border-radius:2px}
+/* brand lockup */
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:44px;height:44px;flex:none}
+.brand .word{display:flex;align-items:center;gap:12px;font-weight:300}
+.brand .word b{font-weight:800;font-size:20px}
+.brand .bar{width:2px;height:28px;background:rgba(255,255,255,.55)}
+.brand .word span{font-size:20px;letter-spacing:.22em}
+/* hero */
+.hero{background:var(--hero);color:#fff;position:relative;overflow:hidden;padding:56px 0 64px}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(80% 60% at 70% 0%,#000,transparent 75%);mask-image:radial-gradient(80% 60% at 70% 0%,#000,transparent 75%)}
+.hero .wrap{position:relative;z-index:1}
+.hero .brand{margin-bottom:34px}
+.crumb{font-size:13px;color:var(--roxo-light);margin-bottom:16px;letter-spacing:.02em}
+.crumb a{color:var(--roxo-light)}
+.badge{display:inline-block;border:1px solid rgba(167,139,250,.5);color:var(--roxo-light);border-radius:100px;padding:8px 16px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(34px,6vw,50px);margin-bottom:10px}
+.hero .sub{font-size:clamp(17px,3vw,22px);color:var(--roxo-light);font-weight:400;max-width:680px}
+.hero .cliente{margin-top:20px;font-size:13px;color:rgba(255,255,255,.6)}
+.hero .cliente b{color:#fff;font-weight:600}
+/* hub cards */
+.months{margin-top:12px}
+.month-block{margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.doc-card{display:block;border:1px solid var(--linha);border-radius:18px;padding:26px;background:#fff;transition:.15s;position:relative}
+.doc-card:hover{border-color:var(--roxo-light);box-shadow:0 8px 30px rgba(124,58,237,.08);transform:translateY(-2px)}
+.doc-card .ico{width:46px;height:46px;border-radius:12px;background:var(--roxo-xlight);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.doc-card h3{font-size:19px;margin-bottom:6px;color:var(--ink)}
+.doc-card p{margin:0;color:var(--cinza);font-size:14.5px}
+.doc-card .go{margin-top:16px;font-size:13px;font-weight:600;color:var(--roxo);letter-spacing:.02em}
+.pill{display:inline-block;border:1px solid var(--roxo-light);color:var(--roxo-dark);border-radius:100px;padding:5px 13px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0 5px 6px 0}
+.pill.solid{background:var(--grad-marca);color:#fff;border-color:transparent}
+/* content */
+main.wrap{padding-top:48px;padding-bottom:64px}
+.toc{background:var(--bg-soft);border:1px solid var(--linha);border-radius:16px;padding:22px 26px;margin-bottom:40px}
+.toc h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin-bottom:12px}
+.toc ul{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
+.toc li{padding:4px 0;font-size:14px;break-inside:avoid}
+.divider{font-family:'Poppins';font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--roxo-deep);border-radius:10px;padding:10px 18px;margin:46px 0 10px}
+.post{border:1px solid var(--linha);border-radius:20px;padding:30px 32px;margin:22px 0;background:#fff;scroll-margin-top:20px}
+.post > h2{font-size:22px;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+.subh{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.subh::before{content:"";width:22px;height:2px;background:var(--roxo);border-radius:2px}
+.nota{background:var(--roxo-xlight);border-radius:12px;padding:12px 16px;font-size:14px;color:#4a3b73;margin:4px 0 8px}
+.info{font-size:14.5px;margin:3px 0}
+.info b{color:var(--ink);font-weight:600}
+.slide{border-left:3px solid var(--roxo-light);padding:2px 0 2px 16px;margin:14px 0}
+.slide .sl-t{font-weight:700;color:var(--roxo-dark);font-size:14px;margin-bottom:4px}
+.slide p{margin:2px 0;font-size:14.5px}
+.leg{background:var(--bg-soft);border:1px solid var(--linha);border-radius:14px;padding:18px 20px;font-size:14.5px}
+.leg p{margin:.35em 0}
+.tags{font-size:13.5px;color:var(--cinza)}
+.hash{font-size:13.5px;color:var(--roxo-dark);font-weight:500}
+p{margin:.4em 0}
+/* video page */
+.idea{border:1px solid var(--linha);border-radius:20px;padding:26px 30px;margin:20px 0;background:#fff}
+.idea .tag-fmt{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--roxo);margin-bottom:6px}
+.idea h2{font-size:20px;margin-bottom:8px}
+.idea .ref{font-size:13px;color:var(--cinza);margin-bottom:12px}
+.idea .ref a{color:var(--roxo-dark)}
+.roteiro{background:var(--bg-soft);border-radius:12px;padding:14px 18px;margin-top:10px}
+table.tbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+table.tbl th{background:var(--roxo-xlight);color:var(--roxo-deep);text-align:left;padding:9px 12px;font-weight:600;font-size:12px;letter-spacing:.04em}
+table.tbl td{border-bottom:1px solid var(--linha);padding:9px 12px;vertical-align:top}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:40px 0;text-align:center;margin-top:20px}
+footer .brand{justify-content:center;margin-bottom:16px}
+footer a{color:var(--roxo-light)}
+footer .small{font-size:13px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}.toc ul{columns:1}}
+@media print{.hero,footer,.divider{-webkit-print-color-adjust:exact;print-color-adjust:exact}.post{break-inside:avoid}}
+</style></head><body>
+<header class="hero"><div class="wrap"><div class="brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon><polygon points="50,33 65,59 35,59"></polygon><line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line><line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line><line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line><line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line><line x1="10" y1="27" x2="50" y2="33"></line></svg><div class="word"><b>BM</b><span class="bar"></span><span>MÍDIAS</span></div></div><span class="badge">Central de Conteúdo · Brito Mídias</span>
+<h1>Conteúdo CEVEPE</h1>
+<div class="sub">Central dos documentos de planejamento e roteiro produzidos pela Brito Mídias para o CEVEPE — organizados por mês.</div>
+<div class="cliente">Cliente: <b>CEVEPE · Centro Veterinário de Petrolina</b> · Instagram orgânico</div></div></header>
+<main class="wrap">
+<div class="section-label">Meses</div>
+<div class="month-block">
+  <h2 style="font-size:26px;margin-bottom:4px">Agosto 2026</h2>
+  <p style="color:var(--cinza);margin:0 0 18px">Campanhas ativas: SPA PET (Jul/Ago) e 30 Anos CEVEPE.</p>
+  <div class="grid2">
+    <a class="doc-card" href="agosto/carrosseis-estaticos.html">
+      <div class="ico">🎠</div>
+      <h3>Carrosséis e Estáticos</h3>
+      <p>4 carrosséis + 4 estáticos (com 2 opções alternativas), com slides, legendas, tags e hashtags.</p>
+      <div class="go">Abrir documento →</div>
+    </a>
+    <a class="doc-card" href="agosto/roteiros-video.html">
+      <div class="ico">🎬</div>
+      <h3>Roteiros de Vídeo</h3>
+      <p>Banco de narrativas de vídeos e carrosséis — conceito, roteiro e referência de cada peça.</p>
+      <div class="go">Abrir documento →</div>
+    </a>
+  </div>
+</div>
+</main>
+<footer><div class="wrap"><div class="brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon><polygon points="50,33 65,59 35,59"></polygon><line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line><line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line><line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line><line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line><line x1="10" y1="27" x2="50" y2="33"></line></svg><div class="word"><b>BM</b><span class="bar"></span><span>MÍDIAS</span></div></div><p class="small">Documento de entrega · <b>Brito Mídias</b> — Gestão de Conteúdo · Cliente: CEVEPE<br><a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a></p></div></footer>
+</body></html>
