@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEVEPE · Manual de Identidade Visual</title>
+<meta name="description" content="Manual de Identidade Visual do CEVEPE (Centro Veterinário de Petrolina) — marca, cores, tipografia e elementos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#84C127;
+    --verde-dark:#5E9016;
+    --verde-pinho:#00483C;
+    --lima:#7BDB0F;
+    --verde-xlight:#EDF6DA;
+    --grafite:#37423F;
+    --ink:#1D2320;
+    --cinza:#6A716E;
+    --linha:#E4E9E0;
+    --bg:#FFFFFF;
+    --bg-soft:#F5F8EF;
+    --hero:radial-gradient(1100px 520px at 80% -10%, rgba(132,193,39,.42), transparent 60%),
+           linear-gradient(155deg,#05231C 0%,#00332A 45%,#00483C 100%);
+    --grad-marca:linear-gradient(90deg,#84C127,#5E9016);
+    --maxw:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Poppins',sans-serif;font-weight:400;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+  h1,h2,h3,h4{margin:0;line-height:1.15;font-weight:700}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;letter-spacing:-.01em}
+  p{margin:0 0 1em}
+  a{color:var(--verde-dark)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-dark)}
+  .section-label{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-dark);margin-bottom:14px}
+  .section-label::before{content:"";width:34px;height:3px;background:var(--verde);border-radius:3px}
+
+  /* ---------- BRAND LOCKUP ---------- */
+  .brand{display:flex;align-items:center;gap:16px}
+  .brand .mark{width:56px;height:56px;flex:none}
+  .brand .word{display:flex;flex-direction:column;line-height:1}
+  .brand .word .name{font-family:'Fredoka',sans-serif;font-weight:700;font-size:30px;letter-spacing:.01em;color:#fff}
+  .brand .word .tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:4px}
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--hero);color:#fff;position:relative;overflow:hidden;padding:72px 0 84px}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.10;
+    background-image:radial-gradient(rgba(255,255,255,.9) 1.5px,transparent 1.6px);background-size:34px 34px;
+    -webkit-mask-image:radial-gradient(80% 60% at 70% 0%,#000,transparent 75%);mask-image:radial-gradient(80% 60% at 70% 0%,#000,transparent 75%)}
+  .hero .wrap{position:relative;z-index:1}
+  .hero .brand{margin-bottom:52px}
+  .hero .badge{display:inline-block;border:1px solid rgba(132,193,39,.55);color:var(--verde);border-radius:100px;padding:9px 18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+  .hero h1{font-size:clamp(42px,7vw,60px);margin-bottom:10px}
+  .hero .sub{font-size:clamp(19px,3.2vw,26px);color:var(--verde);font-weight:500;margin-bottom:18px}
+  .hero .lead{max-width:640px;color:rgba(255,255,255,.85);font-size:16.5px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .meta{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 18px;min-width:150px}
+  .meta small{display:block;color:var(--verde);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  .meta b{font-weight:600;font-size:15px}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0;border-bottom:1px solid var(--linha)}
+  section.soft{background:var(--bg-soft)}
+  section h2{font-family:'Fredoka',sans-serif;font-size:clamp(28px,4vw,36px);margin-bottom:12px;letter-spacing:-.01em}
+  section .intro{color:var(--cinza);max-width:660px;margin-bottom:34px;font-size:16px}
+
+  /* logo showcase */
+  .logo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .logo-card{border:1px solid var(--linha);border-radius:20px;overflow:hidden;background:#fff}
+  .logo-card .frame{display:flex;align-items:center;justify-content:center;padding:36px;min-height:180px}
+  .logo-card .frame img{max-width:74%;max-height:140px;object-fit:contain}
+  .logo-card.light .frame{background:var(--verde-xlight)}
+  .logo-card.deep .frame{background:var(--hero)}
+  .logo-card.graf .frame{background:var(--grafite)}
+  .logo-card .cap{padding:12px 18px;border-top:1px solid var(--linha);font-size:13px;color:var(--cinza)}
+  .logo-card .cap b{color:var(--ink);font-weight:600}
+
+  /* logo vertical lockup (recriado) */
+  .lock{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .lock .sym{width:82px;height:82px}
+  .lock .nm{font-family:'Fredoka',sans-serif;font-weight:700;font-size:38px;line-height:.8;letter-spacing:.01em}
+  .lock .sw{width:150px;height:14px;margin-top:-2px}
+  .lock .tg{font-size:10.5px;letter-spacing:.10em;text-transform:uppercase;margin-top:2px}
+  .lock.on-dark .nm,.lock.on-dark .tg{color:#fff}
+
+  .do-dont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+  .rule{border:1px solid var(--linha);border-radius:18px;padding:20px 22px;background:#fff}
+  .rule h4{font-size:14px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .rule.ok h4{color:#2f7d16}
+  .rule.no h4{color:#b0242a}
+  .rule ul{margin:0;padding-left:18px;color:var(--cinza);font-size:14.5px}
+  .rule li{margin-bottom:6px}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .dot.g{background:var(--verde)}.dot.r{background:#e0454b}
+
+  /* palette */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .swatch{border:1px solid var(--linha);border-radius:16px;overflow:hidden;background:#fff}
+  .swatch .chip{height:96px}
+  .swatch .info{padding:12px 14px}
+  .swatch .name{font-weight:600;font-size:14px}
+  .swatch .hex{font-size:13px;color:var(--cinza);letter-spacing:.03em;font-variant-numeric:tabular-nums}
+  .swatch .role{font-size:12px;color:var(--cinza);margin-top:2px}
+  .grads{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .grad{border-radius:18px;overflow:hidden;border:1px solid var(--linha)}
+  .grad .band{height:90px}
+  .grad .lbl{padding:12px 16px;font-size:12.5px;color:var(--cinza);background:#fff}
+  .grad .lbl b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px;font-size:13.5px}
+
+  /* typography */
+  .type-row{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px dashed var(--linha);flex-wrap:wrap}
+  .type-row:last-child{border-bottom:0}
+  .type-row .spec{font-size:12.5px;color:var(--cinza);letter-spacing:.04em;white-space:nowrap}
+  .fred{font-family:'Fredoka',sans-serif}
+  .w800{font-weight:800}.w700{font-weight:700}.w600{font-weight:600}.w400{font-weight:400}.w300{font-weight:300}
+  .scale-800{font-size:44px}.scale-700{font-size:30px}.scale-600{font-size:22px}.scale-b{font-size:16px}.scale-s{font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* components */
+  .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .demo{border:1px solid var(--linha);border-radius:20px;padding:24px;background:#fff}
+  .demo h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza);margin-bottom:16px}
+  .pill{display:inline-block;border:1.5px solid var(--verde);color:var(--verde-dark);border-radius:100px;padding:8px 16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 6px 8px 0}
+  .pill.solid{background:var(--grad-marca);color:#fff;border-color:transparent}
+  .btn{display:inline-block;background:var(--grad-marca);color:#fff;border-radius:12px;padding:12px 22px;font-size:14px;font-weight:700;text-decoration:none;margin:0 8px 8px 0}
+  .btn.ghost{background:transparent;color:var(--verde-dark);border:2px solid var(--verde)}
+  .mini-card{border:1px solid var(--linha);border-radius:16px;padding:16px 18px;background:var(--bg-soft)}
+  .mini-card small{display:block;color:var(--verde-dark);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+  .mini-card b{font-size:20px;font-weight:800;color:var(--verde-pinho)}
+
+  /* voice */
+  .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+  .voice{border-left:3px solid var(--verde);padding:6px 0 6px 18px}
+  .voice b{display:block;font-weight:700;margin-bottom:4px}
+  .voice span{color:var(--cinza);font-size:14.5px}
+
+  /* claude box */
+  .claude-box{background:var(--verde-pinho);color:#fff;border-radius:22px;padding:34px}
+  .claude-box h3{color:#fff;font-family:'Fredoka',sans-serif;font-size:22px;margin-bottom:10px}
+  .claude-box p{color:rgba(255,255,255,.82)}
+  .claude-box code{background:rgba(255,255,255,.12);padding:2px 7px;border-radius:6px;font-size:13px}
+  .claude-box .file{display:inline-flex;align-items:center;gap:8px;background:var(--verde);color:var(--verde-pinho);border-radius:8px;padding:8px 14px;font-size:13.5px;font-weight:700;margin-top:8px}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.72);padding:44px 0;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:18px}
+  footer a{color:var(--verde)}
+  footer .small{font-size:13px}
+
+  @media (max-width:720px){
+    .logo-grid,.do-dont,.comp-grid,.voice-grid{grid-template-columns:1fr}
+    .swatches{grid-template-columns:repeat(2,1fr)}
+    .grads{grid-template-columns:1fr}
+  }
+  @page{size:A4;margin:14mm}
+  @media print{
+    body{font-size:12px}.hero{padding:34px 0}section{padding:26px 0;break-inside:avoid}
+    .hero,footer,.logo-card.deep .frame,.logo-card.graf .frame,.claude-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}a{text-decoration:none}h2{break-after:avoid}
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG defs reutilizáveis: símbolo (oval+patinha) e swoosh -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="cevepe-sym">
+    <ellipse cx="50" cy="47" rx="33" ry="39" fill="none" stroke="#84C127" stroke-width="7.5"/>
+    <path d="M14 84 C 34 95, 66 95, 86 82" fill="none" stroke="#84C127" stroke-width="7.5" stroke-linecap="round"/>
+    <!-- patinha (stand-in do cluster de animais) -->
+    <g fill="#37423F">
+      <ellipse cx="50" cy="58" rx="13" ry="10"/>
+      <ellipse cx="34" cy="44" rx="5.2" ry="7"/>
+      <ellipse cx="44" cy="37" rx="5.2" ry="7.2"/>
+      <ellipse cx="56" cy="37" rx="5.2" ry="7.2"/>
+      <ellipse cx="66" cy="44" rx="5.2" ry="7"/>
+    </g>
+  </g>
+</defs></svg>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <img src="png/logo-cevepe-branco.png" alt="CEVEPE — Centro Veterinário de Petrolina" style="height:88px;width:auto">
+    </div>
+
+    <span class="badge">Manual de Marca · Clínica Veterinária 24h</span>
+    <h1>Identidade Visual</h1>
+    <div class="sub">CEVEPE — o sistema visual da marca</div>
+    <p class="lead">Este documento reúne, num só lugar, tudo que define o visual do CEVEPE: a marca, as cores, a tipografia, os elementos e o tom de voz. Serve de referência para qualquer peça — post, carrossel, roteiro, arte ou documento.</p>
+
+    <div class="meta-row">
+      <div class="meta"><small>Marca</small><b>CEVEPE · Petrolina-PE</b></div>
+      <div class="meta"><small>Tipografia</small><b>Poppins + Fredoka</b></div>
+      <div class="meta"><small>Cor principal</small><b>Verde #84C127</b></div>
+      <div class="meta"><small>Versão</small><b>1.0 · 2026</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MARCA ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-label">A Marca</div>
+    <h2>O logo</h2>
+    <p class="intro">O símbolo é um <b>oval verde</b> com um <b>swoosh</b> na base, envolvendo um <b>cluster de animais em traço grafite</b> (avestruz, cabra, cavalo, cão e gato) — o cuidado com <b>todos</b> os animais. Abaixo, o logotipo <b>cevepe</b> em minúsculas arredondadas e a tagline <i>centro veterinário de petrolina</i>.</p>
+    <p class="intro" style="margin-top:-18px;font-size:14px;color:var(--verde-dark)"><b>Logo oficial</b>, com fundo removido: versão colorida (<code>png/logo-cevepe.png</code>) e versão para fundo escuro, com animais e texto em branco (<code>png/logo-cevepe-branco.png</code>). Para impressão em alta ou vetor, peça o SVG/AI à designer.</p>
+
+    <div class="logo-grid">
+      <div class="logo-card">
+        <div class="frame"><img src="png/logo-cevepe.png" alt="Logo CEVEPE — versão principal colorida"></div>
+        <div class="cap"><b>Principal (positiva)</b> — colorida sobre fundo branco. Uso preferencial.</div>
+      </div>
+      <div class="logo-card light">
+        <div class="frame"><img src="png/logo-cevepe.png" alt="Logo CEVEPE sobre verde suave"></div>
+        <div class="cap"><b>Sobre verde suave</b> — fundos leves da marca (<code>#EDF6DA</code>).</div>
+      </div>
+      <div class="logo-card deep">
+        <div class="frame"><img src="png/logo-cevepe-branco.png" alt="Logo CEVEPE — versão para fundo escuro"></div>
+        <div class="cap"><b>Negativa</b> — versão para o verde-pinho da marca.</div>
+      </div>
+      <div class="logo-card graf">
+        <div class="frame"><img src="png/logo-cevepe-branco.png" alt="Logo CEVEPE sobre grafite"></div>
+        <div class="cap"><b>Sobre grafite</b> — fundo escuro neutro (<code>#37423F</code>).</div>
+      </div>
+    </div>
+
+    <div class="do-dont">
+      <div class="rule ok">
+        <h4><span class="dot g"></span>Pode</h4>
+        <ul>
+          <li>Manter área de proteção livre ao redor (mín. = altura do oval).</li>
+          <li>Usar a versão branca sobre verde-pinho ou grafite.</li>
+          <li>Omitir a tagline quando o logo ficar muito pequeno (abaixo de ~120&nbsp;px).</li>
+          <li>Aplicar sobre foto só com um "respiro" claro por trás.</li>
+        </ul>
+      </div>
+      <div class="rule no">
+        <h4><span class="dot r"></span>Não pode</h4>
+        <ul>
+          <li>Distorcer, inclinar ou mudar a proporção.</li>
+          <li>Trocar o verde ou recolorir os animais.</li>
+          <li>Aplicar sombra, contorno ou brilho.</li>
+          <li>Reescrever "cevepe" em outra fonte.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORES ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Paleta</div>
+    <h2>Cores</h2>
+    <p class="intro">O <b>verde-folha</b> é a assinatura — do logo às artes. O <b>lima vibrante</b> entra nos realces e CTAs; o <b>verde-pinho</b> nos fundos escuros. Os neutros sustentam o texto. <b>Verde e lima não servem para texto pequeno</b> sobre branco — use-os em blocos, ícones e números.</p>
+
+    <h4 class="kicker" style="margin-bottom:14px">Verdes</h4>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#84C127"></div><div class="info"><div class="name">Verde-folha</div><div class="hex">#84C127</div><div class="role">Principal · marca</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#5E9016"></div><div class="info"><div class="name">Verde Escuro</div><div class="hex">#5E9016</div><div class="role">Botões · gradiente</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#00483C"></div><div class="info"><div class="name">Verde-pinho</div><div class="hex">#00483C</div><div class="role">Fundos hero</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#7BDB0F"></div><div class="info"><div class="name">Lima Vibrante</div><div class="hex">#7BDB0F</div><div class="role">Realce · CTA</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#EDF6DA"></div><div class="info"><div class="name">Verde Suave</div><div class="hex">#EDF6DA</div><div class="role">Fundos leves · tags</div></div></div>
+    </div>
+
+    <h4 class="kicker" style="margin:30px 0 14px">Neutros</h4>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#37423F"></div><div class="info"><div class="name">Grafite</div><div class="hex">#37423F</div><div class="role">Wordmark · títulos</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#1D2320"></div><div class="info"><div class="name">Ink</div><div class="hex">#1D2320</div><div class="role">Texto principal</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#6A716E"></div><div class="info"><div class="name">Cinza</div><div class="hex">#6A716E</div><div class="role">Texto secundário</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#E4E9E0"></div><div class="info"><div class="name">Linha</div><div class="hex">#E4E9E0</div><div class="role">Bordas · divisórias</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#F5F8EF;box-shadow:inset 0 0 0 1px #E4E9E0"></div><div class="info"><div class="name">Fundo Suave</div><div class="hex">#F5F8EF</div><div class="role">Seções alternadas</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#FFFFFF;box-shadow:inset 0 0 0 1px #E4E9E0"></div><div class="info"><div class="name">Branco</div><div class="hex">#FFFFFF</div><div class="role">Fundo base</div></div></div>
+    </div>
+
+    <div class="section-label" style="margin-top:44px">Gradientes</div>
+    <div class="grads">
+      <div class="grad"><div class="band" style="background:radial-gradient(600px 300px at 80% -10%,rgba(132,193,39,.5),transparent 60%),linear-gradient(155deg,#05231C 0%,#00332A 45%,#00483C 100%)"></div><div class="lbl"><b>Hero</b>Verde-pinho com brilho verde</div></div>
+      <div class="grad"><div class="band" style="background:linear-gradient(90deg,#84C127,#5E9016)"></div><div class="lbl"><b>Marca</b>Botões, faixas e pílulas sólidas</div></div>
+      <div class="grad"><div class="band" style="background:linear-gradient(135deg,#00483C 0%,#84C127 100%)"></div><div class="lbl"><b>Realce</b>Cards e destaques</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPOGRAFIA ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Tipografia</div>
+    <h2>Poppins + Fredoka</h2>
+    <p class="intro"><b>Poppins</b> é o cavalo de batalha do sistema (títulos e corpo). <b>Fredoka</b>, redonda e amigável, entra nos <b>headlines</b> para ecoar a redondeza do wordmark "cevepe". O peso e a caixa criam a hierarquia; rótulos usam maiúsculas espaçadas em verde.</p>
+
+    <div class="type-row"><span class="fred w700 scale-800">Título de impacto</span><span class="spec">Fredoka · 700</span></div>
+    <div class="type-row"><span class="w700 scale-700">Título de seção</span><span class="spec">Poppins Bold · 700</span></div>
+    <div class="type-row"><span class="w600 scale-600">Subtítulo / destaque</span><span class="spec">Poppins SemiBold · 600</span></div>
+    <div class="type-row"><span class="w400 scale-b">Texto de corpo — natural, arejado e fácil de ler em blocos longos.</span><span class="spec">Poppins Regular · 400</span></div>
+    <div class="type-row"><span class="w700 scale-s" style="color:var(--verde-dark)">Rótulo de seção</span><span class="spec">Poppins Bold · 700 · maiúsculas · tracking .14em</span></div>
+  </div>
+</section>
+
+<!-- ============ ELEMENTOS ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Interface</div>
+    <h2>Elementos</h2>
+    <p class="intro">Componentes recorrentes do sistema. Cantos bem arredondados (16–20&nbsp;px nos blocos, 100&nbsp;px nas pílulas), bordas suaves e o verde como fio condutor — um visual orgânico e acolhedor.</p>
+
+    <div class="comp-grid">
+      <div class="demo">
+        <h4>Pílulas / Etiquetas</h4>
+        <span class="pill">Clínica 24h</span>
+        <span class="pill">Banho e Tosa</span>
+        <span class="pill solid">SPA PET</span>
+      </div>
+      <div class="demo">
+        <h4>Botões</h4>
+        <a href="#" class="btn" onclick="return false">Agendar no WhatsApp</a>
+        <a href="#" class="btn ghost" onclick="return false">Saber mais</a>
+      </div>
+      <div class="demo">
+        <h4>Rótulo de seção</h4>
+        <div class="section-label" style="margin:0">Cuidado Completo</div>
+        <p style="margin:14px 0 0;color:var(--cinza);font-size:14px">Traço + texto em maiúsculas verde. Abre cada bloco de conteúdo.</p>
+      </div>
+      <div class="demo">
+        <h4>Cards de destaque</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="mini-card"><small>Atendimento</small><b>24 horas</b></div>
+          <div class="mini-card"><small>História</small><b>30 anos</b></div>
+        </div>
+      </div>
+      <div class="demo" style="grid-column:1/-1">
+        <h4>Swoosh (elemento da marca)</h4>
+        <svg viewBox="0 0 260 24" style="width:220px;height:22px" fill="none"><path d="M4 16 C 70 2, 190 2, 256 14" stroke="#84C127" stroke-width="6" stroke-linecap="round"/></svg>
+        <p style="margin:12px 0 0;color:var(--cinza);font-size:14px">O traço curvo do logo, reutilizável como sublinhado de título ou divisória.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOM DE VOZ ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Comunicação</div>
+    <h2>Tom de voz</h2>
+    <p class="intro">O CEVEPE fala como a clínica de bairro que virou referência: <b>acolhedora, próxima, bem-humorada e confiável</b>. Cuida de quem você ama, com informação correta e uma chamada clara pra ação.</p>
+    <div class="voice-grid">
+      <div class="voice"><b>Acolhedor</b><span>Fala com quem ama o pet como parte da família.</span></div>
+      <div class="voice"><b>Próximo e regional</b><span>Jeito petrolinense, leve, com humor nos vídeos.</span></div>
+      <div class="voice"><b>Cuidadoso e confiável</b><span>Saúde animal correta; 24h, 30 anos, estrutura completa.</span></div>
+      <div class="voice"><b>Chamada clara</b><span>Todo conteúdo leva a agendar, salvar ou visitar.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USO COM O CLAUDE ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-label">Aplicação</div>
+    <h2>Como o Claude aplica esta identidade</h2>
+    <p class="intro">A identidade vem em dois formatos irmãos: esta <b>página visual</b> (que também vira PDF) e um <b>arquivo de tokens</b> que o Claude lê para reproduzir a marca em qualquer peça nova.</p>
+    <div class="claude-box">
+      <h3>Arquivo de referência</h3>
+      <p>Sempre que pedir uma peça “na identidade do CEVEPE”, o Claude consulta o arquivo abaixo — com todas as cores, fontes e regras em texto estruturado — e monta já dentro do padrão.</p>
+      <span class="file">📄 IDENTIDADE-VISUAL-CEVEPE.md</span>
+      <p style="margin-top:18px;font-size:14px">Cores como <code>--verde:#84C127</code>, tipografia <code>Poppins + Fredoka</code> e os componentes acima ficam registrados lá em formato que qualquer sessão do Claude entende e reaproveita.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <img src="png/logo-cevepe-branco.png" alt="CEVEPE" style="height:66px;width:auto">
+    </div>
+    <p class="small">Manual de Identidade Visual · CEVEPE — versão 1.0 · 2026<br>
+    <a href="https://www.instagram.com/clinica_cevepe">@clinica_cevepe</a> · Petrolina-PE · Atendimento 24h</p>
+  </div>
+</footer>
+
+</body>
+</html>
