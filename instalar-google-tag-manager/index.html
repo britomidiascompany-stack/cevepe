@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BM Mídias · CEVEPE — Instalar o Google Tag Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C3AED; --purple-dark:#5B21B6; --purple-deep:#3B0F73; --purple-light:#A78BFA; --purple-xlight:#EDE9FE;
+    --black:#0A0A0A; --ink:#141018; --gray:#5B5566; --line:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --green:#16A34A; --green-light:#DCFCE7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-weight:300;font-size:16px}
+  .page{max-width:860px;margin:0 auto;padding:0 40px}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  strong,b{font-weight:600}
+  p{margin-bottom:14px}
+  p.body{max-width:680px}
+  .muted{color:var(--gray)}
+  code{font-family:'SF Mono','Courier New',monospace}
+
+  /* COVER */
+  .cover{background:radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,0.55), transparent 60%),linear-gradient(150deg,#0A0A0A 0%, #17111F 45%, #3B0F73 100%);color:#fff;padding:70px 0 60px;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(120deg,transparent 40%,#000 100%);pointer-events:none}
+  .cover .page{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:56px}
+  .brand svg{width:48px;height:48px;flex:0 0 auto}
+  .brand .bar{width:2px;height:40px;background:rgba(255,255,255,.85)}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm .l1{font-weight:800;font-size:18px;letter-spacing:.06em}
+  .brand .wm .l2{font-weight:300;font-size:18px;letter-spacing:.28em}
+  .eyebrow{display:inline-block;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--purple-light);border:1px solid rgba(167,139,250,.4);border-radius:100px;padding:7px 16px;margin-bottom:24px}
+  .cover h1{font-size:44px;font-weight:800;margin-bottom:16px}
+  .cover h1 .thin{font-weight:300;display:block;font-size:24px;color:rgba(255,255,255,.72);letter-spacing:-0.01em;margin-top:6px}
+  .cover .lede{font-weight:300;font-size:17px;color:rgba(255,255,255,.82);max-width:600px}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+  .cover .meta .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:11px 16px;font-size:12.5px;color:rgba(255,255,255,.9)}
+  .cover .meta .chip b{color:#fff;font-weight:600;display:block;font-size:13.5px}
+  .cover .meta .chip span{color:rgba(255,255,255,.55);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+
+  section{padding:48px 0}
+  section + section{border-top:1px solid var(--line)}
+  .kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--purple);display:inline-block}
+  h2.sec{font-size:27px;font-weight:700;margin-bottom:12px}
+  .sec-lede{font-size:15.5px;color:var(--gray);max-width:640px;margin-bottom:6px}
+
+  .note{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:12px;padding:18px 20px;font-size:14px;font-weight:300;margin-top:20px}
+  .note b{color:var(--purple-dark)}
+  .note.warn{border-left-color:#B45309;background:#FFFBF3;border-color:#F3E4CC}
+  .note.warn b{color:#B45309}
+  .note.ok{border-left-color:var(--green);background:#F2FBF5;border-color:#D6F0DE}
+  .note.ok b{color:#15803D}
+
+  /* STEP HEADER */
+  .step{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+  .step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step .t{font-weight:700;font-size:16.5px}
+  .step .t small{display:block;font-weight:400;font-size:13px;color:var(--gray);margin-top:2px}
+
+  /* COPY BOX */
+  .copybox{position:relative;background:#0F0F1A;border:1px solid #2D1F4A;border-radius:14px;margin:0 0 30px;overflow:hidden}
+  .copybox .head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#17102A;border-bottom:1px solid #2D1F4A}
+  .copybox .label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-light)}
+  .copybox pre{margin:0;padding:18px 20px;overflow-x:auto;font-size:12.5px;line-height:1.7;color:#C4B5FD;white-space:pre;-webkit-overflow-scrolling:touch}
+  .copybox pre .tag{color:#7DD3FC}
+  .copybox pre .str{color:#86EFAC}
+  .copy-btn{display:flex;align-items:center;gap:7px;background:var(--purple);color:#fff;border:none;border-radius:9px;padding:7px 14px;font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;transition:background .15s}
+  .copy-btn:hover{background:var(--purple-dark)}
+  .copy-btn svg{width:14px;height:14px}
+  .copy-btn.copied{background:var(--green)}
+
+  /* WHERE TO PASTE TABLE */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+  table th{background:var(--purple);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.04em}
+  table td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--ink)}
+  table tr:nth-child(even) td{background:var(--bg-soft)}
+  table td.mono{font-family:'SF Mono','Courier New',monospace;font-size:12.5px;color:var(--purple-dark)}
+
+  /* CHECKLIST */
+  .checklist{list-style:none;margin-top:10px}
+  .checklist li{padding:8px 0;font-size:14.5px;padding-left:26px;position:relative}
+  .checklist li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+
+  .pill-id{display:inline-flex;align-items:center;gap:8px;background:var(--purple-xlight);color:var(--purple-dark);border-radius:100px;padding:6px 16px;font-weight:700;font-size:13px;font-family:'SF Mono','Courier New',monospace;letter-spacing:.02em}
+
+  .wa-cta{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:600;text-decoration:none;margin-top:8px}
+
+  footer{background:var(--black);color:#fff;padding:40px 0}
+  footer .page{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  footer .fbrand{display:flex;align-items:center;gap:14px}
+  footer .fbrand svg{width:36px;height:36px}
+  footer .fbrand .wm b{font-weight:700;letter-spacing:.05em;font-size:15px;display:block}
+  footer .fbrand .wm span{font-size:11.5px;color:rgba(255,255,255,.55)}
+  footer .fmeta{font-size:12px;color:rgba(255,255,255,.6);text-align:right;line-height:1.7}
+  footer .fmeta a{color:var(--purple-light);text-decoration:none}
+
+  @media (max-width:760px){
+    .page{padding:0 22px}
+    .cover h1{font-size:32px}
+    .cover h1 .thin{font-size:19px}
+    .copybox pre{font-size:11px}
+    footer .page{flex-direction:column;align-items:flex-start}
+    footer .fmeta{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="bar"></div>
+      <div class="wm"><span class="l1">BM</span><span class="l2">MÍDIAS</span></div>
+    </div>
+
+    <span class="eyebrow">Direcionamento Técnico · Google Tag Manager</span>
+    <h1>Instalar o Google Tag Manager<span class="thin">CEVEPE · Centro Veterinário de Petrolina</span></h1>
+    <p class="lede">Guia rápido para instalar o container do GTM no site do CEVEPE. Duas caixinhas de código abaixo — é só clicar em copiar e colar nos lugares indicados.</p>
+
+    <div class="meta">
+      <div class="chip"><span>Preparado para</span><b>Felipe</b></div>
+      <div class="chip"><span>Container GTM</span><b>GTM-NDPCSCS</b></div>
+      <div class="chip"><span>Tempo estimado</span><b>5 minutos</b></div>
+      <div class="chip"><span>Emitido em</span><b>Agosto de 2026</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- O QUE É -->
+<section>
+  <div class="page">
+    <div class="kicker">Antes de começar</div>
+    <h2 class="sec">O que é isso e por que instalar</h2>
+    <p class="body sec-lede">O Google Tag Manager (GTM) é o "hub" que centraliza todo o rastreamento do site — Google Ads, Meta Ads, GA4, eventos de conversão. Sem ele instalado, a gente fica cego em relação ao que acontece no site depois que alguém clica num anúncio.</p>
+    <p class="body">O container já foi criado do lado da Brito Mídias. Falta só colar dois trechos de código no site, uma vez, em todas as páginas.</p>
+    <div class="note">
+      <p style="margin:0"><b>ID do container:</b> <span class="pill-id">GTM-NDPCSCS</span><br><br>Esse ID é único do CEVEPE. Se o código-fonte do site já tiver outro ID de GTM instalado, <b>não sobrescreva</b> — chama a Brito Mídias antes pra decidir se substitui ou mantém os dois.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÓDIGO -->
+<section>
+  <div class="page">
+    <div class="kicker">O código</div>
+    <h2 class="sec">Copie e cole os dois trechos</h2>
+    <p class="body sec-lede">São os mesmos dois códigos que aparecem na tela de instalação do Google Tag Manager. Não precisa alterar nada — só copiar exatamente como está.</p>
+
+    <div class="step">
+      <div class="n">1</div>
+      <div class="t">Cole isto o mais alto possível dentro do <code>&lt;head&gt;</code> da página
+        <small>Antes de qualquer outro &lt;script&gt;, logo após o &lt;meta charset&gt; e o &lt;title&gt;</small>
+      </div>
+    </div>
+    <div class="copybox">
+      <div class="head">
+        <span class="label">Código do &lt;head&gt;</span>
+        <button class="copy-btn" onclick="copyBox('code-head', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar
+        </button>
+      </div>
+      <pre id="code-head">&lt;<span class="tag">!-- Google Tag Manager --</span>&gt;
+&lt;<span class="tag">script</span>&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({<span class="str">'gtm.start'</span>:
+new Date().getTime(),event:<span class="str">'gtm.js'</span>});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!=<span class="str">'dataLayer'</span>?<span class="str">'&amp;l='</span>+l:<span class="str">''</span>;j.async=true;j.src=
+<span class="str">'https://www.googletagmanager.com/gtm.js?id='</span>+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,<span class="str">'script'</span>,<span class="str">'dataLayer'</span>,<span class="str">'GTM-NDPCSCS'</span>);&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">!-- End Google Tag Manager --</span>&gt;</pre>
+    </div>
+
+    <div class="step">
+      <div class="n">2</div>
+      <div class="t">Cole isto imediatamente após a tag de abertura <code>&lt;body&gt;</code>
+        <small>Como primeiro elemento dentro do body, antes de qualquer conteúdo visível</small>
+      </div>
+    </div>
+    <div class="copybox">
+      <div class="head">
+        <span class="label">Código do &lt;body&gt; (noscript)</span>
+        <button class="copy-btn" onclick="copyBox('code-body', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar
+        </button>
+      </div>
+      <pre id="code-body">&lt;<span class="tag">!-- Google Tag Manager (noscript) --</span>&gt;
+&lt;<span class="tag">noscript</span>&gt;&lt;<span class="tag">iframe</span> src=<span class="str">"https://www.googletagmanager.com/ns.html?id=GTM-NDPCSCS"</span>
+height=<span class="str">"0"</span> width=<span class="str">"0"</span> style=<span class="str">"display:none;visibility:hidden"</span>&gt;&lt;/<span class="tag">iframe</span>&gt;&lt;/<span class="tag">noscript</span>&gt;
+&lt;<span class="tag">!-- End Google Tag Manager (noscript) --</span>&gt;</pre>
+    </div>
+
+    <div class="note warn">
+      <p style="margin:0"><b>Instale os dois.</b> Só o código do &lt;head&gt; não é suficiente — o do &lt;body&gt; garante o rastreamento de quem acessa com JavaScript desabilitado. E lembre de colar em <b>todas as páginas do site</b> (ou só no arquivo de layout/template, se o site usar um).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ONDE COLAR / IA -->
+<section>
+  <div class="page">
+    <div class="kicker">Não sabe onde colar?</div>
+    <h2 class="sec">Peça a uma IA pra fazer por você</h2>
+    <p class="body sec-lede">Como o site foi feito com IA, o jeito mais rápido é abrir a mesma ferramenta (Claude, Cursor, ChatGPT, Lovable, v0, Bolt...) e colar esta mensagem:</p>
+    <div class="copybox">
+      <div class="head">
+        <span class="label">Mensagem para a IA</span>
+        <button class="copy-btn" onclick="copyBox('code-ia', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar
+        </button>
+      </div>
+      <pre id="code-ia" style="color:#E9E4FA;white-space:pre-wrap">Preciso instalar o Google Tag Manager (ID GTM-NDPCSCS) neste site. Cole o snippet 1 o mais alto possível dentro do &lt;head&gt;, antes de qualquer outro script. Cole o snippet 2 imediatamente após a abertura do &lt;body&gt;, antes de qualquer conteúdo. Aplique em todas as páginas do site (ou no arquivo de layout/template compartilhado, se existir). Não modifique o código dos snippets, não troque o ID, e não duplique se o GTM já estiver instalado.
+
+SNIPPET 1 (head):
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NDPCSCS');&lt;/script&gt;
+
+SNIPPET 2 (body):
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDPCSCS" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;</pre>
+    </div>
+    <p class="body" style="font-size:13.5px;color:var(--gray)">A IA vai identificar o framework do site (Next.js, Astro, WordPress, etc.) e colar os snippets no lugar certo automaticamente.</p>
+  </div>
+</section>
+
+<!-- VERIFICAR -->
+<section>
+  <div class="page">
+    <div class="kicker">Depois de instalar</div>
+    <h2 class="sec">Como confirmar que funcionou</h2>
+    <p class="body sec-lede">Só funciona depois de publicar o site (não vale rodar local). Qualquer uma das 3 formas abaixo confirma:</p>
+    <ul class="checklist">
+      <li><b>Tag Assistant:</b> acesse <a href="https://tagassistant.google.com" style="color:var(--purple-dark)">tagassistant.google.com</a> → "Add domain" → cole a URL do site → deve aparecer <span class="pill-id" style="padding:3px 10px;font-size:11.5px">GTM-NDPCSCS</span> como "Connected"</li>
+      <li><b>DevTools do navegador:</b> abra o site → F12 → aba Console → digite <code>dataLayer</code> e aperte Enter. Se retornar um array (mesmo vazio <code>[]</code>), funcionou. Se retornar <code>undefined</code>, não instalou</li>
+      <li><b>Preview do GTM:</b> no painel do Google Tag Manager, clique em "Preview" e cole a URL do site — deve conectar</li>
+    </ul>
+    <div class="note ok">
+      <p style="margin:0"><b>Qualquer dúvida ou se algo não bater,</b> chama a gente no WhatsApp que a Brito Mídias ajuda a validar junto.</p>
+      <a class="wa-cta" href="https://wa.me/5587988253766?text=Oi%2C+instalei+o+GTM+no+site+do+CEVEPE%2C+pode+conferir%3F">💬 Falar com a Brito Mídias</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="fbrand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="wm"><b>BM MÍDIAS</b><span>Gestão de Tráfego Pago</span></div>
+    </div>
+    <div class="fmeta">
+      Direcionamento técnico · Cliente CEVEPE<br>
+      Emitido em agosto de 2026 · <a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function copyBox(id, btn){
+  var el = document.getElementById(id);
+  var text = el.innerText;
+  navigator.clipboard.writeText(text).then(function(){
+    var original = btn.innerHTML;
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copiado!';
+    setTimeout(function(){
+      btn.classList.remove('copied');
+      btn.innerHTML = original;
+    }, 1800);
+  });
+}
+</script>
+
+</body>
+</html>
