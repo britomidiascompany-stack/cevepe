@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BM Mídias · CEVEPE — Configuração do Google Tag Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C3AED; --purple-dark:#5B21B6; --purple-deep:#3B0F73; --purple-light:#A78BFA; --purple-xlight:#EDE9FE;
+    --black:#0A0A0A; --ink:#141018; --gray:#5B5566; --line:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --green:#16A34A; --green-light:#DCFCE7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-weight:300;font-size:16px}
+  .page{max-width:900px;margin:0 auto;padding:0 40px}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  strong,b{font-weight:600}
+  p{margin-bottom:14px}
+  p.body{max-width:680px}
+  .muted{color:var(--gray)}
+  code{font-family:'SF Mono','Courier New',monospace;background:var(--purple-xlight);color:var(--purple-dark);padding:1px 6px;border-radius:5px;font-size:.92em}
+
+  /* COVER */
+  .cover{background:radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,0.55), transparent 60%),linear-gradient(150deg,#0A0A0A 0%, #17111F 45%, #3B0F73 100%);color:#fff;padding:70px 0 60px;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(120deg,transparent 40%,#000 100%);pointer-events:none}
+  .cover .page{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:56px}
+  .brand svg{width:48px;height:48px;flex:0 0 auto}
+  .brand .bar{width:2px;height:40px;background:rgba(255,255,255,.85)}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm .l1{font-weight:800;font-size:18px;letter-spacing:.06em}
+  .brand .wm .l2{font-weight:300;font-size:18px;letter-spacing:.28em}
+  .eyebrow{display:inline-block;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--purple-light);border:1px solid rgba(167,139,250,.4);border-radius:100px;padding:7px 16px;margin-bottom:24px}
+  .cover h1{font-size:42px;font-weight:800;margin-bottom:16px}
+  .cover h1 .thin{font-weight:300;display:block;font-size:22px;color:rgba(255,255,255,.72);letter-spacing:-0.01em;margin-top:6px}
+  .cover .lede{font-weight:300;font-size:17px;color:rgba(255,255,255,.82);max-width:620px}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+  .cover .meta .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:11px 16px;font-size:12.5px;color:rgba(255,255,255,.9)}
+  .cover .meta .chip b{color:#fff;font-weight:600;display:block;font-size:13.5px}
+  .cover .meta .chip span{color:rgba(255,255,255,.55);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+
+  section{padding:48px 0}
+  section + section{border-top:1px solid var(--line)}
+  .kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--purple);display:inline-block}
+  h2.sec{font-size:27px;font-weight:700;margin-bottom:12px}
+  .sec-lede{font-size:15.5px;color:var(--gray);max-width:660px;margin-bottom:6px}
+
+  /* KPIS */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+  .kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:20px 18px}
+  .kpi .n{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1}
+  .kpi .n small{font-size:14px;font-weight:700;color:var(--purple)}
+  .kpi .l{font-size:11.5px;color:var(--gray);margin-top:8px;line-height:1.4}
+
+  .note{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:12px;padding:18px 20px;font-size:14px;font-weight:300;margin-top:20px}
+  .note b{color:var(--purple-dark)}
+  .note.ok{border-left-color:var(--green);background:#F2FBF5;border-color:#D6F0DE}
+  .note.ok b{color:#15803D}
+
+  /* STEP FLOW */
+  .step{display:flex;align-items:flex-start;gap:12px;margin:0 0 4px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .flow .step:last-child{border-bottom:none}
+  .step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step .t{font-weight:700;font-size:15.5px;padding-top:3px}
+  .step .t small{display:block;font-weight:300;font-size:13.5px;color:var(--gray);margin-top:3px;line-height:1.5}
+
+  /* CHANNEL PILLS */
+  .channels{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .ch{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;border-radius:100px;padding:6px 13px}
+  .ch.meta{background:#EDE4FF;color:#4C1D95}
+  .ch.ga4{background:#FFF4DE;color:#92400E}
+  .ch.ads{background:#E0F2FE;color:#075985}
+  .ch.capi{background:var(--green-light);color:#166534}
+
+  /* CONVERSION CARDS */
+  .conv{border:1px solid var(--line);border-radius:18px;padding:24px 26px;margin:16px 0;background:#fff}
+  .conv .top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+  .conv .evname{font-family:'SF Mono','Courier New',monospace;font-size:13px;font-weight:700;color:var(--purple-dark);background:var(--purple-xlight);border-radius:8px;padding:5px 12px;display:inline-block}
+  .conv .badge-loc{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);border:1px solid var(--line);border-radius:100px;padding:5px 12px;white-space:nowrap}
+  .conv h3{font-size:18px;margin:10px 0 4px}
+  .conv .trig{font-size:13.5px;color:var(--gray);margin-bottom:10px}
+  .conv .quote{border-left:3px solid var(--purple);background:var(--purple-xlight);padding:10px 15px;border-radius:8px;font-style:italic;color:#4a3b73;margin:10px 0;font-size:14px}
+  .conv .where{font-size:13.5px;color:var(--ink);margin:10px 0}
+  .conv .where b{color:var(--purple-dark)}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:18px}
+  table th{background:var(--purple);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.04em}
+  table td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top}
+  table tr:nth-child(even) td{background:var(--bg-soft)}
+  table td.mono{font-family:'SF Mono','Courier New',monospace;font-size:12px;color:var(--purple-dark)}
+
+  .pill-id{display:inline-flex;align-items:center;gap:8px;background:var(--purple-xlight);color:var(--purple-dark);border-radius:100px;padding:6px 16px;font-weight:700;font-size:13px;font-family:'SF Mono','Courier New',monospace;letter-spacing:.02em}
+
+  /* MOCKUP (browser-frame representation of where buttons sit) */
+  .mock{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:22px;background:#fff}
+  .mock .bar{background:var(--bg-soft);border-bottom:1px solid var(--line);padding:9px 14px;display:flex;align-items:center;gap:7px}
+  .mock .dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
+  .mock .url{margin-left:8px;font-size:11.5px;color:var(--gray);font-family:'SF Mono','Courier New',monospace}
+  .mock .body{padding:26px 24px;background:linear-gradient(150deg,#0A0A0A 0%,#17111F 55%,#241539 100%);position:relative;min-height:210px}
+  .mock .hnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+  .mock .hnav .logo{color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em}
+  .mock .hnav .agenda{background:var(--purple-light);color:#1a0b33;font-size:10px;font-weight:700;border-radius:100px;padding:5px 11px;position:relative}
+  .mock .htitle{color:#fff;font-size:19px;font-weight:800;max-width:280px;line-height:1.25;margin-bottom:14px}
+  .mock .htopo{display:inline-block;background:var(--purple-light);color:#1a0b33;font-size:11px;font-weight:700;border-radius:100px;padding:8px 16px;position:relative}
+  .mock .fab{position:absolute;right:20px;bottom:20px;width:38px;height:38px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  .mock .fab svg{width:19px;height:19px}
+  .callout{position:absolute;font-size:9.5px;font-weight:700;color:#fff;background:var(--purple-dark);border-radius:6px;padding:3px 8px;white-space:nowrap}
+  .callout::after{content:"";position:absolute;width:7px;height:7px;background:var(--purple-dark);transform:rotate(45deg)}
+  .callout.c1{top:-24px;left:-4px}.callout.c1::after{bottom:-3px;left:14px}
+  .callout.c2{top:44px;left:0}.callout.c2::after{top:-3px;left:14px}
+  .callout.c3{bottom:-24px;right:-6px}.callout.c3::after{top:-3px;right:12px}
+
+  footer{background:var(--black);color:#fff;padding:40px 0}
+  footer .page{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  footer .fbrand{display:flex;align-items:center;gap:14px}
+  footer .fbrand svg{width:36px;height:36px}
+  footer .fbrand .wm b{font-weight:700;letter-spacing:.05em;font-size:15px;display:block}
+  footer .fbrand .wm span{font-size:11.5px;color:rgba(255,255,255,.55)}
+  footer .fmeta{font-size:12px;color:rgba(255,255,255,.6);text-align:right;line-height:1.7}
+  footer .fmeta a{color:var(--purple-light);text-decoration:none}
+
+  @media (max-width:760px){
+    .page{padding:0 22px}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .cover h1{font-size:30px}
+    .cover h1 .thin{font-size:18px}
+    table{font-size:12px}
+    footer .page{flex-direction:column;align-items:flex-start}
+    footer .fmeta{text-align:left}
+  }
+  @page{size:A4;margin:14mm}
+  @media print{
+    .page{max-width:100%;padding:0}
+    section{padding:20px 0}
+    .cover{padding:30px}
+    .cover .page{padding:0}
+    footer .page{padding:0 6px}
+    section,.conv,.note,table,.mock{break-inside:avoid;page-break-inside:avoid}
+    h2.sec{break-after:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="bar"></div>
+      <div class="wm"><span class="l1">BM</span><span class="l2">MÍDIAS</span></div>
+    </div>
+
+    <span class="eyebrow">Documentação Técnica · Rastreamento e Conversões</span>
+    <h1>Configuração do Google Tag Manager<span class="thin">CEVEPE · Centro Veterinário de Petrolina</span></h1>
+    <p class="lede">Como o rastreamento de conversões do CEVEPE está estruturado hoje: os dois containers, a conexão via Stape para o lado servidor, e as 5 conversões de WhatsApp configuradas e disparando no site.</p>
+
+    <div class="meta">
+      <div class="chip"><span>Container Web</span><b>GTM-MCQ7N3L2</b></div>
+      <div class="chip"><span>Container Servidor</span><b>GTM-PWXJZRVT</b></div>
+      <div class="chip"><span>Conversões ativas</span><b>5 de WhatsApp</b></div>
+      <div class="chip"><span>Emitido em</span><b>Agosto de 2026</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- VISÃO GERAL -->
+<section>
+  <div class="page">
+    <div class="kicker">Visão geral</div>
+    <h2 class="sec">O que está configurado</h2>
+    <p class="body sec-lede">O rastreamento do CEVEPE roda em dois containers do GTM trabalhando juntos: um no navegador (site) e um no servidor (via Stape), garantindo que o Meta receba os eventos por dois caminhos ao mesmo tempo, sem contar em duplicidade.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n">2</div><div class="l">Containers conectados: Web e Servidor (Stape)</div></div>
+      <div class="kpi"><div class="n">5</div><div class="l">Conversões personalizadas de WhatsApp configuradas</div></div>
+      <div class="kpi"><div class="n">4<small>x</small></div><div class="l">Canais disparando por clique: GA4, Google Ads, Meta Pixel e Meta CAPI</div></div>
+      <div class="kpi"><div class="n">1<small>:1</small></div><div class="l">Event ID compartilhado entre Pixel e CAPI, para deduplicar no Meta</div></div>
+    </div>
+    <div class="note ok">
+      <p style="margin:0"><b>Testado e funcionando.</b> A deduplicação do Meta foi testada no Events Manager e está validada: cada conversão chega pelo Pixel (navegador) e pela API de Conversões (servidor) com o mesmo identificador de evento, e o Meta reconhece as duas entradas como um único evento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARQUITETURA -->
+<section>
+  <div class="page">
+    <div class="kicker">Como funciona</div>
+    <h2 class="sec">O caminho de um clique até o Meta</h2>
+    <p class="body sec-lede">Todo clique num dos 5 botões de WhatsApp dispara os quatro canais ao mesmo tempo, por dois caminhos diferentes até chegar no Meta.</p>
+    <div class="flow">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="t">Alguém clica em um botão de WhatsApp no site<small>O GTM do navegador (container Web, GTM-MCQ7N3L2) identifica o clique pelo texto do botão ou pelo elemento.</small></div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="t">Dois disparos acontecem em paralelo, direto do navegador<small><b>Meta Pixel</b> envia o evento direto pro Meta, com um Event ID único. <b>GA4</b> envia o mesmo evento pro Google, e também para o container servidor.</small></div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="t">O container servidor recebe a cópia do evento<small>Rodando na infraestrutura da Stape (GTM-PWXJZRVT), ele funciona como uma segunda via, mais resistente a bloqueadores de rastreamento e restrições de navegador (Safari, iOS, ad blockers).</small></div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div class="t">O servidor reenvia o evento pro Meta via API de Conversões (CAPI)<small>Usando o <b>mesmo Event ID</b> que o Pixel já enviou. O Meta recebe as duas entradas, reconhece que são o mesmo clique e conta como <b>uma única conversão</b>.</small></div>
+      </div>
+    </div>
+    <div class="note">
+      <p style="margin:0"><b>Por que os dois caminhos:</b> o Pixel sozinho perde eventos quando o navegador bloqueia rastreamento. A API de Conversões sozinha não tem o contexto completo do clique. Rodando os dois juntos, com deduplicação pelo Event ID, o CEVEPE tem o dado mais completo possível sem contar conversão em dobro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AS 5 CONVERSÕES -->
+<section>
+  <div class="page">
+    <div class="kicker">As conversões</div>
+    <h2 class="sec">As 5 conversões personalizadas de WhatsApp</h2>
+    <p class="body sec-lede">Cada uma corresponde a um botão diferente do site, identificado pelo próprio Google Tag Manager (pelo texto do botão ou pelo elemento clicado). Todas apontam para o mesmo WhatsApp do CEVEPE, (87) 98825-3766, cada uma com uma mensagem pré-preenchida diferente.</p>
+
+    <table>
+      <thead>
+        <tr><th>Conversão</th><th>O que aciona</th><th>Onde fica no site</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">whatsapp_topo</td><td>Clique no botão "Falar no WhatsApp"</td><td>Topo do site, na primeira dobra (hero)</td></tr>
+        <tr><td class="mono">whatsapp_botao</td><td>Clique no ícone flutuante do WhatsApp</td><td>Canto inferior direito, fixo em todas as páginas</td></tr>
+        <tr><td class="mono">whatsapp_urgencia</td><td>Clique em "Chamar no WhatsApp agora"</td><td>Seção "Seu pet precisa de atendimento urgente?"</td></tr>
+        <tr><td class="mono">whatsapp_duvidas</td><td>Clique em "Tirar minha dúvida no WhatsApp"</td><td>Fim da seção de Perguntas frequentes</td></tr>
+        <tr><td class="mono">whatsapp_agenda</td><td>Clique em "Agendar consulta"</td><td>Menu superior (fixo) e seção de Localização/Contato</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mock">
+      <div class="bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="url">cevepe.com.br</div></div>
+      <div class="body">
+        <div class="hnav">
+          <span class="logo">CEVEPE</span>
+          <span class="agenda">Agendar consulta<span class="callout c1">whatsapp_agenda</span></span>
+        </div>
+        <div class="htitle">O cuidado premium que seu pet merece</div>
+        <span class="htopo">Falar no WhatsApp<span class="callout c2">whatsapp_topo</span></span>
+        <div class="fab">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.05-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.18l-.31-.18-3.16.84.85-3.08-.2-.32A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+          <span class="callout c3">whatsapp_botao</span>
+        </div>
+      </div>
+    </div>
+    <p class="body muted" style="font-size:12.5px;margin-top:10px">Representação do topo do site (hero), com os 3 botões que ficam sempre visíveis na primeira tela. As outras 2 conversões (urgência e dúvidas) ficam em seções mais abaixo, detalhadas nos cards a seguir.</p>
+
+    <div class="conv">
+      <div class="top">
+        <span class="evname">whatsapp_topo</span>
+        <span class="badge-loc">Primeira dobra do site</span>
+      </div>
+      <h3>Botão principal do topo</h3>
+      <div class="trig">Acionador: clique em texto que contém <b>"Falar no WhatsApp"</b></div>
+      <div class="quote">Botão verde logo abaixo do título "O cuidado premium que seu pet merece", ao lado do botão "Nossos serviços".</div>
+      <div class="channels">
+        <span class="ch ga4">GA4</span><span class="ch ads">Google Ads</span><span class="ch meta">Meta Pixel</span><span class="ch capi">Meta CAPI</span>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="top">
+        <span class="evname">whatsapp_botao</span>
+        <span class="badge-loc">Fixo, todas as páginas</span>
+      </div>
+      <h3>Ícone flutuante de WhatsApp</h3>
+      <div class="trig">Acionador: clique no elemento <code>a.whatsapp-float</code> (o ícone e tudo dentro dele)</div>
+      <div class="quote">Bolinha verde fixa no canto inferior direito da tela, acompanha o scroll e aparece em qualquer ponto do site.</div>
+      <div class="channels">
+        <span class="ch ga4">GA4</span><span class="ch ads">Google Ads</span><span class="ch meta">Meta Pixel</span><span class="ch capi">Meta CAPI</span>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="top">
+        <span class="evname">whatsapp_urgencia</span>
+        <span class="badge-loc">Seção de urgência</span>
+      </div>
+      <h3>Chamada de emergência</h3>
+      <div class="trig">Acionador: clique em texto que contém <b>"Chamar no WhatsApp agora"</b></div>
+      <div class="quote">"Seu pet precisa de atendimento urgente? Nossa equipe está pronta para receber você com todo carinho e agilidade." Fica logo depois da lista de serviços, antes das avaliações do Google.</div>
+      <div class="channels">
+        <span class="ch ga4">GA4</span><span class="ch ads">Google Ads</span><span class="ch meta">Meta Pixel</span><span class="ch capi">Meta CAPI</span>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="top">
+        <span class="evname">whatsapp_duvidas</span>
+        <span class="badge-loc">Fim do FAQ</span>
+      </div>
+      <h3>Dúvida não respondida no FAQ</h3>
+      <div class="trig">Acionador: clique em texto que contém <b>"Tirar minha dúvida no WhatsApp"</b></div>
+      <div class="quote">"Não encontrou o que procurava?" É o último botão da seção de Perguntas frequentes, depois da lista de dúvidas comuns.</div>
+      <div class="channels">
+        <span class="ch ga4">GA4</span><span class="ch ads">Google Ads</span><span class="ch meta">Meta Pixel</span><span class="ch capi">Meta CAPI</span>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="top">
+        <span class="evname">whatsapp_agenda</span>
+        <span class="badge-loc">Menu fixo + Contato</span>
+      </div>
+      <h3>Agendar consulta</h3>
+      <div class="trig">Acionador: clique em texto que contém <b>"Agendar consulta"</b></div>
+      <div class="quote">Aparece em dois lugares com o mesmo texto, então os dois contam para esta conversão: o botão do menu superior (visível em todas as páginas) e o botão da seção "Onde estamos", ao lado do endereço e telefone.</div>
+      <div class="channels">
+        <span class="ch ga4">GA4</span><span class="ch ads">Google Ads</span><span class="ch meta">Meta Pixel</span><span class="ch capi">Meta CAPI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEDUPLICAÇÃO -->
+<section>
+  <div class="page">
+    <div class="kicker">Qualidade do dado</div>
+    <h2 class="sec">Deduplicação no Meta</h2>
+    <p class="body sec-lede">Confirmado nos dois containers: os 5 eventos usam exatamente o mesmo nome em todos os pontos da cadeia, do clique no site até o servidor.</p>
+    <ul style="margin:14px 0 0 20px;font-size:14.5px;color:var(--ink)">
+      <li style="margin-bottom:8px">No navegador, o <b>Meta Pixel</b> envia cada evento com um <code>Event ID</code> único gerado no momento do clique.</li>
+      <li style="margin-bottom:8px">O mesmo clique dispara o <b>GA4</b>, que carrega esse identificador junto e o envia também para o container servidor.</li>
+      <li style="margin-bottom:8px">No servidor, a tag oficial da Stape de <b>API de Conversões do Meta</b> escuta os 5 nomes de evento (<code>whatsapp_topo</code>, <code>whatsapp_botao</code>, <code>whatsapp_urgencia</code>, <code>whatsapp_duvidas</code>, <code>whatsapp_agenda</code>) e reenvia cada um preservando o mesmo <code>Event ID</code>.</li>
+      <li>O Meta recebe as duas entradas com o identificador batendo e junta as duas em uma única conversão contada.</li>
+    </ul>
+    <div class="note ok">
+      <p style="margin:0"><b>Resultado do teste:</b> no Events Manager do Meta, os eventos de Pixel e de API aparecem casados (mesma fonte de evento, sem duplicidade na contagem), confirmando que a configuração está correta ponta a ponta para as 5 conversões.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="fbrand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="wm"><b>BM MÍDIAS</b><span>Gestão de Tráfego Pago</span></div>
+    </div>
+    <div class="fmeta">
+      Documentação técnica · Cliente CEVEPE<br>
+      Emitido em agosto de 2026 · <a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
