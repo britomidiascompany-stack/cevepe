@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BM Mídias · CEVEPE · Campanha Novembro e Dezembro 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C3AED; --purple-dark:#5B21B6; --purple-deep:#3B0F73; --purple-light:#A78BFA; --purple-xlight:#EDE9FE;
+    --black:#0A0A0A; --ink:#141018; --gray:#5B5566; --line:#E7E3EE; --bg:#FFFFFF; --bg-soft:#FAF9FC;
+    --green:#16A34A; --green-light:#DCFCE7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-weight:300;font-size:16px}
+  .page{max-width:920px;margin:0 auto;padding:0 40px}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  strong,b{font-weight:600}
+  p{margin-bottom:12px}
+  p.body{max-width:700px}
+  .muted{color:var(--gray)}
+  a{color:var(--purple-dark)}
+
+  .cover{background:radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,0.55), transparent 60%),linear-gradient(150deg,#0A0A0A 0%, #17111F 45%, #3B0F73 100%);color:#fff;padding:70px 0 60px;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(120deg,transparent 40%,#000 100%);pointer-events:none}
+  .cover .page{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:56px}
+  .brand svg{width:48px;height:48px;flex:0 0 auto}
+  .brand .bar{width:2px;height:40px;background:rgba(255,255,255,.85)}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm .l1{font-weight:800;font-size:18px;letter-spacing:.06em}
+  .brand .wm .l2{font-weight:300;font-size:18px;letter-spacing:.28em}
+  .eyebrow{display:inline-block;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--purple-light);border:1px solid rgba(167,139,250,.4);border-radius:100px;padding:7px 16px;margin-bottom:24px}
+  .cover h1{font-size:42px;font-weight:800;margin-bottom:16px}
+  .cover h1 .thin{font-weight:300;display:block;font-size:22px;color:rgba(255,255,255,.72);letter-spacing:-0.01em;margin-top:6px}
+  .cover .lede{font-weight:300;font-size:17px;color:rgba(255,255,255,.82);max-width:640px}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+  .cover .meta .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:11px 16px;font-size:12.5px;color:rgba(255,255,255,.9)}
+  .cover .meta .chip b{color:#fff;font-weight:600;display:block;font-size:13.5px}
+  .cover .meta .chip span{color:rgba(255,255,255,.55);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+
+  section{padding:48px 0}
+  section + section{border-top:1px solid var(--line)}
+  .kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--purple);display:inline-block}
+  h2.sec{font-size:27px;font-weight:700;margin-bottom:12px}
+  h3.sub{font-size:17px;margin:28px 0 10px}
+  .sec-lede{font-size:15.5px;color:var(--gray);max-width:680px;margin-bottom:6px}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+  .kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:20px 18px}
+  .kpi .n{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.05}
+  .kpi .n small{font-size:13px;font-weight:700;color:var(--purple)}
+  .kpi .l{font-size:11.5px;color:var(--gray);margin-top:8px;line-height:1.4}
+
+  .note{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:12px;padding:16px 20px;font-size:14px;font-weight:300;margin-top:18px}
+  .note b{color:var(--purple-dark)}
+  .note.ok{border-left-color:var(--green);background:#F2FBF5;border-color:#D6F0DE}
+  .note.ok b{color:#15803D}
+  .note.warn{border-left-color:#B45309;background:#FFFBF3;border-color:#F3E4CC}
+  .note.warn b{color:#B45309}
+
+  .rules{list-style:none;margin-top:14px}
+  .rules li{padding:9px 0 9px 30px;position:relative;font-size:14.5px;border-bottom:1px solid var(--line)}
+  .rules li:last-child{border-bottom:none}
+  .rules li::before{content:"✓";position:absolute;left:4px;top:9px;color:var(--purple);font-weight:700}
+
+  .step{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .flow .step:last-child{border-bottom:none}
+  .step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step .t{font-weight:700;font-size:15.5px;padding-top:3px}
+  .step .t small{display:block;font-weight:300;font-size:13.5px;color:var(--gray);margin-top:3px;line-height:1.5}
+
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;margin-top:26px}
+  .opt{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:#fff;position:relative}
+  .opt.rec{border:2px solid var(--purple)}
+  .opt .badge{position:absolute;top:-11px;right:16px;background:var(--purple);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:4px 11px}
+  .opt h4{font-size:16px;margin-bottom:4px}
+  .opt .cost{font-size:24px;font-weight:800;color:var(--purple-dark);margin:6px 0 2px}
+  .opt .cost small{font-size:12px;font-weight:500;color:var(--gray)}
+  .opt ul{margin:10px 0 0 18px;font-size:13.5px}
+  .opt li{margin-bottom:5px}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+  table th{background:var(--purple);color:#fff;padding:9px 12px;text-align:left;font-weight:600;font-size:11px;letter-spacing:.04em}
+  table td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table tr:nth-child(even) td{background:var(--bg-soft)}
+  table td.num{text-align:right;white-space:nowrap;font-weight:500}
+  table td.hl{font-weight:700;color:var(--purple-dark)}
+  table tr.best td{background:var(--purple-xlight)}
+
+  .art{display:grid;grid-template-columns:240px 1fr;gap:26px;align-items:center;margin-top:20px}
+  .magnet{width:240px;aspect-ratio:5/7;border-radius:14px;background:linear-gradient(160deg,#1a1230,#3B0F73);position:relative;overflow:hidden;box-shadow:0 14px 34px rgba(59,15,115,.28);border:6px solid #fff;outline:1px solid var(--line)}
+  .magnet .scene{position:absolute;inset:0 0 26% 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;background:radial-gradient(circle at 50% 30%,rgba(167,139,250,.35),transparent 60%)}
+  .magnet .scene svg{width:78%}
+  .magnet .band{position:absolute;left:0;right:0;bottom:0;height:26%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
+  .magnet .band b{font-size:13px;color:#2c7a3b;font-weight:800;letter-spacing:.02em}
+  .magnet .band span{font-size:9.5px;color:var(--ink);line-height:1.3}
+  .magnet .tag{position:absolute;top:10px;left:10px;background:#7bc043;color:#fff;font-size:9px;font-weight:700;border-radius:100px;padding:3px 9px}
+
+  .phase{border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-top:14px;background:#fff}
+  .phase .ph{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+  .phase .ph h4{font-size:16px}
+  .phase .ph span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);background:var(--purple-xlight);border-radius:100px;padding:4px 11px}
+  .phase ul{margin:6px 0 0 18px;font-size:14px}
+  .phase li{margin-bottom:5px}
+
+  .caption{background:#0F0F1A;color:#EDE9FE;border-radius:14px;padding:18px 22px;font-size:13.5px;line-height:1.75;margin-top:14px;white-space:pre-line}
+
+  .checks{list-style:none;margin-top:12px}
+  .checks li{padding:10px 0 10px 34px;position:relative;font-size:14.5px;border-bottom:1px solid var(--line)}
+  .checks li:last-child{border-bottom:none}
+  .checks li::before{content:"";position:absolute;left:4px;top:13px;width:16px;height:16px;border:2px solid var(--purple-light);border-radius:5px}
+
+  footer{background:var(--black);color:#fff;padding:40px 0}
+  footer .page{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  footer .fbrand{display:flex;align-items:center;gap:14px}
+  footer .fbrand svg{width:36px;height:36px}
+  footer .fbrand .wm b{font-weight:700;letter-spacing:.05em;font-size:15px;display:block}
+  footer .fbrand .wm span{font-size:11.5px;color:rgba(255,255,255,.55)}
+  footer .fmeta{font-size:12px;color:rgba(255,255,255,.6);text-align:right;line-height:1.7}
+  footer .fmeta a{color:var(--purple-light);text-decoration:none}
+
+  @media (max-width:760px){
+    .page{padding:0 20px}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .opts{grid-template-columns:1fr}
+    .art{grid-template-columns:1fr;justify-items:center}
+    .cover h1{font-size:30px}
+    .cover h1 .thin{font-size:18px}
+    table{font-size:11.5px}
+    table td,table th{padding:7px 8px}
+    footer .page{flex-direction:column;align-items:flex-start}
+    footer .fmeta{text-align:left}
+  }
+  @page{size:A4;margin:14mm}
+  @media print{
+    .page{max-width:100%;padding:0}
+    section{padding:20px 0}
+    .cover{padding:30px}
+    .cover .page{padding:0}
+    .opt,.note,.phase,table,.art,.step{break-inside:avoid;page-break-inside:avoid}
+    h2.sec,h3.sub,.kicker{break-after:avoid;page-break-after:avoid}
+    .kpis,.opt{break-inside:avoid;page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="bar"></div>
+      <div class="wm"><span class="l1">BM</span><span class="l2">MÍDIAS</span></div>
+    </div>
+
+    <span class="eyebrow">Planejamento · Novembro e Dezembro 2026</span>
+    <h1>Na Garupa dos 30 Anos<span class="thin">CEVEPE · Centro Veterinário de Petrolina</span></h1>
+    <p class="lede">Reta final do sorteio das 3 scooters elétricas. A cada R$ 100 em compras, o cliente ganha o cupom do sorteio e leva na hora a foto dele com o pet pilotando a scooter, impressa em chaveiro ou ímã de geladeira.</p>
+
+    <div class="meta">
+      <div class="chip"><span>Período</span><b>01/11 a dezembro de 2026</b></div>
+      <div class="chip"><span>Base</span><b>Sorteio de 30 anos</b></div>
+      <div class="chip"><span>Novidade</span><b>Brinde impresso na hora</b></div>
+      <div class="chip"><span>Status</span><b>Ideia para aprovação</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESUMO -->
+<section>
+  <div class="page">
+    <div class="kicker">A ideia em uma frase</div>
+    <h2 class="sec">Transformar cada cupom em uma lembrança que fica na geladeira</h2>
+    <p class="body sec-lede">Em janeiro, a campanha "Você é o herói do seu pet" deu ao tutor uma imagem dele como herói, feita com IA. Foi a ação que o pessoal mais gostou. Agora a gente repete a mesma emoção, só que amarrada no sorteio dos 30 anos e em formato físico: a foto vira objeto, vai para casa e fica lembrando o cliente da promoção todos os dias até o sorteio.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n">R$ 100</div><div class="l">em compras = 1 cupom do sorteio + 1 brinde com a foto</div></div>
+      <div class="kpi"><div class="n">~R$ 0,25<small> a 0,70</small></div><div class="l">custo de material por brinde, conforme o formato</div></div>
+      <div class="kpi"><div class="n">Na hora</div><div class="l">foto gerada por IA e impressa na própria recepção</div></div>
+      <div class="kpi"><div class="n">2 meses</div><div class="l">novembro e dezembro, reta final até o sorteio</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGRAS -->
+<section>
+  <div class="page">
+    <div class="kicker">A base</div>
+    <h2 class="sec">A promoção de 30 anos, como já está rodando</h2>
+    <p class="body sec-lede">Regras levantadas do cartaz principal, do cartão de visita do sorteio e das legendas oficiais publicadas no Instagram.</p>
+    <ul class="rules">
+      <li><b>A cada R$ 100 em compras no CEVEPE, o cliente ganha 1 cupom.</b> R$ 200 dá 2 cupons, R$ 300 dá 3, e assim por diante.</li>
+      <li><b>Vale para todos os setores:</b> consultas, banho e tosa, farmácia veterinária, pet shop, rações, medicamentos e acessórios.</li>
+      <li><b>Sem limite de participação.</b> Quanto mais o cliente cuida do pet, mais chances tem.</li>
+      <li><b>Grande sorteio em dezembro de 2026:</b> 3 scooters elétricas para 3 ganhadores diferentes. Os cupons acumulados no ano todo participam.</li>
+      <li><b>Sorteios mensais</b> ao longo de 2026 com produtos e serviços.</li>
+      <li><b>Novembro é o mês da celebração oficial dos 30 anos.</b></li>
+      <li>O cupom precisa ser preenchido corretamente, e ao participar o cliente autoriza o uso de imagem na divulgação da campanha.</li>
+    </ul>
+    <div class="note warn">
+      <p style="margin:0"><b>Dois pontos para confirmar com o Felipe:</b> não encontrei no Drive o regulamento formal (o cartaz diz "consulte o regulamento") nem a data exata do sorteio em dezembro. Os dois entram em todo o conteúdo da reta final, então vale fechar antes de começar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE FUNCIONA -->
+<section>
+  <div class="page">
+    <div class="kicker">O aprendizado de janeiro</div>
+    <h2 class="sec">Por que repetir o formato do "Herói do seu pet"</h2>
+    <p class="body">Em janeiro, quem vacinava o pet ganhava vermifugação gratuita e uma imagem feita com IA mostrando o tutor como o herói do pet. A personalização foi o que puxou a conversa: o Reels da campanha (POST019) teve CTR de 3,12%, o melhor dos impulsionamentos do semestre, com visita ao perfil a R$ 0,28.</p>
+    <p class="body">A diferença agora está em três pontos:</p>
+    <ul class="rules">
+      <li><b>Amarrado na promoção maior.</b> O brinde não é uma ação isolada, ele reforça o sorteio. O cliente sai com o cupom na mão e com a scooter na foto.</li>
+      <li><b>Físico, não digital.</b> Em janeiro a imagem ia pelo WhatsApp e se perdia na galeria. O ímã fica na geladeira e o chaveiro anda no bolso, com a marca CEVEPE e a data do sorteio estampadas.</li>
+      <li><b>Gatilho de recompra.</b> Até o sorteio, toda vez que o cliente olhar o ímã ele lembra que ainda dá tempo de acumular cupom.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MECÂNICA -->
+<section>
+  <div class="page">
+    <div class="kicker">Como funciona na recepção</div>
+    <h2 class="sec">Do caixa ao brinde em poucos minutos</h2>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><div class="t">Cliente fecha compra de R$ 100 ou mais<small>Recebe os cupons do sorteio normalmente, como já acontece hoje.</small></div></div>
+      <div class="step"><div class="n">2</div><div class="t">A recepção oferece o brinde<small>"Quer levar uma foto sua com o seu pet pilotando a scooter do sorteio?" Se o pet estiver junto, tira uma foto dos dois. Se não estiver, o tutor mostra uma foto do pet no celular e tira só a dele.</small></div></div>
+      <div class="step"><div class="n">3</div><div class="t">O aplicativo gera a imagem<small>Tutor e pet em cima de uma scooter elétrica igual à do sorteio, com a moldura CEVEPE 30 anos. Leva cerca de meio minuto a um minuto.</small></div></div>
+      <div class="step"><div class="n">4</div><div class="t">Impressão e montagem<small>Imprime no papel adesivo que a clínica já usa, cola no ímã ou encaixa no chaveiro e recorta pela guia. O cliente pode aguardar enquanto finaliza o atendimento.</small></div></div>
+      <div class="step"><div class="n">5</div><div class="t">Entrega e versão digital<small>Entrega o brinde e manda a imagem também pelo WhatsApp, pedindo para postar e marcar @clinica_cevepe. Isso vira conteúdo espontâneo para a campanha.</small></div></div>
+    </div>
+    <div class="note">
+      <p style="margin:0"><b>Regra do brinde, ponto para decidir:</b> a ideia original é 1 brinde a cada R$ 100, igual ao cupom. Recomendo <b>1 brinde por compra a partir de R$ 100</b>, e não um por centena. Quem gasta R$ 500 não precisa de 5 fotos iguais, e isso evita fila na recepção. Os cupons continuam proporcionais ao valor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- A ARTE -->
+<section>
+  <div class="page">
+    <div class="kicker">A arte</div>
+    <h2 class="sec">O que vai impresso</h2>
+    <div class="art">
+      <div class="magnet">
+        <span class="tag">30 ANOS</span>
+        <div class="scene">
+          <svg viewBox="0 0 200 140" fill="none">
+            <circle cx="52" cy="112" r="20" stroke="#fff" stroke-width="6"/><circle cx="152" cy="112" r="20" stroke="#fff" stroke-width="6"/>
+            <path d="M52 112 L88 112 L118 70 L150 70 L152 112" stroke="#A78BFA" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M150 70 L142 36 L160 36" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="104" cy="34" r="13" fill="#fff"/><path d="M92 50 L116 50 L120 78 L96 82 Z" fill="#fff"/>
+            <ellipse cx="70" cy="70" rx="17" ry="12" fill="#F5D0A9"/><circle cx="62" cy="56" r="10" fill="#F5D0A9"/><path d="M55 49 L52 40 L60 47 Z M66 47 L70 39 L72 48 Z" fill="#E8B486"/>
+          </svg>
+        </div>
+        <div class="band"><b>cevepe</b><span>30 anos cuidando de quem você ama<br>Sorteio de 3 scooters · dez/2026</span></div>
+      </div>
+      <div>
+        <p class="body"><b>Cena:</b> o tutor pilotando uma scooter elétrica, com o pet junto, na garupa ou na cestinha da frente. Estilo divertido e caprichado, com cara de foto de comemoração. A scooter deve ser parecida com a do sorteio, por isso o aplicativo vai usar a foto real do prêmio como referência.</p>
+        <p class="body"><b>Moldura fixa:</b> faixa inferior com a marca CEVEPE, "30 anos cuidando de quem você ama" e "Sorteio de 3 scooters · dez/2026". É essa faixa que transforma cada geladeira em um anúncio da promoção.</p>
+        <p class="body"><b>Tamanhos:</b> ímã em 7x5 cm (cabe a cena inteira com folga) e chaveiro em 3x4 cm (a cena é recortada mais fechada, só tutor, pet e guidão).</p>
+        <p class="body muted" style="font-size:13px">O rascunho mostra só a proporção e a moldura. A imagem real é gerada pela IA a partir das fotos do cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPÇÕES DE BRINDE -->
+<section>
+  <div class="page">
+    <div class="kicker">O brinde</div>
+    <h2 class="sec">Quatro formas de produzir, da mais barata à mais caprichada</h2>
+    <p class="body sec-lede">Custo de material por unidade, calculado com os preços do Mercado Livre pesquisados em outubro de 2026. Não inclui tinta da impressora nem frete.</p>
+    <div class="opts">
+      <div class="opt rec">
+        <span class="badge">Recomendado</span>
+        <h4>Ímã 7x5 cm com manta magnética</h4>
+        <div class="cost">~R$ 0,25 <small>por ímã</small></div>
+        <ul>
+          <li>Imprime no papel adesivo e cola numa folha de manta magnética adesivada. Uma folha A4 rende 16 ímãs.</li>
+          <li>Mais barato de todos e com a maior área de imagem.</li>
+          <li>Fica na geladeira: lembrança diária do sorteio.</li>
+        </ul>
+      </div>
+      <div class="opt">
+        <h4>Chaveiro acrílico com foto 3x4</h4>
+        <div class="cost">~R$ 0,70 <small>por chaveiro</small></div>
+        <ul>
+          <li>Chaveiro pronto, só recorta a foto 3x4 e encaixa.</li>
+          <li>Acabamento mais "de brinde", anda no bolso.</li>
+          <li>Foto pequena: a cena precisa ser mais fechada.</li>
+        </ul>
+      </div>
+      <div class="opt">
+        <h4>Ímã impresso direto no papel imantado</h4>
+        <div class="cost">~R$ 0,40 <small>por ímã</small></div>
+        <ul>
+          <li>Papel fotográfico com ímã no verso, imprime direto, sem colar nada.</li>
+          <li>Mais rápido de montar. Só serve para impressora jato de tinta.</li>
+          <li>Precisa confirmar se a impressora da clínica puxa papel de 690 g.</li>
+        </ul>
+      </div>
+      <div class="opt">
+        <h4>Ímã com moldura de acrílico</h4>
+        <div class="cost">~R$ 1,10 <small>a 2,55 por ímã</small></div>
+        <ul>
+          <li>Moldurinha de acrílico com ímã, a foto vai por dentro.</li>
+          <li>Visual mais premium e protege a foto.</li>
+          <li>Bom para uma faixa especial, por exemplo compras acima de R$ 300.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note ok">
+      <p style="margin:0"><b>Sugestão de combinação:</b> o ímã com manta magnética como brinde padrão, e o chaveiro como opção para quem preferir. Dá para deixar o cliente escolher na hora, os dois saem da mesma imagem e da mesma impressão.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PESQUISA ML -->
+<section>
+  <div class="page">
+    <div class="kicker">Pesquisa de preços</div>
+    <h2 class="sec">Opções encontradas no Mercado Livre</h2>
+    <p class="body sec-lede">Preços à vista coletados em 15/10/2026, sem frete. Anúncios patrocinados foram ignorados. Em destaque, o melhor custo-benefício de cada grupo.</p>
+
+    <h3 class="sub">Manta magnética adesivada A4 (para o ímã recomendado)</h3>
+    <table>
+      <thead><tr><th>Anúncio</th><th>Qtd.</th><th>Preço</th><th>Por folha</th><th>Por ímã 7x5</th></tr></thead>
+      <tbody>
+        <tr class="best"><td><a href="https://www.mercadolivre.com.br/up/MLBU4377171694">30 Folhas Imã Manta Imantada Adesivada A4 0,3mm</a></td><td>30 fls</td><td class="num">R$ 77,00</td><td class="num">R$ 2,57</td><td class="num hl">R$ 0,16</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU1748239655">20 Folhas Imã Manta Imantada Adesivada A4 0,3mm</a></td><td>20 fls</td><td class="num">R$ 62,02</td><td class="num">R$ 3,10</td><td class="num">R$ 0,19</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU5002568280">10 Folhas Imã Manta Imantada Adesivada A4 0,3mm</a></td><td>10 fls</td><td class="num">R$ 34,90</td><td class="num">R$ 3,49</td><td class="num">R$ 0,22</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU1140630285">10 Folhas Imã Manta Imantada Adesivada A4 0,3mm</a></td><td>10 fls</td><td class="num">R$ 35,90</td><td class="num">R$ 3,59</td><td class="num">R$ 0,22</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU2962545271">Kit 5 Folhas Imã Manta Imantada Adesivada A4 0,3mm</a> (para teste)</td><td>5 fls</td><td class="num">R$ 27,90</td><td class="num">R$ 5,58</td><td class="num">R$ 0,35</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">Papel fotográfico adesivo A4 (imprime a foto que vai no ímã e no chaveiro)</h3>
+    <table>
+      <thead><tr><th>Anúncio</th><th>Qtd.</th><th>Preço</th><th>Por folha</th></tr></thead>
+      <tbody>
+        <tr class="best"><td><a href="https://www.mercadolivre.com.br/p/MLB24043318">Papel Fotográfico Adesivo A4 Glossy 115g · Masterprint</a></td><td>100 fls</td><td class="num">R$ 39,00</td><td class="num hl">R$ 0,39</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB74786854">Papel Fotográfico Adesivo A4 Glossy 115g Premium</a></td><td>100 fls</td><td class="num">R$ 43,00</td><td class="num">R$ 0,43</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB72724544">Papel Fotográfico Adesivo Glossy A4 115g</a></td><td>100 fls</td><td class="num">R$ 45,21</td><td class="num">R$ 0,45</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB21722192">Papel Fotográfico Adesivo 130g A4 Glossy · Masterprint</a></td><td>100 fls</td><td class="num">R$ 48,99</td><td class="num">R$ 0,49</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU608950755">Papel Fotográfico Adesivo A4 Glossy 115g Premium</a></td><td>200 fls</td><td class="num">R$ 73,09</td><td class="num">R$ 0,37</td></tr>
+      </tbody>
+    </table>
+    <p class="body muted" style="font-size:12.5px;margin-top:8px">Se a clínica já tem papel adesivo em estoque, esse item nem precisa ser comprado.</p>
+
+    <h3 class="sub">Chaveiro acrílico porta-foto 3x4</h3>
+    <table>
+      <thead><tr><th>Anúncio</th><th>Qtd.</th><th>Preço</th><th>Por unidade</th></tr></thead>
+      <tbody>
+        <tr class="best"><td><a href="https://www.mercadolivre.com.br/up/MLBU4226974206">Kit 100 Chaveiros Acrílico Porta Foto Retrato Personalizável</a> (5,5 x 4 cm)</td><td>100</td><td class="num">R$ 68,00</td><td class="num hl">R$ 0,68</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU4455407465">Kit 100 Chaveiros Acrílico Personalizado Porta Retrato</a></td><td>100</td><td class="num">R$ 68,00</td><td class="num">R$ 0,68</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU4328715271">Kit Chaveiros Foto Acrílico Porta Diy 100 Pcs</a></td><td>100</td><td class="num">R$ 69,00</td><td class="num">R$ 0,69</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB39450047">Chaveiro Para Foto 3x4 Acrílico Retangular 50 Unidades</a> (mais de 5 mil vendidos)</td><td>50</td><td class="num">R$ 34,99</td><td class="num">R$ 0,70</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU2963180659">Chaveiro Acrílico 3x4 P/ Fotos · Kit 150 Unidades</a></td><td>150</td><td class="num">R$ 126,31</td><td class="num">R$ 0,84</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU3264422445">Chaveiro Acrílico P/foto 3x4 Kit 50</a></td><td>50</td><td class="num">R$ 49,50</td><td class="num">R$ 0,99</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU3469273087">Chaveiro Acrílico P/ Foto 3x4 (Kit 10) Sem Personalizar</a> (para teste)</td><td>10</td><td class="num">R$ 19,00</td><td class="num">R$ 1,90</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">Papel fotográfico imantado A4 (ímã impresso direto)</h3>
+    <table>
+      <thead><tr><th>Anúncio</th><th>Qtd.</th><th>Preço</th><th>Por folha</th><th>Por ímã 7x5</th></tr></thead>
+      <tbody>
+        <tr class="best"><td><a href="https://www.mercadolivre.com.br/up/MLBU1447837305">Papel Imantado Fotográfico Com Ímã 690g A4 Glossy</a></td><td>5 fls</td><td class="num">R$ 32,22</td><td class="num">R$ 6,44</td><td class="num hl">R$ 0,40</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB29622067">Papel Com Ímã A4 690g Glossy Imantado À Prova D'água</a></td><td>5 fls</td><td class="num">R$ 32,87</td><td class="num">R$ 6,57</td><td class="num">R$ 0,41</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU3765221485">Papel Ímã A4 690g Glossy Imantado No Verso · Mundoware</a></td><td>5 fls</td><td class="num">R$ 32,88</td><td class="num">R$ 6,58</td><td class="num">R$ 0,41</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU1136965936">Papel Fotográfico A4 C/ímã · Masterprint</a></td><td>5 fls</td><td class="num">R$ 44,16</td><td class="num">R$ 8,83</td><td class="num">R$ 0,55</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">Ímã de geladeira com moldura de acrílico</h3>
+    <table>
+      <thead><tr><th>Anúncio</th><th>Qtd.</th><th>Preço</th><th>Por unidade</th></tr></thead>
+      <tbody>
+        <tr class="best"><td><a href="https://www.mercadolivre.com.br/p/MLB2095865820">Ímãs Geladeira Acrílico 24 Pcs Moldura Foto Diy</a></td><td>24</td><td class="num">R$ 26,21</td><td class="num hl">R$ 1,09</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB2113769832">Kit 24 Ímãs De Geladeira Porta Foto Acrílico Diy</a></td><td>24</td><td class="num">R$ 36,02</td><td class="num">R$ 1,50</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/up/MLBU5356349397">Ímãs Geladeira Acrílico 24 Pcs Moldura Foto Diy</a></td><td>24</td><td class="num">R$ 38,46</td><td class="num">R$ 1,60</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB2101187731">Kit 10 Porta Fotos Ímã Geladeira Acrílico 2 polegadas</a></td><td>10</td><td class="num">R$ 25,50</td><td class="num">R$ 2,55</td></tr>
+        <tr><td><a href="https://www.mercadolivre.com.br/p/MLB2092486367">Pacote Com 10 Molduras Para Fotos Com Ímã Diy De Acrílico</a></td><td>10</td><td class="num">R$ 27,38</td><td class="num">R$ 2,74</td></tr>
+      </tbody>
+    </table>
+    <p class="body muted" style="font-size:12.5px;margin-top:8px">Os kits de moldura de acrílico têm medidas variadas (muitos são 5x5 cm). Confirmar o tamanho no anúncio antes de comprar, porque a arte do aplicativo vai ser ajustada a esse formato.</p>
+  </div>
+</section>
+
+<!-- ORÇAMENTO -->
+<section>
+  <div class="page">
+    <div class="kicker">Orçamento</div>
+    <h2 class="sec">Quanto custa para os dois meses</h2>
+    <p class="body sec-lede">Material por cenário de volume de brindes entregues. A geração da imagem por IA custa centavos por foto; o valor exato depende do modelo escolhido na fase do aplicativo.</p>
+    <table>
+      <thead><tr><th>Cenário</th><th>Só ímã (manta)</th><th>Só chaveiro</th><th>Metade de cada</th></tr></thead>
+      <tbody>
+        <tr><td>300 brindes</td><td class="num">~R$ 80</td><td class="num">~R$ 210</td><td class="num">~R$ 145</td></tr>
+        <tr class="best"><td>500 brindes</td><td class="num hl">~R$ 120</td><td class="num">~R$ 345</td><td class="num">~R$ 235</td></tr>
+        <tr><td>1.000 brindes</td><td class="num">~R$ 240</td><td class="num">~R$ 690</td><td class="num">~R$ 465</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <p style="margin:0"><b>Leitura:</b> mesmo no cenário de 1.000 brindes o material não passa de R$ 700. Cada brinde só é entregue numa compra de pelo menos R$ 100, então o custo por cliente fica abaixo de 1% do ticket. Sugestão de compra inicial: 1 pacote de 30 folhas de manta (rende 480 ímãs), 1 pacote de 100 folhas de papel adesivo e 1 kit de 100 chaveiros, cerca de R$ 185, e repor conforme a saída.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEÚDO -->
+<section>
+  <div class="page">
+    <div class="kicker">Conteúdo</div>
+    <h2 class="sec">Plano de conteúdo de novembro e dezembro</h2>
+    <p class="body sec-lede">Mesmo estilo do "Herói do seu pet": o conteúdo segue com os temas de saúde e cuidado do mês, e todo post termina chamando para o sorteio de 30 anos e para o brinde.</p>
+
+    <div class="phase">
+      <div class="ph"><h4>Fase 1 · Lançamento do brinde</h4><span>1ª semana de novembro</span></div>
+      <ul>
+        <li>Reels do Felipe anunciando a novidade: "agora, além do cupom, você leva a sua foto na scooter".</li>
+        <li>Reels de bastidores mostrando a foto sendo gerada e impressa na recepção, do celular até o ímã na mão do cliente.</li>
+        <li>Carrossel "Como funciona": compra de R$ 100, cupom, foto na scooter, sorteio em dezembro.</li>
+        <li>Stories fixados no destaque "30 anos".</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph"><h4>Fase 2 · Celebração dos 30 anos</h4><span>Novembro</span></div>
+      <ul>
+        <li>Novembro é o mês oficial dos 30 anos: conteúdo de história da clínica (o raio-X na bagagem, os anos das avestruzes) fechando sempre com o sorteio.</li>
+        <li>"Galeria dos pilotos": stories diários com as fotos dos clientes que autorizarem, e um mural físico na recepção com os ímãs de exemplo.</li>
+        <li>Reels de antes e depois: a foto real do tutor com o pet e a versão na scooter.</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph"><h4>Fase 3 · Reta final</h4><span>Dezembro até o sorteio</span></div>
+      <ul>
+        <li>Contagem regressiva para o sorteio, com urgência: "últimos dias para acumular cupons e levar sua foto".</li>
+        <li>Combinar com as compras de fim de ano: ração, antipulgas para as férias, banho e tosa das festas.</li>
+        <li>Live ou vídeo do sorteio e post dos 3 ganhadores com a foto deles na scooter de verdade.</li>
+      </ul>
+    </div>
+
+    <h3 class="sub">Fechamento padrão de todas as legendas</h3>
+    <div class="caption">💚 CEVEPE, 30 anos cuidando de quem você ama
+🛵 A cada R$100 em compras você ganha 1 cupom e concorre a 3 scooters elétricas no sorteio de dezembro
+📸 E em novembro e dezembro você ainda leva na hora uma foto sua com o seu pet pilotando a scooter, impressa em ímã de geladeira ou chaveiro
+✔ Vale para todos os setores, sem limite de participação
+📲 Fale com a gente no WhatsApp: (87) 98825-3766</div>
+  </div>
+</section>
+
+<!-- TRÁFEGO -->
+<section>
+  <div class="page">
+    <div class="kicker">Tráfego pago</div>
+    <h2 class="sec">Como os anúncios entram</h2>
+    <ul class="rules">
+      <li><b>Campanha de mensagens:</b> entra um criativo novo com o brinde (o ímã na mão do cliente). Ela continua com os criativos campeões, e o do brinde disputa espaço com eles.</li>
+      <li><b>Impulsionamento:</b> o Reels de lançamento e o de bastidores vão para público novo em Petrolina e Juazeiro.</li>
+      <li><b>Remarketing:</b> quem engajou nos conteúdos de 30 anos recebe a reta final do sorteio em dezembro, com a urgência da contagem regressiva.</li>
+      <li><b>Google:</b> segue capturando a busca de quem já procura veterinário. As palavras de marca ("cevepe") devem subir com a campanha.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- APLICATIVO -->
+<section>
+  <div class="page">
+    <div class="kicker">Próxima fase</div>
+    <h2 class="sec">O aplicativo que gera a imagem</h2>
+    <p class="body sec-lede">Depois da aprovação deste plano, a Brito Mídias desenvolve o aplicativo. Ele roda no navegador do computador ou tablet da recepção, sem instalar nada.</p>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><div class="t">Captura<small>Botão para tirar a foto pela câmera ou enviar do celular. Aceita uma foto com tutor e pet juntos, ou duas fotos separadas.</small></div></div>
+      <div class="step"><div class="n">2</div><div class="t">Geração<small>A IA monta a cena do tutor e do pet na scooter, usando a foto real da scooter do sorteio como referência, no estilo definido para a campanha.</small></div></div>
+      <div class="step"><div class="n">3</div><div class="t">Moldura e formato<small>Aplica a faixa CEVEPE 30 anos e ajusta para ímã 7x5 cm ou chaveiro 3x4 cm.</small></div></div>
+      <div class="step"><div class="n">4</div><div class="t">Impressão sem desperdício<small>O aplicativo controla as posições da folha A4. Cada cliente usa um espaço da folha, e a mesma folha volta para a impressora no próximo atendimento até acabar. Imprime com marcas de corte.</small></div></div>
+      <div class="step"><div class="n">5</div><div class="t">Envio digital<small>Botão para mandar a imagem pelo WhatsApp do cliente, já com a legenda convidando a postar e marcar o CEVEPE.</small></div></div>
+    </div>
+    <div class="note warn">
+      <p style="margin:0"><b>Privacidade:</b> o aplicativo não guarda as fotos dos clientes depois da impressão. O consentimento de uso de imagem já está nas regras da promoção, mas a recepção deve perguntar antes de tirar a foto, e só vão para o Instagram as fotos de quem autorizar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PENDÊNCIAS -->
+<section>
+  <div class="page">
+    <div class="kicker">Para começar</div>
+    <h2 class="sec">O que precisamos do CEVEPE</h2>
+    <ul class="checks">
+      <li><b>Data exata do sorteio</b> e o regulamento formal da promoção.</li>
+      <li><b>Regra do brinde:</b> 1 por compra a partir de R$ 100 (recomendado) ou 1 a cada R$ 100.</li>
+      <li><b>Formato:</b> ímã, chaveiro ou o cliente escolhe.</li>
+      <li><b>Foto da scooter do sorteio</b> (modelo e cor), para a IA desenhar a scooter certa.</li>
+      <li><b>Modelo da impressora</b> da recepção, para confirmar papel adesivo e papel imantado.</li>
+      <li><b>Quem opera na recepção</b> e qual computador ou tablet vai rodar o aplicativo.</li>
+      <li><b>Nome da ação.</b> Sugestões: "Na Garupa dos 30 Anos" (recomendado), "Pilotos do CEVEPE" ou "Você e seu pet na scooter dos 30".</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="fbrand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/><polygon points="50,33 65,59 35,59"/>
+        <line x1="50" y1="4" x2="50" y2="33"/><line x1="90" y1="73" x2="65" y2="59"/><line x1="10" y1="73" x2="35" y2="59"/>
+        <line x1="90" y1="27" x2="50" y2="33"/><line x1="90" y1="27" x2="65" y2="59"/><line x1="50" y1="96" x2="65" y2="59"/>
+        <line x1="50" y1="96" x2="35" y2="59"/><line x1="10" y1="27" x2="35" y2="59"/><line x1="10" y1="27" x2="50" y2="33"/>
+      </svg>
+      <div class="wm"><b>BM MÍDIAS</b><span>Gestão de Tráfego Pago</span></div>
+    </div>
+    <div class="fmeta">
+      Planejamento de campanha · Cliente CEVEPE<br>
+      Outubro de 2026 · <a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
