@@ -1,0 +1,306 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Direcionamento Google Ads · CEVEPE · Brito Mídias</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{
+  --roxo:#7C3AED;--roxo-dark:#5B21B6;--roxo-deep:#3B0F73;--roxo-light:#A78BFA;--roxo-xlight:#EDE9FE;
+  --preto:#0A0A0A;--ink:#141018;--cinza:#5B5566;--linha:#E7E3EE;--bg:#FFFFFF;--bg-soft:#FAF9FC;
+  --hero:radial-gradient(1100px 500px at 78% -10%, rgba(124,58,237,.55), transparent 60%),linear-gradient(150deg,#0A0A0A 0%,#17111F 45%,#3B0F73 100%);
+  --grad-marca:linear-gradient(90deg,#7C3AED,#5B21B6);--maxw:1020px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Poppins',sans-serif;font-weight:300;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3,h4{margin:0;line-height:1.2;font-weight:700}h1{font-weight:800;letter-spacing:-.02em}
+a{color:var(--roxo-dark);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.section-label{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo);margin-bottom:14px}
+.section-label::before{content:"";width:34px;height:2px;background:var(--roxo);border-radius:2px}
+/* brand lockup */
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:44px;height:44px;flex:none}
+.brand .word{display:flex;align-items:center;gap:12px;font-weight:300}
+.brand .word b{font-weight:800;font-size:20px}
+.brand .bar{width:2px;height:28px;background:rgba(255,255,255,.55)}
+.brand .word span{font-size:20px;letter-spacing:.22em}
+/* hero */
+.hero{background:var(--hero);color:#fff;position:relative;overflow:hidden;padding:56px 0 64px}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(80% 60% at 70% 0%,#000,transparent 75%);mask-image:radial-gradient(80% 60% at 70% 0%,#000,transparent 75%)}
+.hero .wrap{position:relative;z-index:1}
+.hero .brand{margin-bottom:34px}
+.crumb{font-size:13px;color:var(--roxo-light);margin-bottom:16px;letter-spacing:.02em}
+.crumb a{color:var(--roxo-light)}
+.badge{display:inline-block;border:1px solid rgba(167,139,250,.5);color:var(--roxo-light);border-radius:100px;padding:8px 16px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(34px,6vw,50px);margin-bottom:10px}
+.hero .sub{font-size:clamp(17px,3vw,22px);color:var(--roxo-light);font-weight:400;max-width:680px}
+.hero .cliente{margin-top:20px;font-size:13px;color:rgba(255,255,255,.6)}
+.hero .cliente b{color:#fff;font-weight:600}
+/* hub cards */
+.months{margin-top:12px}
+.month-block{margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.doc-card{display:block;border:1px solid var(--linha);border-radius:18px;padding:26px;background:#fff;transition:.15s;position:relative}
+.doc-card:hover{border-color:var(--roxo-light);box-shadow:0 8px 30px rgba(124,58,237,.08);transform:translateY(-2px)}
+.doc-card .ico{width:46px;height:46px;border-radius:12px;background:var(--roxo-xlight);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.doc-card h3{font-size:19px;margin-bottom:6px;color:var(--ink)}
+.doc-card p{margin:0;color:var(--cinza);font-size:14.5px}
+.doc-card .go{margin-top:16px;font-size:13px;font-weight:600;color:var(--roxo);letter-spacing:.02em}
+.pill{display:inline-block;border:1px solid var(--roxo-light);color:var(--roxo-dark);border-radius:100px;padding:5px 13px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0 5px 6px 0}
+.pill.solid{background:var(--grad-marca);color:#fff;border-color:transparent}
+/* content */
+main.wrap{padding-top:48px;padding-bottom:64px}
+.toc{background:var(--bg-soft);border:1px solid var(--linha);border-radius:16px;padding:22px 26px;margin-bottom:40px}
+.toc h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin-bottom:12px}
+.toc ul{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
+.toc li{padding:4px 0;font-size:14px;break-inside:avoid}
+.divider{font-family:'Poppins';font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--roxo-deep);border-radius:10px;padding:10px 18px;margin:46px 0 10px}
+.post{border:1px solid var(--linha);border-radius:20px;padding:30px 32px;margin:22px 0;background:#fff;scroll-margin-top:20px}
+.post > h2{font-size:22px;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+.subh{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.subh::before{content:"";width:22px;height:2px;background:var(--roxo);border-radius:2px}
+.nota{background:var(--roxo-xlight);border-radius:12px;padding:12px 16px;font-size:14px;color:#4a3b73;margin:4px 0 8px}
+.info{font-size:14.5px;margin:3px 0}
+.info b{color:var(--ink);font-weight:600}
+.slide{border-left:3px solid var(--roxo-light);padding:2px 0 2px 16px;margin:14px 0}
+.slide .sl-t{font-weight:700;color:var(--roxo-dark);font-size:14px;margin-bottom:4px}
+.slide p{margin:2px 0;font-size:14.5px}
+.leg{background:var(--bg-soft);border:1px solid var(--linha);border-radius:14px;padding:18px 20px;font-size:14.5px}
+.leg p{margin:.35em 0}
+.tags{font-size:13.5px;color:var(--cinza)}
+.hash{font-size:13.5px;color:var(--roxo-dark);font-weight:500}
+p{margin:.4em 0}
+/* video page */
+.idea{border:1px solid var(--linha);border-radius:20px;padding:26px 30px;margin:20px 0;background:#fff}
+.idea .tag-fmt{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--roxo);margin-bottom:6px}
+.idea h2{font-size:20px;margin-bottom:8px}
+.idea .ref{font-size:13px;color:var(--cinza);margin-bottom:12px}
+.idea .ref a{color:var(--roxo-dark)}
+.roteiro{background:var(--bg-soft);border-radius:12px;padding:14px 18px;margin-top:10px}
+table.tbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+table.tbl th{background:var(--roxo-xlight);color:var(--roxo-deep);text-align:left;padding:9px 12px;font-weight:600;font-size:12px;letter-spacing:.04em}
+table.tbl td{border-bottom:1px solid var(--linha);padding:9px 12px;vertical-align:top}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:40px 0;text-align:center;margin-top:20px}
+footer .brand{justify-content:center;margin-bottom:16px}
+footer a{color:var(--roxo-light)}
+footer .small{font-size:13px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}.toc ul{columns:1}}
+@media print{.hero,footer,.divider{-webkit-print-color-adjust:exact;print-color-adjust:exact}.post{break-inside:avoid}}
+
+.idea .quote{border-left:3px solid var(--roxo);background:var(--roxo-xlight);padding:10px 16px;border-radius:8px;font-style:italic;color:#4a3b73;margin:10px 0}
+.idea p.bul{margin:4px 0 4px 10px}
+.idea .ref{font-size:13px;color:var(--cinza);margin-bottom:10px}
+.idea .ref a{color:var(--roxo-dark)}
+.obj{color:var(--cinza);font-size:13px;font-style:italic;margin:3px 0 8px}
+.arte{background:#fff;border:1px dashed var(--roxo-light);border-radius:10px;padding:10px 14px;margin:6px 0;font-size:14.5px}
+.arte b{color:var(--roxo-dark)}
+.cena{border-left:3px solid var(--roxo-light);padding:2px 0 2px 16px;margin:12px 0}
+.cena .m{font-weight:700;color:var(--roxo-dark);font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.cena p{margin:2px 0;font-size:14.5px}
+/* ===== guia lateral fixa (scroll-spy) ===== */
+.doclayout{display:flex;gap:34px;align-items:flex-start;max-width:1200px;margin:0 auto;padding:0 28px}
+.doclayout main.wrap{padding-left:0;padding-right:0;margin:0;max-width:none;flex:1;min-width:0}
+.sidenav{position:sticky;top:18px;flex:0 0 238px;width:238px;align-self:flex-start;max-height:calc(100vh - 36px);overflow-y:auto;padding:22px 0;font-size:13.5px;scrollbar-width:thin}
+.sidenav .sn-h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);font-weight:700;margin:0 0 12px;padding-left:14px}
+.sidenav .sn-grp{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza);font-weight:700;margin:18px 0 6px;padding-left:14px}
+.sidenav a{display:block;color:var(--cinza);padding:6px 12px 6px 14px;border-left:2px solid transparent;line-height:1.35;transition:.12s;border-radius:0 8px 8px 0}
+.sidenav a:hover{color:var(--roxo-dark);background:var(--bg-soft)}
+.sidenav a.active{color:var(--roxo-dark);font-weight:600;border-left-color:var(--roxo);background:var(--roxo-xlight)}
+.post{scroll-margin-top:16px}
+@media(max-width:980px){.sidenav{display:none}.doclayout{display:block;padding:0}.doclayout main.wrap{padding:0 28px}}
+
+.tipo{display:inline-block;border-radius:100px;padding:4px 12px;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:4px 6px 8px 0}
+.tipo.full{background:var(--grad-marca);color:#fff}
+.tipo.base{background:var(--roxo-xlight);color:var(--roxo-deep)}
+.tipo.livre{border:1px solid var(--roxo-light);color:var(--roxo-dark)}
+.post .ref{font-size:13px;color:var(--cinza);margin:4px 0 8px}
+.post .ref a{color:var(--roxo-dark);word-break:break-all}
+.pontos{background:var(--bg-soft);border:1px solid var(--linha);border-radius:14px;padding:14px 20px;margin:8px 0}
+.pontos li{margin:5px 0;font-size:14.5px}
+.pontos ul{margin:0;padding-left:18px}
+.alerta{border-left:3px solid #DC2626;background:#FEF2F2;border-radius:8px;padding:10px 14px;font-size:14px;color:#7F1D1D;margin:10px 0}
+.alerta b{color:#7F1D1D}
+.confirmar{border-left:3px solid #D97706;background:#FFFBEB;border-radius:8px;padding:10px 14px;font-size:14px;color:#78350F;margin:10px 0}
+.confirmar b{color:#78350F}
+.cta-box{background:var(--hero);color:#fff;border-radius:18px;padding:22px 26px;margin:18px 0 8px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cta-box .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo-light);font-weight:700;margin-bottom:6px}
+.cta-box p{font-size:15px;margin:.35em 0}
+.blocos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:14px 0}
+.bloco{border:1px solid var(--linha);border-radius:16px;padding:18px 20px;background:#fff}
+.bloco h4{font-size:15px;color:var(--roxo-dark);margin-bottom:6px}
+.bloco p{font-size:13.5px;color:var(--cinza);margin:3px 0}
+.bloco .n{font-weight:700;color:var(--ink)}
+table.tbl td .tipo{margin:0;white-space:nowrap}
+@media(max-width:820px){.blocos{grid-template-columns:1fr}table.tbl{font-size:12.5px}}
+@media print{.sidenav{display:none}.doclayout{display:block}.cta-box,.tipo.full{-webkit-print-color-adjust:exact;print-color-adjust:exact}.post{break-inside:auto}.cena,.pontos,.alerta,.confirmar,.leg{break-inside:avoid}}
+
+/* ===== direcionamento google ===== */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 6px}
+.kpi{border:1px solid var(--linha);border-radius:16px;padding:18px 18px 16px;background:var(--bg-soft)}
+.kpi .v{font-size:25px;font-weight:800;letter-spacing:-.02em;color:var(--roxo-deep);line-height:1.15}
+.kpi .k{font-size:12.5px;color:var(--cinza);margin-top:6px;line-height:1.4}
+.kpis.k3{grid-template-columns:repeat(3,1fr)}
+.lede{font-size:15.5px;color:var(--cinza);margin:2px 0 10px}
+.post p{font-size:15px}
+.post ul,.post ol{margin:8px 0 8px 0;padding-left:22px;font-size:15px}
+.post li{margin:6px 0}
+.post b{font-weight:600}
+table.tbl td.n,table.tbl th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.tbl tr.tot td{font-weight:600;background:var(--bg-soft)}
+.tblwrap{overflow-x:auto}
+.chip{display:inline-block;border-radius:100px;padding:4px 12px;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.chip.ok{background:var(--grad-marca);color:#fff}
+.chip.open{border:1px solid var(--roxo-light);color:var(--roxo-dark)}
+.chip.cli{background:var(--roxo-xlight);color:var(--roxo-deep)}
+.passo{display:flex;gap:14px;align-items:flex-start;margin:14px 0}
+.passo .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--grad-marca);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+.passo .tx{flex:1;min-width:0}
+.passo .tx h4{font-size:15.5px;margin-bottom:3px}
+.passo .tx p{margin:2px 0;font-size:14.5px}
+.regra{border:1px solid var(--roxo-light);border-radius:14px;padding:16px 20px;margin:14px 0;background:#fff}
+.regra h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin-bottom:8px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+.duo .box{border:1px solid var(--linha);border-radius:14px;padding:16px 18px;background:var(--bg-soft)}
+.duo .box h4{font-size:14px;margin-bottom:6px;color:var(--roxo-deep)}
+.duo .box p,.duo .box li{font-size:14px}
+.duo .box ul{padding-left:18px;margin:4px 0}
+.pdfbtn{display:inline-block;margin-top:22px;border:1px solid rgba(167,139,250,.6);color:#fff;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:600;letter-spacing:.02em}
+.pdfbtn:hover{background:rgba(124,58,237,.35)}
+@media(max-width:720px){.kpis,.kpis.k3{grid-template-columns:1fr 1fr}.duo{grid-template-columns:1fr}.post{padding:22px 18px}}
+@media print{.pdfbtn{display:none}.kpi,.chip,.passo .num{-webkit-print-color-adjust:exact;print-color-adjust:exact}.post{break-inside:auto}.passo,.regra,.kpi,table.tbl tr{break-inside:avoid}}
+</style></head><body><header class="hero"><div class="wrap"><div class="brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon><polygon points="50,33 65,59 35,59"></polygon><line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line><line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line><line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line><line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line><line x1="10" y1="27" x2="50" y2="33"></line></svg><div class="word"><b>BM</b><span class="bar"></span><span>MÍDIAS</span></div></div><div class="crumb"><a href="../central/">Central CEVEPE</a> › Google Ads › Direcionamento</div><span class="badge">Passagem da conta · Novembro de 2026</span><h1>Direcionamento Google Ads</h1><div class="sub">Como a conta está sendo entregue, o plano de verba até 31 de dezembro e a rotina que mantém o resultado.</div><div class="cliente">Cliente <b>CEVEPE · Centro Veterinário de Petrolina</b> &nbsp;·&nbsp; Canal <b>Google Ads, Rede de Pesquisa</b> &nbsp;·&nbsp; Dados até <b>09/11/2026</b></div><a class="pdfbtn" href="BM-Midias-CEVEPE-Direcionamento-Google-Ads.pdf">Baixar em PDF</a></div></header><div class="doclayout"><nav class="sidenav"><div class="sn-h">Neste documento</div><div class="sn-grp">📦 Entrega da conta</div><a href="#resumo">Como a conta está sendo entregue</a><a href="#historico">Resultado histórico</a><a href="#custo">Por que o custo por conversão mudou</a><a href="#reformulacao">O que foi reformulado</a><a href="#hoje">A conta hoje</a><div class="sn-grp">💰 Verba e lance</div><a href="#verba">Plano de verba até 31/12</a><a href="#teste">Regra do teste de R$ 45</a><a href="#lance">Lance: quando subir</a><div class="sn-grp">🔁 Rotina</div><a href="#semanal">Toda semana</a><a href="#negativas">Palavras negativas</a><a href="#recomendacoes">Recomendações do Google</a><a href="#mensal">Todo mês</a><a href="#gmn">Google Meu Negócio</a><div class="sn-grp">📌 Próximos passos</div><a href="#pendencias">Pendências em aberto</a><a href="#2027">Para 2027: 31 anos</a><a href="#dados">Dados da conta</a></nav><main class="wrap"><div class="post" id="resumo"><h2>📦 Como a conta está sendo entregue</h2>
+<p class="lede">Este documento registra o estado da conta de Google Ads do CEVEPE na passagem, o plano de verba combinado até o fim de dezembro e a rotina que mantém o resultado. Serve para o Felipe e para quem assumir a gestão.</p>
+<div class="kpis "><div class="kpi"><div class="v">R$ 16.715</div><div class="k">Investidos em Google Ads de janeiro de 2025 a 9 de novembro de 2026</div></div><div class="kpi"><div class="v">9.195</div><div class="k">Cliques levados ao site no mesmo período</div></div><div class="kpi"><div class="v">R$ 1,07</div><div class="k">Custo por clique nas últimas duas semanas. Em 2025 a média era R$ 1,76</div></div><div class="kpi"><div class="v">R$ 45</div><div class="k">Orçamento diário atual, com a campanha sem limitação de verba</div></div></div>
+<p>A conta chega à passagem <b>reformulada por completo</b>. Nos últimos meses a campanha de pesquisa foi refeita do zero, o rastreamento de conversões foi reconstruído junto com a troca do site, e os anúncios, as palavras negativas e os recursos foram atualizados para a campanha dos 30 anos.</p>
+<ul>
+<li><b>Uma campanha ativa</b>, de Rede de Pesquisa, mostrando o CEVEPE para quem procura veterinário, clínica 24 horas, pet shop e farmácia veterinária em um raio de 20 km da clínica.</li>
+<li><b>Clique mais barato que em qualquer momento dos últimos dois anos:</b> a campanha nova fechou em R$ 1,36 por clique, contra R$ 2,13 da campanha anterior em 2026.</li>
+<li><b>Conversão medida de forma mais fiel:</b> hoje o número representa contatos de WhatsApp e ligações, sem a contagem em dobro que existia antes.</li>
+<li><b>Verba destravada:</b> o orçamento passou de R$ 33 para R$ 45 por dia e o Google deixou de classificar a campanha como limitada pelo orçamento.</li>
+</ul>
+<div class="nota"><b>Leitura rápida:</b> se você tiver pouco tempo, leia <a href="#verba">Plano de verba</a>, <a href="#semanal">Toda semana</a> e <a href="#pendencias">Pendências em aberto</a>. São as três partes que pedem ação.</div>
+</div><div class="post" id="historico"><h2>📈 Resultado histórico</h2>
+<p class="lede">Dados extraídos direto da conta de Google Ads. 2026 está fechado até 9 de novembro.</p>
+<div class="subh">Ano a ano</div>
+<div class="tblwrap"><table class="tbl"><tr><th>Período</th><th class="n">Investido</th><th class="n">Cliques</th><th class="n">Custo por clique</th><th class="n">Impressões</th></tr><tr><td>2025 (ano inteiro)</td><td class="n">R$ 8.629,42</td><td class="n">4.895</td><td class="n">R$ 1,76</td><td class="n">82.045</td></tr><tr><td>2026 (até 09/11)</td><td class="n">R$ 8.086,30</td><td class="n">4.300</td><td class="n">R$ 1,88</td><td class="n">100.353</td></tr><tr class="tot"><td>Total</td><td class="n">R$ 16.715,72</td><td class="n">9.195</td><td class="n">R$ 1,82</td><td class="n">182.398</td></tr></table></div>
+<div class="subh">Investimento por trimestre</div>
+<div class="tblwrap"><table class="tbl"><tr><th>Trimestre</th><th class="n">Campanha anterior</th><th class="n">Campanha nova (#2)</th><th class="n">Total</th></tr><tr><td>1º tri 2025</td><td class="n">R$ 1.825,48</td><td class="n"></td><td class="n">R$ 1.825,48</td></tr><tr><td>2º tri 2025</td><td class="n">R$ 2.040,57</td><td class="n"></td><td class="n">R$ 2.040,57</td></tr><tr><td>3º tri 2025</td><td class="n">R$ 2.391,71</td><td class="n"></td><td class="n">R$ 2.391,71</td></tr><tr><td>4º tri 2025</td><td class="n">R$ 2.371,65</td><td class="n"></td><td class="n">R$ 2.371,65</td></tr><tr><td>1º tri 2026</td><td class="n">R$ 2.273,65</td><td class="n"></td><td class="n">R$ 2.273,65</td></tr><tr><td>2º tri 2026</td><td class="n">R$ 2.644,06</td><td class="n"></td><td class="n">R$ 2.644,06</td></tr><tr><td>3º tri 2026</td><td class="n">R$ 1.279,06</td><td class="n">R$ 1.130,01</td><td class="n">R$ 2.409,07</td></tr><tr><td>4º tri 2026 (até 09/11)</td><td class="n"></td><td class="n">R$ 759,52</td><td class="n">R$ 759,52</td></tr></table></div>
+<div class="subh">A campanha nova, de 19/08 a 09/11/2026</div>
+<div class="kpis "><div class="kpi"><div class="v">R$ 1.889,53</div><div class="k">Investidos</div></div><div class="kpi"><div class="v">1.393</div><div class="k">Cliques</div></div><div class="kpi"><div class="v">R$ 1,36</div><div class="k">Custo por clique</div></div><div class="kpi"><div class="v">4,75%</div><div class="k">Taxa de cliques (CTR)</div></div></div>
+<div class="subh">Últimas duas semanas, de 27/10 a 09/11/2026</div>
+<div class="tblwrap"><table class="tbl"><tr><th>Grupo de anúncios</th><th class="n">Cliques</th><th class="n">Investido</th><th class="n">Conversões</th><th class="n">Custo por conversão</th></tr><tr><td>[CEVEPE] (marca)</td><td class="n">159</td><td class="n">R$ 157,41</td><td class="n">33,5</td><td class="n">R$ 4,70</td></tr><tr><td>[COMPARAÇÕES/RELACIONADOS]</td><td class="n">114</td><td class="n">R$ 124,38</td><td class="n">30,0</td><td class="n">R$ 4,15</td></tr><tr><td>[PREPOSIÇÕES]</td><td class="n">89</td><td class="n">R$ 106,61</td><td class="n">23,5</td><td class="n">R$ 4,54</td></tr><tr class="tot"><td>Total da campanha</td><td class="n">362</td><td class="n">R$ 388,40</td><td class="n">87,0</td><td class="n">R$ 4,46</td></tr></table></div>
+<p>No período a campanha teve CTR de 5,44% e custo por clique de R$ 1,07. Cerca de 97% do investimento acontece em celular, então a velocidade do site e a clareza do botão de WhatsApp no celular continuam sendo o ponto mais sensível.</p>
+</div><div class="post" id="custo"><h2>🔍 Por que o custo por conversão mudou</h2>
+<p class="lede">Quem comparar os relatórios vai ver o custo por conversão sair de cerca de R$ 3,20 no primeiro semestre para cerca de R$ 4,50 hoje. O clique não ficou mais caro. O que mudou foi a forma de contar.</p>
+<div class="tblwrap"><table class="tbl"><tr><th>Momento</th><th class="n">Custo por clique</th><th class="n">Custo por conversão</th><th>Como a conversão era contada</th></tr><tr><td>Janeiro a julho de 2026</td><td class="n">R$ 2,22</td><td class="n">R$ 3,21</td><td>Contagem antiga, que somava o mesmo contato mais de uma vez</td></tr><tr><td>Campanha nova, de 19/08 a 09/11</td><td class="n">R$ 1,36</td><td class="n">R$ 5,21</td><td>Período de troca do site e de reaprendizado da campanha</td></tr><tr><td>Últimas duas semanas</td><td class="n">R$ 1,07</td><td class="n">R$ 4,46</td><td>Rastreamento novo, já estabilizado</td></tr></table></div>
+<div class="passo"><div class="num">1</div><div class="tx"><h4>O site foi trocado</h4><p>Com o site novo, o rastreamento precisou ser refeito do zero no Google Tag Manager, com conversões separadas por botão: WhatsApp de atendimento e produtos, WhatsApp de urgência e ligações.</p></div></div><div class="passo"><div class="num">2</div><div class="tx"><h4>A contagem em dobro acabou</h4><p>No modelo antigo o mesmo contato era somado mais de uma vez, e em alguns dias havia mais conversões do que cliques. Em setembro de 2026 as conversões foram reorganizadas e essa soma em dobro saiu da conta. O número ficou menor e mais próximo de contatos reais, e por isso o custo por conversão parece mais alto.</p></div></div><div class="passo"><div class="num">3</div><div class="tx"><h4>A campanha reaprendeu e estabilizou</h4><p>Toda troca de site e de conversão faz o lance automático do Google reaprender. Nas primeiras semanas o custo oscilou, e a média do período ficou em R$ 5,21. Nas últimas duas semanas já está em R$ 4,46, abaixo da meta configurada de R$ 4,63.</p></div></div>
+<div class="nota"><b>Como comparar daqui para frente:</b> use o custo por clique para comparar com 2025 e com o primeiro semestre de 2026, porque ele não depende da forma de contar conversão. Use o custo por conversão apenas para comparar períodos de setembro de 2026 em diante.</div>
+</div><div class="post" id="reformulacao"><h2>🛠️ O que foi reformulado</h2>
+<p class="lede">O trabalho dos últimos meses, da criação da campanha nova em agosto aos ajustes finais de novembro.</p>
+<div class="tblwrap"><table class="tbl"><tr><th>Frente</th><th>O que foi feito</th></tr><tr><td><b>Campanha</b></td><td>Nova campanha de pesquisa, com grupos separados por intenção: marca, comparações e termos relacionados, e buscas com preposição (veterinário em Petrolina, clínica para gatos e semelhantes).</td></tr><tr><td><b>Rastreamento</b></td><td>Conversões refeitas junto com o site novo: WhatsApp de atendimento e produtos, WhatsApp de urgência e ligações como metas principais.</td></tr><tr><td><b>Área de alcance</b></td><td>Raio de 20 km em torno da clínica, no Centro de Petrolina, mostrando o anúncio só para quem está na região.</td></tr><tr><td><b>Anúncios</b></td><td>Os 5 anúncios da campanha trazem "30 Anos de História" e títulos novos: "Veterinário em Petrolina", "Farmácia Veterinária" e "Atendimento pelo WhatsApp".</td></tr><tr><td><b>Palavras negativas</b></td><td>Lista ampliada para 81 termos. Entraram concorrentes nacionais e marketplaces, buscas por atendimento gratuito, vagas de emprego e cursos, e dúvidas sem intenção de consulta.</td></tr><tr><td><b>Palavras-chave</b></td><td>46 palavras redundantes removidas, para concentrar o histórico nas que de fato recebem busca.</td></tr><tr><td><b>Sitelinks</b></td><td>Dois novos: "Contato e Localização" e "Avaliações de Clientes". São 6 sitelinks do anunciante no total.</td></tr><tr><td><b>Logo e imagens</b></td><td>Logo atual do CEVEPE e 6 fotos reais da fachada, da loja e da entrada, em formato quadrado e paisagem.</td></tr><tr><td><b>Telefone</b></td><td>Recurso de chamada revisado, mantendo apenas números validados pelo Google.</td></tr><tr><td><b>Automação</b></td><td>A aplicação automática de recomendações ficou restrita ao que é seguro. O Google não altera lances nem remove palavras negativas sozinho.</td></tr><tr><td><b>Orçamento</b></td><td>De R$ 33 para R$ 45 por dia, tirando a campanha da condição de limitada pelo orçamento.</td></tr></table></div>
+<p>Com esses ajustes, a pontuação de otimização da conta saiu de 73,8% e está perto de 80%.</p>
+</div><div class="post" id="hoje"><h2>🧭 A conta hoje</h2>
+<p class="lede">Configuração no momento da passagem.</p>
+<div class="tblwrap"><table class="tbl"><tr><th>Item</th><th>Como está</th></tr><tr><td>Campanha ativa</td><td><b>[CEVEPE] [SEARCH] [LEADS] [RAIO-20KM] #2</b>, Rede de Pesquisa</td></tr><tr><td>Orçamento</td><td><b>R$ 45,00 por dia</b> (cerca de R$ 1.370 por mês)</td></tr><tr><td>Estratégia de lance</td><td>Maximizar conversões com CPA desejado de <b>R$ 4,63</b></td></tr><tr><td>Localização</td><td>Raio de 20 km a partir da Rua Engenheiro Carlos Pinheiro, 382, Centro, Petrolina</td></tr><tr><td>Grupos ativos</td><td>[CEVEPE], [COMPARAÇÕES/RELACIONADOS] e [PREPOSIÇÕES]</td></tr><tr><td>Grupos pausados</td><td>[ALFABÉTICOS] e [CONCORRENTES], já com os anúncios atualizados caso sejam reativados</td></tr><tr><td>Anúncios</td><td>Responsivos de pesquisa, com 15 títulos e 4 descrições cada. Destino: cevepe.com.br</td></tr><tr><td>Palavras negativas</td><td>81 na campanha</td></tr><tr><td>Recursos</td><td>Sitelinks, frases de destaque, snippets, chamada, local do perfil no Google, logo e imagens</td></tr><tr><td>Metas de conversão</td><td>WhatsApp de atendimento e produtos, WhatsApp de urgência, ligações e visitas à loja</td></tr><tr><td>Pagamento</td><td>Pré-pago por Pix, com recarga automática desligada</td></tr><tr><td>Outras campanhas</td><td>A campanha anterior e 6 campanhas de teste seguem pausadas, apenas como histórico</td></tr></table></div>
+<div class="nota"><b>Em análise no Google:</b> o logo novo e as 6 fotos estavam em revisão no momento da passagem. Vale conferir em Recursos se todos aparecem como "Qualificado". Se alguma foto for recusada, basta trocar por outra sem texto por cima.</div>
+<div class="subh">Quem disputa o leilão com o CEVEPE</div>
+<p>Os anunciantes que mais aparecem nas mesmas buscas são Petlove, Mercado Livre, Petz e Shopee, que vendem produto pela internet, e duas clínicas da região. O CEVEPE aparece em cerca de 22% das buscas em que poderia aparecer. Esse número, chamado de parcela de impressões, é o termômetro para saber se a campanha está ganhando espaço.</p>
+</div><div class="post" id="verba"><h2>💰 Plano de verba até 31/12</h2>
+<p class="lede">Planejamento de 10 de novembro a 31 de dezembro de 2026, 52 dias, conforme a planilha de controle de tráfego.</p>
+<div class="kpis k3"><div class="kpi"><div class="v">R$ 45</div><div class="k">Orçamento por dia no Google</div></div><div class="kpi"><div class="v">R$ 2.340</div><div class="k">Total planejado para os 52 dias</div></div><div class="kpi"><div class="v">R$ 2.342</div><div class="k">Total disponível: saldo mais depósitos previstos</div></div></div>
+<div class="subh">De onde vem</div>
+<div class="tblwrap"><table class="tbl"><tr><th>Origem</th><th class="n">Valor</th><th>Situação</th></tr><tr><td>Saldo na conta em 10/11</td><td class="n">R$ 797,00</td><td>Na conta</td></tr><tr><td>Depósito de novembro</td><td class="n">R$ 800,00</td><td>Previsto para 10/11</td></tr><tr><td>Depósito de dezembro</td><td class="n">R$ 745,00</td><td>Previsto para 01/12, data a confirmar</td></tr><tr class="tot"><td>Total disponível</td><td class="n">R$ 2.342,00</td><td></td></tr></table></div>
+<p>Existe ainda uma <b>reserva de R$ 300</b> no plano geral. Ela vai para o Google se o teste de R$ 45 gastar tudo com custo estável. Caso contrário, vai para a promoção no Meta.</p>
+<div class="regra"><h4>Atenção ao saldo</h4>
+<p>A conta é pré-paga. Quando o saldo acaba, os anúncios param na hora e a campanha perde ritmo. Em outubro a conta ficou cerca de duas semanas quase sem veicular até a recarga entrar, e o mês fechou em R$ 433 de investimento, contra R$ 1.003 em setembro.</p>
+<p>A R$ 45 por dia, cada R$ 1.000 de recarga dura cerca de 22 dias. Vale conferir o saldo toda semana e recarregar quando ele estiver abaixo de R$ 300. Outra opção é ligar a recarga automática em Faturamento.</p></div>
+</div><div class="post" id="teste"><h2>🧪 Regra do teste de R$ 45</h2>
+<p class="lede">O aumento de R$ 33 para R$ 45 por dia é um teste com data para revisão. A decisão segue uma regra simples.</p>
+<div class="tblwrap"><table class="tbl"><tr><th>Parâmetro</th><th>Valor</th></tr><tr><td>Data da revisão</td><td><b>24/11/2026</b>, 14 dias depois do aumento</td></tr><tr><td>Gasto médio mínimo para manter os R$ 45</td><td>R$ 38,00 por dia</td></tr><tr><td>Custo máximo por contato real</td><td>R$ 6,50</td></tr><tr><td>Orçamento de recuo se o teste não se pagar</td><td>R$ 38,00 por dia</td></tr></table></div>
+<div class="duo">
+<div class="box"><h4>Mantém os R$ 45</h4><ul><li>A campanha gasta em média R$ 38 por dia ou mais.</li><li>O custo por contato real fica em até R$ 6,50.</li></ul><p>Nesse caso a reserva de R$ 300 pode reforçar o Google em dezembro.</p></div>
+<div class="box"><h4>Recua para R$ 38</h4><ul><li>A campanha não consegue gastar a verba, ou</li><li>o custo por contato real passa de R$ 6,50.</li></ul><p>Antes de recuar por falta de gasto, veja a regra do lance logo abaixo.</p></div>
+</div>
+<div class="nota"><b>Contato real</b> é o clique único no WhatsApp somado às ligações, sem contagem repetida e sem as visitas à loja estimadas pelo Google.</div>
+</div><div class="post" id="lance"><h2>🎯 Lance: quando subir</h2>
+<p class="lede">O CPA desejado é o valor que o Google tenta pagar por conversão. Ele continua em R$ 4,63. Subir o lance é o segundo passo, só depois de a verba nova mostrar resultado.</p>
+<p>Enquanto a campanha estava limitada pelo orçamento, aumentar o lance só deixaria cada contato mais caro. Agora que a verba subiu, a pergunta passa a ser outra: a campanha está conseguindo ocupar mais espaço no Google?</p>
+<div class="passo"><div class="num">1</div><div class="tx"><h4>Observe por 14 dias</h4><p>Acompanhe o gasto médio diário e a parcela de impressões. O ponto de partida é cerca de 22%. Se o gasto chegar perto dos R$ 45 e a parcela subir, o lance fica como está.</p></div></div><div class="passo"><div class="num">2</div><div class="tx"><h4>Se não ganhar espaço, suba para R$ 5,00</h4><p>Se depois de 14 dias a campanha não gastar a verba ou a parcela de impressões não sair do lugar, o lance está segurando a entrega. Suba o CPA desejado de R$ 4,63 para R$ 5,00 e espere mais 14 dias.</p></div></div><div class="passo"><div class="num">3</div><div class="tx"><h4>Depois teste R$ 6,00</h4><p>Se com R$ 5,00 ainda sobrar verba e o custo por contato real continuar dentro do limite de R$ 6,50, teste R$ 6,00. Esse é o teto recomendado para este momento.</p></div></div>
+<div class="regra"><h4>Duas regras para não bagunçar o aprendizado</h4>
+<p><b>Uma mudança por vez.</b> Orçamento e lance não devem mudar na mesma semana. Cada alteração faz o Google reaprender por 7 a 14 dias.</p>
+<p><b>Lance e contagem andam juntos.</b> Quando a contagem das conversões for corrigida para uma por pessoa (veja <a href="#pendencias">Pendências</a>), o número de conversões vai cair e o custo por conversão vai subir no relatório. Nesse dia o CPA desejado precisa subir junto, para R$ 5,00 ou R$ 6,00, senão o Google reduz a entrega.</p></div>
+</div><div class="post" id="semanal"><h2>🔁 Toda semana</h2>
+<p class="lede">Quinze minutos por semana mantêm a conta saudável. A ordem abaixo vai do mais importante para o menos urgente.</p>
+<div class="passo"><div class="num">1</div><div class="tx"><h4>Termos de pesquisa</h4><p>Em Insights e relatórios, abra Termos de pesquisa com os últimos 7 dias. Veja o que as pessoas digitaram e marque como palavra negativa tudo o que trouxe clique e está fora do nicho. É a tarefa que mais protege a verba. Detalhes na próxima seção.</p></div></div><div class="passo"><div class="num">2</div><div class="tx"><h4>Saldo da conta</h4><p>Em Faturamento, confira os fundos disponíveis. Abaixo de R$ 300, peça a recarga.</p></div></div><div class="passo"><div class="num">3</div><div class="tx"><h4>Status e gasto</h4><p>Na lista de campanhas, veja se o status segue "Qualificada" e se o gasto médio está perto de R$ 45 por dia. Se voltar a aparecer "Limitada pelo orçamento", é sinal de que há mais demanda do que verba.</p></div></div><div class="passo"><div class="num">4</div><div class="tx"><h4>Recursos e anúncios</h4><p>Confira se algum anúncio, imagem, sitelink ou telefone foi reprovado. Item reprovado deixa de aparecer sem avisar.</p></div></div><div class="passo"><div class="num">5</div><div class="tx"><h4>Recomendações do Google</h4><p>Abra a aba Recomendações e avalie o que apareceu de novo, com o critério da seção <a href="#recomendacoes">Recomendações do Google</a>.</p></div></div><div class="passo"><div class="num">6</div><div class="tx"><h4>Google Meu Negócio</h4><p>Responda as avaliações novas e veja se o perfil pede alguma atualização. Detalhes em <a href="#gmn">Google Meu Negócio</a>.</p></div></div>
+</div><div class="post" id="negativas"><h2>🚫 Palavras negativas</h2>
+<p class="lede">Palavra negativa é o termo que impede o anúncio de aparecer. Cada clique fora do nicho é verba que deixa de ir para quem procura o CEVEPE.</p>
+<div class="subh">O que já está negativado</div>
+<div class="tblwrap"><table class="tbl"><tr><th>Tipo de busca</th><th>Exemplos na lista</th></tr><tr><td>Lojas nacionais e marketplaces</td><td>petz, petlove, cobasi, mercado livre, shopee</td></tr><tr><td>Concorrentes sem relação com a região</td><td>campineira, planeta animal, animalia, vet center, vetpop, gran pet</td></tr><tr><td>Atendimento gratuito</td><td>grátis, gratuita, sus, público, prefeitura, universitário</td></tr><tr><td>Emprego e estudo</td><td>vaga, emprego, salário, faculdade, estágio</td></tr><tr><td>Dúvida sem intenção de consulta</td><td>o que fazer, posso dar, pode dar, quanto tempo, sintomas, caseiro</td></tr></table></div>
+<div class="subh">Como decidir toda semana</div>
+<div class="duo">
+<div class="box"><h4>Negativar</h4><ul><li>Outra cidade ou outro estado no termo.</li><li>Produto ou serviço que o CEVEPE não oferece.</li><li>Busca por algo de graça, curso, vaga ou concurso.</li><li>Pergunta de curiosidade, sem intenção de atendimento.</li><li>Nome de loja online ou marketplace.</li></ul></div>
+<div class="box"><h4>Manter</h4><ul><li>Qualquer variação de veterinário, clínica, hospital, pet shop, banho e tosa e farmácia veterinária em Petrolina e Juazeiro.</li><li>Buscas com "24 horas", "aberto agora", "perto de mim" e "urgência".</li><li>O nome CEVEPE, mesmo com erro de digitação.</li></ul></div>
+</div>
+<div class="nota"><b>Cuidado com concorrentes locais:</b> a conta tem palavras-chave com nomes de clínicas e pet shops da região, colocadas de propósito para o CEVEPE aparecer quando alguém procura por eles. Antes de negativar um concorrente de Petrolina ou Juazeiro, confira se ele não é palavra-chave. Uma negativa com o mesmo termo bloqueia a própria palavra.</div>
+<p>Use correspondência de frase e adicione no nível da campanha, para valer em todos os grupos.</p>
+</div><div class="post" id="recomendacoes"><h2>💡 Recomendações do Google</h2>
+<p class="lede">A aba Recomendações mistura sugestões úteis com sugestões que só aumentam o gasto. Este é o critério usado na conta.</p>
+<div class="tblwrap"><table class="tbl"><tr><th>Recomendação</th><th>O que fazer</th><th>Por quê</th></tr><tr><td>Remover palavras-chave redundantes</td><td><b>Aceitar</b></td><td>Limpa a conta sem perder alcance.</td></tr><tr><td>Corrigir ou adicionar sitelinks, imagens e logo</td><td><b>Aceitar</b></td><td>Deixa o anúncio maior e mais clicável, sem custo extra.</td></tr><tr><td>Aumentar o orçamento</td><td><b>Avaliar</b></td><td>Só segue a regra do teste e o plano de verba.</td></tr><tr><td>Adicionar novas palavras-chave</td><td><b>Avaliar uma a uma</b></td><td>As sugestões vêm em correspondência ampla e puxam buscas de outras cidades. Só entram termos claramente locais.</td></tr><tr><td>Importar lista de clientes</td><td><b>Avaliar com o cliente</b></td><td>Depende de o CEVEPE fornecer os contatos e de autorização para uso.</td></tr><tr><td>Criar campanha Performance Max</td><td><b>Recusar por enquanto</b></td><td>Espalha a verba em YouTube, Display e Gmail. Para clínica local com esta verba, a pesquisa rende mais.</td></tr><tr><td>Ativar a Rede de Display</td><td><b>Recusar</b></td><td>Gera clique barato e sem intenção de atendimento.</td></tr><tr><td>Aplicar lances automaticamente</td><td><b>Recusar</b></td><td>Mudança de lance precisa seguir a regra deste documento.</td></tr></table></div>
+<p>A pontuação de otimização é uma referência, não uma meta. Chegar a 100% exigiria aceitar as sugestões acima que não fazem sentido para o CEVEPE.</p>
+</div><div class="post" id="mensal"><h2>🗓️ Todo mês</h2>
+<p class="lede">Uma revisão mais calma no começo de cada mês.</p>
+<ul>
+<li><b>Compare o mês com o anterior:</b> investimento, cliques, custo por clique, conversões e custo por conversão. Queda forte de investimento quase sempre é saldo.</li>
+<li><b>Olhe a parcela de impressões.</b> Se ela sobe com custo estável, a campanha está ganhando espaço. Se cai, veja primeiro o saldo e depois o lance.</li>
+<li><b>Confira os anúncios.</b> A força dos anúncios está como "Média". Dá para subir trocando títulos parecidos entre si por variações com as palavras mais buscadas, um anúncio por vez.</li>
+<li><b>Atualize as imagens</b> quando o cliente enviar fotos novas da estrutura clínica, da equipe e da fachada de dia.</li>
+<li><b>Revise os sitelinks</b> sempre que o site ganhar página ou seção nova.</li>
+<li><b>Registre os depósitos</b> e o resultado do mês na planilha de controle de tráfego.</li>
+</ul>
+</div><div class="post" id="gmn"><h2>📍 Google Meu Negócio</h2>
+<p class="lede">O perfil do CEVEPE no Google trabalha junto com os anúncios. Quem pesquisa a clínica vê o perfil antes de qualquer outra coisa, e ele também aparece ligado ao anúncio como endereço.</p>
+<div class="kpis "><div class="kpi"><div class="v">4,8 ★</div><div class="k">Nota no Google</div></div><div class="kpi"><div class="v">476</div><div class="k">Avaliações no perfil</div></div><div class="kpi"><div class="v">398</div><div class="k">Interações em outubro, o melhor mês do semestre</div></div><div class="kpi"><div class="v">2.448</div><div class="k">Visualizações do perfil no último mês</div></div></div>
+<div class="tblwrap"><table class="tbl"><tr><th>Mês de 2026</th><th class="n">Interações no perfil</th></tr><tr><td>Junho</td><td class="n">258</td></tr><tr><td>Julho</td><td class="n">318</td></tr><tr><td>Agosto</td><td class="n">355</td></tr><tr><td>Setembro</td><td class="n">360</td></tr><tr><td>Outubro</td><td class="n">398</td></tr></table></div>
+<p>O perfil está com as informações completas: categoria principal Hospital veterinário, funcionamento 24 horas, WhatsApp, site, redes sociais e área de atendimento em Petrolina, Juazeiro, Casa Nova e Lagoa Grande. Todas as avaliações recentes estão respondidas.</p>
+<div class="subh">Rotina recomendada</div>
+<div class="passo"><div class="num">1</div><div class="tx"><h4>Responder as avaliações toda semana</h4><p>Resposta curta, com o nome da pessoa e algo do que ela escreveu. Vale incluir de forma natural termos como clínica veterinária em Petrolina, veterinário 24 horas ou farmácia veterinária, um por resposta, sem repetir sempre o mesmo. Avaliação negativa pede resposta calma e convite para resolver por telefone.</p></div></div><div class="passo"><div class="num">2</div><div class="tx"><h4>Pedir avaliação a quem foi bem atendido</h4><p>O perfil gera um link próprio para pedir avaliação. Enviar pelo WhatsApp depois do atendimento é o que mais aumenta o volume.</p></div></div><div class="passo"><div class="num">3</div><div class="tx"><h4>Renovar as fotos todo mês</h4><p>As fotos do perfil são antigas e mostram quase só o pet shop. Faltam fachada de dia, consultórios, centro cirúrgico, internação e equipe. O próprio Google pede uma foto externa.</p></div></div><div class="passo"><div class="num">4</div><div class="tx"><h4>Manter horários e informações em dia</h4><p>Confirmar horários especiais em feriados, como 15 de novembro, Natal e Ano Novo. O Google também sugeriu um atributo de acessibilidade que precisa de confirmação de quem conhece a estrutura.</p></div></div><div class="passo"><div class="num">5</div><div class="tx"><h4>Publicar novidades</h4><p>Postagens no perfil com campanhas, como o sorteio dos 30 anos, mantêm o perfil ativo.</p></div></div>
+<p>O diagnóstico completo e as ações já feitas no perfil estão no <a href="../plano-de-otimizacao-google-meu-negocio/">Plano de Otimização do Google Meu Negócio</a>.</p>
+</div><div class="post" id="pendencias"><h2>📌 Pendências em aberto</h2>
+<p class="lede">O que ficou concluído na passagem e o que fica para a próxima gestão, com a ordem recomendada.</p>
+<div class="tblwrap"><table class="tbl"><tr><th>Item</th><th>Situação</th><th>Orientação</th></tr><tr><td>Subir o orçamento de R$ 33 para R$ 45 por dia</td><td><span class="chip ok">Concluído</span></td><td>Em teste até 24/11, pela regra deste documento.</td></tr><tr><td>Entender a queda de entrega de outubro</td><td><span class="chip ok">Concluído</span></td><td>O saldo pré-pago acabou antes da recarga. A prevenção está em Plano de verba.</td></tr><tr><td>Atualizar anúncios, negativas, sitelinks, logo e imagens</td><td><span class="chip ok">Concluído</span></td><td>Conferir a aprovação do logo e das fotos.</td></tr><tr><td>Subir o CPA desejado</td><td><span class="chip open">Em aberto</span></td><td>Segue em R$ 4,63. Subir em etapas, para R$ 5,00 e depois R$ 6,00, pela regra do lance.</td></tr><tr><td>Contar as conversões de WhatsApp uma vez por pessoa</td><td><span class="chip open">Em aberto</span></td><td>Hoje, se a mesma pessoa toca no botão mais de uma vez, cada toque conta. Trocar a contagem de "Todas" para "Uma" e ajustar o CPA desejado no mesmo dia.</td></tr><tr><td>Passar "Visitas à loja" para conversão secundária</td><td><span class="chip open">Em aberto</span></td><td>É uma estimativa do Google e hoje entra na conta como contato. Fazer junto com o item anterior.</td></tr><tr><td>Arquivar conversões antigas</td><td><span class="chip open">Em aberto</span></td><td>A conta guarda ações de conversão de versões anteriores do site. Não atrapalham, mas poluem os relatórios.</td></tr><tr><td>Melhorar a força dos anúncios</td><td><span class="chip open">Em aberto</span></td><td>De "Média" para "Boa", um anúncio por vez.</td></tr><tr><td>Fotos novas da estrutura</td><td><span class="chip cli">Depende do cliente</span></td><td>Servem para os anúncios e para o perfil no Google.</td></tr><tr><td>Lista de clientes</td><td><span class="chip cli">Depende do cliente</span></td><td>Só se o CEVEPE quiser usar a base de contatos nos anúncios.</td></tr><tr><td>Recarga do saldo</td><td><span class="chip cli">Depende do cliente</span></td><td>Depósitos de novembro e dezembro previstos no plano de verba.</td></tr></table></div>
+<div class="regra"><h4>Ordem recomendada</h4>
+<p><b>1.</b> Esperar a revisão do teste em 24/11. <b>2.</b> Corrigir a contagem das conversões e as visitas à loja no mesmo dia, subindo o CPA desejado junto. <b>3.</b> Esperar 14 dias antes de qualquer outra mudança de lance ou verba. <b>4.</b> Só então cuidar da força dos anúncios.</p></div>
+<p>O rastreamento do site também tem itens de manutenção, como testar cada botão no modo de visualização do Google Tag Manager e criar o evento de WhatsApp no Google Analytics. Eles estão listados na aba Pendências da planilha de controle de tráfego.</p>
+</div><div class="post" id="2027"><h2>🎂 Para 2027: 31 anos</h2>
+<p class="lede">O CEVEPE abriu em 21 de novembro de 1996. A comunicação atual fala em 30 anos, e isso tem data para mudar.</p>
+<div class="subh">A partir de 21 de novembro de 2027</div>
+<ul>
+<li><b>Anúncios do Google:</b> trocar o título "30 Anos de História" por "31 Anos de História" nos 5 anúncios da campanha, inclusive nos dois grupos pausados.</li>
+<li><b>Sitelink "Avaliações de Clientes":</b> a descrição diz "30 anos cuidando de quem você ama". Atualizar o número.</li>
+<li><b>Perfil no Google:</b> a descrição da empresa menciona os 30 anos. Atualizar.</li>
+</ul>
+<div class="subh">Logo depois do sorteio, em dezembro de 2026</div>
+<ul>
+<li>Retirar das postagens do perfil e de qualquer anúncio as menções ao sorteio das scooters assim que ele acontecer.</li>
+<li>Rever os horários especiais de fim de ano no perfil.</li>
+</ul>
+<div class="nota"><b>Dica:</b> vale deixar um lembrete na agenda para a primeira semana de novembro de 2027. A troca leva poucos minutos e evita um ano inteiro de anúncio com a idade errada.</div>
+</div><div class="post" id="dados"><h2>🗂️ Dados da conta</h2>
+<div class="tblwrap"><table class="tbl"><tr><th>Item</th><th>Informação</th></tr><tr><td>Conta de Google Ads</td><td>CEVEPE - GOOGLE ADS, ID 108-049-4541</td></tr><tr><td>Campanha ativa</td><td>[CEVEPE] [SEARCH] [LEADS] [RAIO-20KM] #2</td></tr><tr><td>Site de destino</td><td>cevepe.com.br</td></tr><tr><td>WhatsApp de atendimento</td><td>(87) 98825-3766</td></tr><tr><td>WhatsApp de urgência</td><td>(87) 98814-1272</td></tr><tr><td>Perfil no Google</td><td>Centro Veterinário de Petrolina - CEVEPE</td></tr><tr><td>Acesso</td><td>O e-mail do próprio CEVEPE é administrador da conta de anúncios</td></tr><tr><td>Controle de verba e pendências</td><td>Planilha "CEVEPE | Controle de Tráfego (Google + Meta)"</td></tr></table></div>
+<div class="subh">Documentos relacionados</div>
+<ul>
+<li><a href="../estrategia-google/">Estratégia de Busca</a>, com a lógica da operação e os resultados de janeiro a julho de 2026.</li>
+<li><a href="../plano-de-otimizacao-google-meu-negocio/">Plano de Otimização do Google Meu Negócio</a>.</li>
+<li><a href="../configuracao-gtm/">Configuração do Google Tag Manager</a>, com as conversões de WhatsApp.</li>
+<li><a href="../central/">Central de Estratégia e Resultados</a>, com todos os documentos do CEVEPE.</li>
+</ul>
+</div></main></div><script>
+(function(){
+ var links=[].slice.call(document.querySelectorAll('.sidenav a[href^="#"]'));
+ var ids=links.map(function(a){return a.getAttribute('href').slice(1)}).filter(function(id){return document.getElementById(id)});
+ function onScroll(){
+  var cur=ids[0];
+  for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.getBoundingClientRect().top<=160)cur=ids[i];}
+  if((window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-4)cur=ids[ids.length-1];
+  links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+ }
+ window.addEventListener('scroll',onScroll,{passive:true});
+ window.addEventListener('resize',onScroll,{passive:true});
+ onScroll();
+})();
+</script><footer><div class="wrap"><div class="brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon><polygon points="50,33 65,59 35,59"></polygon><line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line><line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line><line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line><line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line><line x1="10" y1="27" x2="50" y2="33"></line></svg><div class="word"><b>BM</b><span class="bar"></span><span>MÍDIAS</span></div></div><p class="small">Documento de passagem · <b>Brito Mídias</b> · Gestão de Tráfego Pago · Cliente: CEVEPE<br>Emitido em novembro de 2026 · <a href="mailto:rafael@britomidias.com.br">rafael@britomidias.com.br</a></p></div></footer></body></html>
